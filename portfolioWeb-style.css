@@ -7,21 +7,40 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
-    color: #333;
+    color: #000000;
     line-height: 1.6;
 }
 
 header {
-    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
-    color: #fff;
+    background: #dad1d1;
+    color: #403434FF;
     padding: 1.5rem 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5rem;
+    color: #403434FF;
+}
+
+i{
+    margin: 1.5rem 0;
+    font-size: 1rem;
+    background: transparent;
+    color: black;
+}
+
+#mode{
+    background-color: transparent;
+    border-color: transparent;
+}
+
+i:hover{
+    color: #ffffff;
 }
 
 nav ul {
@@ -37,7 +56,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #403434FF;
     text-decoration: none;
     font-weight: bold;
     padding: 0.5rem 1rem;
@@ -47,22 +66,27 @@ nav ul li a {
 nav ul li a:hover {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
+    font-size: 110%;
+    transition: 0.3s;
 }
 
 section {
     padding: 2rem;
     margin: 2rem auto;
     max-width: 900px;
-    background: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+}
+
+section:hover{
+    background: #dad1d1;
+    transition: background 1s;
 }
 
 section h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #6a11cb;
-    border-bottom: 2px solid #6a11cb;
+    color: #403434FF;
     display: inline-block;
     padding-bottom: 0.5rem;
 }
@@ -90,7 +114,7 @@ section p {
 .skill h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #2575fc;
+    color: #914545;
     border-bottom: 1px solid #ddd;
     padding-bottom: 0.5rem;
 }
@@ -105,13 +129,27 @@ section p {
     font-size: 1.1rem;
 }
 
+#certificates {
+    margin-top: 2rem; /* Added margin for spacing */
+}
+
+#certificates input {
+    padding: 1rem;
+    margin-bottom: 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+}
+
 #certificates ul {
     list-style: none;
     padding: 0;
 }
 
 #certificates ul li {
-    background: #e3f2fd;
+    background: linear-gradient(90deg, #886767 0%, #ffffff 100%);
+    color: black;
     margin: 0.5rem 0;
     padding: 0.75rem;
     border: 1px solid #90caf9;
@@ -141,8 +179,19 @@ footer p {
 #contact ul {
     list-style: none;
     padding: 0;
+    color: #ac7272;
 }
 
-#contact ul li {
+#contact ul li a{
     margin: 0.5rem 0;
+    color: #ac7272;
+}
+#contact ul li a:hover {
+    font-size: 110%;
+    transition: 0.3s;
+}
+
+i{
+    font-size: 1.5rem;
+    margin: auto;
 }
