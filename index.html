@@ -5,84 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Portfolio</title>
     <link rel="stylesheet" href="portfolioWeb-style.css">
+    <script src="https://kit.fontawesome.com/e9df78b01c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <h1>My Personal Portfolio</h1>
+<header>
+    <div class="header2">
+        <h1>Kunj Shah, Student at SFSU</h1>
         <nav>
-            <ul>
+            <ul class="navigations">
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#hackathons">Hackathons</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-    </header>
+    </div>
+    <button id="mode"><i class="fa-solid fa-circle-half-stroke"></i></button>
+</header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Welcome to my personal portfolio. Here, you can find information about my math and programming skills, as well as my professional certificates.</p>
-    </section>
+<section id="about">
+    <h2><i class="fa-solid fa-address-card"></i> About Me</h2>
+    <p>I am a second-year international student at San Francisco State University, pursuing a Bachelor's degree in Computer Science. Originally from Ahmedabad, India, where I completed my schooling, I am seeking opportunities that align with my academic background and provide a platform to contribute to a professional environment.</p>
+</section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-container">
-            <div class="skill">
-                <h3>Math Skills</h3>
-                <ul>
-                    <li>Algebra</li>
-                    <li>Calculus</li>
-                    <li>Statistics</li>
-                    <li>Linear Algebra</li>
-                </ul>
-            </div>
-            <div class="skill">
-                <h3>Programming Skills</h3>
-                <ul>
-                    <li>Python</li>
-                    <li>JavaScript</li>
-                    <li>HTML & CSS</li>
-                    <li>SQL</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+<section id="experience">
+    <h2><i class="fa-solid fa-briefcase"></i> Experience</h2>
+    <ul>
+        <li>Intern at Dyna Grow Design Solutions – Made a website using HTML, CSS, and JS for them. (LOR Given)</li>
+        <li>Intern at Shah Contractors and Engineers – Made a website for them using the same languages. (LOR Given)</li>
+        <li>L.A. (Lecture Assistant) at CSC215 class of Duc Ta</li>
+        <li>Officer at SF Hacks – Logistics Department</li>
+    </ul>
+</section>
 
-    <section id="certificates">
-        <h2>Certificates</h2>
-        <ul id="certificates-list"></ul>
-    </section>
+<section id="hackathons">
+    <h2><i class="fa-solid fa-users-rectangle"></i> Hackathons</h2>
+    <ul>
+        <li>Participating in Google Chrome AI Hackathon (Online) – 10/01/2024 to 12/13/2024</li>
+        <li>Participating in Cal-Hacks 11.0 at San Francisco – 10/18/2024 to 10/20/2024</li>
+    </ul>
+</section>
 
-    <section id="experience">
-        <h2>Experience</h2>
-        <ul id="experience-list"></ul>
-    </section>
+<section id="projects">
+    <h2><i class="fa-solid fa-diagram-project"></i> Projects</h2>
+    <ul>
+        <li>Volume Gesture Control</li>
+        <li>Cursor Gesture Control</li>
+        <li>ChatBot using OpenAI</li>
+        <li>Spotify songs controller</li>
+        <li>Jarvis - Voice-Activated Assistant</li>
+        <p>More to be added later...</p>
+        <!-- Add more projects here -->
+    </ul>
+</section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li>Volume Gesture Control</li>
-            <li>Spotify Project</li>
-            <li>Jarvis Voice Assistant</li>
-            <!-- Add more projects as necessary -->
-        </ul>
-    </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Connect with me:</p>
-        <ul>
-            <li><a href="https://github.com/kunjcr2" target="_blank">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/kunjcr2" target="_blank">LinkedIn</a></li>
-        </ul>
-    </section>
+<section id="certificates">
+    <h2><i class="fa-solid fa-certificate"></i> Certificates</h2>
+    <input type="text" id="search-input" placeholder="Search Certificates..." />
+    <ul id="certificates-list"></ul>
+</section>
 
-    <footer>
-        <p>&copy; 2024 My Personal Portfolio</p>
-    </footer>
+<section id="contact">
+    <h2><i class="fa-solid fa-phone"></i> Contact</h2>
+    <p>You can connect with me on:</p>
+    <ul>
+        <li><a href="https://www.linkedin.com/in/kunjcr2" target="_blank"><i class="fa-brands fa-linkedin"></i> Kunj Shah</a></li>
+        <li><a href="https://github.com/kunjcr2" target="_blank"><i class="fa-brands fa-github"></i> kunj.cr2.github</a></li>
+        <li><i class="fa-solid fa-envelope"></i> at kunjshah1506@hotmail.com</li>
+    </ul>
+</section>
 
-    <script src="portfolioWeb-script.js"></script>
+<footer>
+    <p>&copy; 2024 My Personal Portfolio</p>
+</footer>
+
+<script src="portfolioWeb-script.js"></script>
 </body>
 </html>
