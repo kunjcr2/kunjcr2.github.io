@@ -43,6 +43,24 @@ i:hover{
     color: #ffffff;
 }
 
+#hackathons i{
+    color: #000000;
+    font-size: 1rem;
+}
+
+#experience i{
+    color: #000000;
+    font-size: 1rem;
+}
+
+#experience p{
+    font-size: 0.8rem;
+}
+
+#experience strong {
+    font-size: 1.1rem;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -148,12 +166,7 @@ section p {
 }
 
 #certificates ul li {
-    background: linear-gradient(90deg, #886767 0%, #ffffff 100%);
     color: black;
-    margin: 0.5rem 0;
-    padding: 0.75rem;
-    border: 1px solid #90caf9;
-    border-radius: 5px;
     font-size: 1.1rem;
 }
 
@@ -170,6 +183,34 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+#skills {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#skills h2 {
+    font-size: 2em;
+    color: #333;
+}
+
+#skills ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#skills ul li {
+    font-size: 1.2em;
+    color: #555;
+    margin: 10px 0;
+    transition: color 0.3s ease;
+}
+
+#skills:hover {
+    background: #dad1d1;
+    transition: background 1s;
 }
 
 #contact {
