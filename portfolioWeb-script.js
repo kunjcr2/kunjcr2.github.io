@@ -8,6 +8,28 @@ let listItems = document.querySelectorAll('nav ul li a');
 let skillsItems = document.querySelectorAll('#skills ul li')
 let certiItems = document.querySelectorAll('#certificates ul li')
 
+// Get references to the mode toggle button and body
+const modeButton = document.getElementById('mode');
+const body = document.body;
+
+// Check if the user has a previously saved theme preference
+if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+}
+
+// Toggle dark mode when the button is clicked
+modeButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    
+    // Save the theme preference to localStorage
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+});
+
+
 btns.forEach(btn => {
     btn.addEventListener("click", () => {
         if (currMode == "light") {
