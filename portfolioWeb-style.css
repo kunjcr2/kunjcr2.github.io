@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -28,33 +32,33 @@ header h1 {
     color: #403434FF;
 }
 
-i{
+i {
     margin: 1.5rem 0;
     font-size: 1rem;
     background: transparent;
     color: black;
 }
 
-#mode{
+#mode {
     background-color: transparent;
     border-color: transparent;
 }
 
-i:hover{
+i:hover {
     color: #ffffff;
 }
 
-#hackathons i{
+#hackathons i {
     color: #000000;
     font-size: 1rem;
 }
 
-#experience i{
+#experience i {
     color: #000000;
     font-size: 1rem;
 }
 
-#experience p{
+#experience p {
     font-size: 0.8rem;
 }
 
@@ -97,7 +101,7 @@ section {
     border-radius: 10px;
 }
 
-section:hover{
+section:hover {
     background: #dad1d1;
     transition: background 1s;
 }
@@ -149,7 +153,8 @@ section p {
 }
 
 #certificates {
-    margin-top: 2rem; /* Added margin for spacing */
+    margin-top: 2rem;
+    /* Added margin for spacing */
 }
 
 #certificates input {
@@ -177,7 +182,8 @@ footer {
     text-align: center;
     padding: 1rem 0;
     margin-top: 2rem;
-    position: relative; /* Changed to relative */
+    position: relative;
+    /* Changed to relative */
     width: 100%;
     box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
 }
@@ -224,16 +230,17 @@ footer p {
     color: #ac7272;
 }
 
-#contact ul li a{
+#contact ul li a {
     margin: 0.5rem 0;
     color: #ac7272;
 }
+
 #contact ul li a:hover {
     font-size: 110%;
     transition: 0.3s;
 }
 
-i{
+i {
     font-size: 1.5rem;
     margin: auto;
 }
