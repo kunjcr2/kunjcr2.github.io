@@ -228,11 +228,20 @@ footer p {
     list-style: none;
     padding: 0;
     color: #ac7272;
+    gap: 50px;
+    margin-top: -20px;
+}
+
+#contact ul #only-icons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
 }
 
 #contact ul li a {
     margin: 0.5rem 0;
-    color: #ac7272;
 }
 
 #contact ul li a:hover {
@@ -243,4 +252,20 @@ footer p {
 i {
     font-size: 1.5rem;
     margin: auto;
+}
+
+@media (max-width: 480px) {
+    .header2 {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .navigations {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #mode {
+        margin-right: 20px;
+    }
 }
