@@ -6,6 +6,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 
@@ -24,12 +25,39 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
+    height: 100vh;
+}
+
+.header2 {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5rem;
     color: #403434FF;
+}
+
+img {
+    height: 40vh;
+    border-radius: 5%;
+}
+
+.header3 {
+    height: 100%;
+    align-items: center;
+    margin: 50px;
+    display: flex;
+    gap: 30px;
+}
+
+.text-in-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 i {
@@ -72,6 +100,8 @@ nav ul {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
+    /* flex-direction: column; */
+    gap: 10px;
 }
 
 nav ul li {
@@ -87,9 +117,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
-    font-size: 110%;
     transition: 0.3s;
 }
 
@@ -117,6 +146,20 @@ section h2 {
 section p {
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
+}
+
+.card-box {
+    margin: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 100%;
+    justify-items: center;
+    height: 100px;
 }
 
 .skills-container {
@@ -255,17 +298,16 @@ i {
 }
 
 @media (max-width: 480px) {
-    .header2 {
-        display: flex;
-        flex-direction: row;
+    img {
+        display: none;
     }
 
-    .navigations {
-        display: flex;
-        flex-direction: column;
+    nav ul {
+        display: none;
     }
 
-    #mode {
-        margin-right: 20px;
+    .text-in-header {
+        width: 70vw;
+        text-align: center;
     }
 }

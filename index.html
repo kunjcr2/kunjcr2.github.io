@@ -3,41 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Portfolio</title>
+    <title>Kunj Shah</title>
     <link rel="stylesheet" href="portfolioWeb-style.css">
     <script src="https://kit.fontawesome.com/e9df78b01c.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <header>
     <div class="header2">
-        <h1>Kunj Shah, Student at SFSU</h1>
         <nav>
             <ul class="navigations">
-                <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#hackathons">Hackathons</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact">Contact Me</a></li>
             </ul>
         </nav>
+        <div class="header3">
+            <img src="IMG_3187.jpg">
+            <div class="text-in-header">
+                <h1>I'm Kunj Shah</h1><br>
+                <p>
+                    I am a second-year international student at San Francisco State University, pursuing a Bachelor's degree in Computer
+                    Science. Originally from Ahmedabad, India, where I completed my schooling, I am actively seeking opportunities that
+                    align with my academic background and allow me to contribute meaningfully to a professional environment. I have
+                    successfully cleared the JEE examination, recognized as the world’s second toughest competitive exam. Proficient in
+                    Python, Java, HTML, CSS, and JavaScript, I have worked on various projects, including a voice-activated assistant,
+                    volume gesture control, and a personal portfolio website, all showcasing practical problem-solving and creative
+                    coding
+                    abilities.
+                </p>
+            </div>
+        </div>
     </div>
-    <button id="mode"><i class="fa-solid fa-circle-half-stroke"></i></button>
+    <!-- <button id="mode"><i class="fa-solid fa-circle-half-stroke"></i></button> -->
 </header>
-
-<section id="about">
-    <h2><i class="fa-solid fa-address-card"></i> About Me</h2>
-    <p>
-        I am a second-year international student at San Francisco State University, pursuing a Bachelor's degree in Computer
-        Science. Originally from Ahmedabad, India, where I completed my schooling, I am actively seeking opportunities that
-        align with my academic background and allow me to contribute meaningfully to a professional environment. I have
-        successfully cleared the JEE examination, recognized as the world’s second toughest competitive exam. Proficient in
-        Python, Java, HTML, CSS, and JavaScript, I have worked on various projects, including a voice-activated assistant,
-        volume gesture control, and a personal portfolio website, all showcasing practical problem-solving and creative coding
-        abilities.
-    </p>
-</section>
 
 <section id="experience">
     <h2><i class="fa-solid fa-briefcase"></i> Experience</h2>
@@ -67,20 +68,64 @@
         <li>
             <strong>Officer, SF Hack | Logistic Department</strong><br>
             <i>September 2024 to Present</i><br>
-            <p>
-                • Coordinated logistics for hackathon events, including venue setup, resource allocation, and participant engagement.
-                <br>• Collaborated with team members to ensure smooth operations and an enjoyable experience for all participants.
-            </p>
         </li>
         <li>
-            <strong>4. Lecture Assistant (L.A.), CSC215 for FALL2024 and CSC220 for SP2025, SFSU | Prof.- Duc Ta</strong><br>
+            <strong>Lecture Assistant (L.A.), CSC215 for FALL2024 and CSC220 for SP2025, SFSU | Prof.- Duc Ta</strong><br>
             <i>August 2024 to Present</i><br>
-            <p>
-                • Assisted in delivering lectures and facilitating discussions for the CSC215 course, providing support to students with
-                course materials and assignments.
-                <br>• Collaborated with the instructor to enhance the learning experience and ensure effective course management.
-            </p>
         </li>
+    </ul>
+</section>
+
+<section id="projects">
+    <h2><i class="fa-solid fa-diagram-project"></i> Projects</h2>
+    <ul>
+        <p>
+            <li>
+                <strong>Breast Cancer Predictor</strong>\
+                Developed a deep learning model using TensorFlow and Keras to detect breast cancer, achieving 98.25% accuracy. Leveraged
+                a combination of dense neural networks and dropout layers to enhance model performance and prevent overfitting. Focused
+                on data preprocessing, feature scaling, and model evaluation to ensure reliable and accurate predictions.
+            </li>
+        </p>
+        <p>
+            <li>
+                <strong>Californian House Price Predictor</strong>
+                Built a machine learning model to predict California house prices using scikit-learn and TensorFlow, achieving a Mean
+                Absolute Error (MAE) of just 8%. Incorporated regression techniques, feature engineering, and model optimization to
+                handle real-world data effectively. This project honed my skills in data analysis, model validation, and performance
+                tuning for complex datasets.
+            </li>
+        </p>
+        <p>
+            <li><strong>MNIST Image Classification</strong><br>
+                I developed a deep learning model using TensorFlow and Keras to classify handwritten digits from the MNIST
+                dataset, achieving 99.8% accuracy. The model utilized a Convolutional Neural Network (CNN) for feature extraction and
+                classification, with a focus on data preprocessing, model optimization, and evaluation to ensure high
+                performance and generalization.
+            </li>
+        </p>
+        <p>
+            <li><strong>Voice-Activated Assistant</strong><br>
+                Developed a voice-activated assistant using Python that employs natural
+                language processing to understand and respond to user commands. The assistant can perform web searches, open
+                websites, and provide location information.
+            </li>
+        </p>
+        <p>
+            <li><strong>Volume Gesture Control</strong><br> Designed a hand gesture-based system using OpenCV/MediaPipe to control
+                volume and Spotify playback.</li>
+        </p>
+        <p>
+            <li><strong>Workout Assistant</strong><br> Built an AI-powered assistant with Python and Flask for real-time exercise
+                tracking and feedback.</li>
+        </p>
+        <p>
+            <li><strong>Login Page Application</strong><br> Developed a responsive login app with user authentication
+                using Node.js, MongoDB, and EJS.</li>
+        </p>
+
+        <p>More to be added later... (You can find them on my <a href="https://github.com/kunjcr2" class="with-text">Github</a>)</p>
+        <!-- Add more projects here -->
     </ul>
 </section>
 
@@ -93,61 +138,19 @@
                 San Francisco, CA |
                 October 18, 2024 – October 20, 2024
             </i><br>
-            • Participating in a major hackathon event, collaborating with a team to develop impactful projects that address
+            • Participating in a major hackathon event, collaborating with a team to develop impactful projects that
+            address
             real-world challenges.<br>
             • We made a workout web application. For more details, see Projects section or my github or contact me.
         </li><br>
     </ul>
 </section>
 
-<section id="projects">
-    <h2><i class="fa-solid fa-diagram-project"></i> Projects</h2>
-    <ol>
-        <p>
-            <li><strong>MNIST Image Classification</strong></li>
-            I developed a deep learning model using TensorFlow and Keras to classify handwritten digits from the MNIST dataset,
-            achieving 99.8% accuracy. The model utilized a Convolutional Neural Network (CNN) for feature extraction and
-            classification, with a focus on data preprocessing, model optimization, and evaluation to ensure high performance
-            and generalization.
-        </p>
-        <p>
-            <li><strong>House proce Estimator (Scikit Learn)</strong><br>
-                Excited to share a recent machine learning project where I built a house price estimator! Using scikit-learn, I
-                developed a model that predicts house prices based on various features like location, size, and amenities. After
-                training the model with a large dataset, I achieved an accuracy of 85%, providing reliable estimates for
-                potential
-                buyers and sellers. This project allowed me to deepen my understanding of regression models, data preprocessing,
-                and
-                evaluation techniques, while also gaining hands-on experience with real-world applications in machine learning.
-            </li>
-        </p>
-        <li><strong>Voice-Activated Assistant:</strong> Developed a voice-activated assistant using Python that employs natural language
-        processing to understand and respond to user commands. The assistant can perform web searches, open websites, and
-        provide location information.</li>
-        <br><li><strong>Volume Gesture Control:</strong> Created a volume control system using OpenCV and MediaPipe that responds to hand gestures,
-        allowing users to adjust audio levels seamlessly. This project includes specific gestures for controlling Spotify
-        playback, enhancing user interaction with music applications.</li>
-        <br><li><strong>Workout Assistant:</strong> Developed an AI-powered workout assistant using Python, OpenCV, and MediaPipe. This project
-        integrates live video streaming and real-time hand and body tracking to monitor exercise form and provide feedback on
-        workout quality. The assistant features a responsive web interface built with Flask, which allows users to perform
-        exercises while receiving visual feedback and improvement tips based on OpenAI-generated routines. This solution
-        enhances the workout experience by offering personalized, data-driven insights into exercise performance.</li>
-        <p><li><strong>Login Page Application (Node.js, Express.js, EJS, Mongoose)</strong><br>
-            Excited to share a recent project where I developed a dynamic login page application! Using Node.js, Express.js, and EJS for the backend, along with HTML, 
-            CSS, and JavaScript for the frontend, I implemented robust user authentication with MongoDB and Mongoose. The app features dynamic content rendering, form 
-            validation for accurate input, and a responsive design for seamless use across devices. This project allowed me to refine my full-stack development skills, 
-            from server-side logic to database integration and UI responsiveness.
-        </p></li>
-        <p>More to be added later... (You can find them on my Github (Link at the end of the WebPage))</p>
-        <!-- Add more projects here -->
-    </ol>
-</section>
-
 <section id="skills">
     <h2><i class="fa-solid fa-book"></i> Skills</h2>
     <ul>
         <li>Python</li>
-        <li>MERN Web Stack skills (Each)</li>
+        <li>MERN Web Stack skills</li>
         <li>Machine Learning and Deep Learning</li>
         <li>TensorFlow and Scikit Learn</li>
         <li>BERT and Transformer Architecture</li>
@@ -157,7 +160,7 @@
         <li>HTML, CSS</li>
         <li>Git</li>
         <li>SQL</li>
-    </ul>
+    </ol>
 </section>
 
 
@@ -169,11 +172,11 @@
         <li>2. Python Data Structures – University of Michigan</li>
         <li>3. Introduction to Generative AI – Google Cloud</li>
         <li>4. Crash course on Python – Google</li>
-        <li>5. Introduction to Web Development – UC Davis</li>
-        <li>6. Calculus through data and modelling: Series and integration – Johns Hopkins University</li>
-        <li>7. Calculus through data and modelling: Techniques of integration – Johns Hopkins University</li>
-        <li>8. Calculus through data and modelling: Integration Applications – Johns Hopkins University</li>
-        <li>9. Calculus through data and modelling: Vector Calculus – Johns Hopkins University</li>
+        <li>5. Calculus through data and modelling: Series and integration – Johns Hopkins University</li>
+        <li>6. Calculus through data and modelling: Techniques of integration – Johns Hopkins University</li>
+        <li>7. Calculus through data and modelling: Integration Applications – Johns Hopkins University</li>
+        <li>8. Calculus through data and modelling: Vector Calculus – Johns Hopkins University</li>
+        <li>9. Introduction to Web Development – UC Davis</li>
         <li>10. Understanding Einstein: Special theory of relativity – Stanford University</li>
         <li>11. Introduction to complex analysis – Wesleyan University</li>
         <li>12. Understanding Basic SQL Syntax – Coursera Project Network</li>
@@ -188,7 +191,7 @@
 </section>
 
 <section id="contact">
-    <h2><i class="fa-solid fa-phone"></i> Contact</h2>
+    <h2><i class="fa-solid fa-phone"></i> Contact Me</h2>
     <p>You can connect with me on:</p>
     <ul>
         <div id="only-icons">
