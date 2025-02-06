@@ -133,7 +133,8 @@ section {
 
 section:hover {
     background: #dad1d1;
-    transition: background 1s;
+    box-shadow: 10 10 10 #000000;
+    transition: all 1s;
 }
 
 section h2 {
@@ -142,6 +143,7 @@ section h2 {
     color: #403434FF;
     display: inline-block;
     padding-bottom: 0.5rem;
+    text-align: center;
 }
 
 section p {
@@ -237,9 +239,7 @@ footer p {
 }
 
 #skills {
-    padding: 20px;
     background-color: #f9f9f9;
-    text-align: center;
 }
 
 #skills h2 {
@@ -250,6 +250,7 @@ footer p {
 #skills ul {
     list-style-type: none;
     padding: 0;
+    text-align: left;
 }
 
 #skills ul li {
@@ -296,6 +297,10 @@ footer p {
 i {
     font-size: 1.5rem;
     margin: auto;
+}
+
+#only_icons {
+    border: black 2 solid;
 }
 
 @media (max-width: 480px) {
