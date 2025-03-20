@@ -138,6 +138,8 @@ section:hover {
 }
 
 section h2 {
+    display: flex;
+    justify-items: left;
     font-size: 2rem;
     margin-bottom: 1rem;
     color: #403434FF;
@@ -196,6 +198,11 @@ section p {
 .skill ul li {
     margin: 0.5rem 0;
     font-size: 1.1rem;
+}
+
+li {
+    font-size: large;
+    text-align: left;
 }
 
 #certificates {
