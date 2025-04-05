@@ -1,8 +1,6 @@
 # Kunj Shah's Portfolio Website
 
-A clean, modern portfolio website showcasing my skills, projects, experiences, and certifications. Built with HTML, CSS, and JavaScript.
-
-![Portfolio Preview](IMG_3187.jpg)
+A clean, modern portfolio website showcasing my skills, projects, experiences, and certifications. Built with Simple HTML, CSS, and JavaScript.
 
 ## Features
 
