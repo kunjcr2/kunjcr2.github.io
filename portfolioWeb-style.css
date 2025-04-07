@@ -54,23 +54,16 @@ header::before {
     z-index: 1;
 }
 
-.header2 {
-    margin: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0px;
-    z-index: 2;
-    width: 100%;
-    max-width: 1200px;
-}
-
 header h1 {
     margin: 0;
     font-size: 3.5rem;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     font-weight: 700;
+    line-height: 1.2;
+    /* Ensures consistent line height */
+    display: inline-block;
+    /* Helps with alignment of multi-line text */
 }
 
 img {
@@ -85,12 +78,38 @@ img:hover {
     transform: scale(1.02);
 }
 
-.header3 {
-    height: 100%;
-    align-items: center;
+.header2 {
     margin: 50px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Add this for horizontal centering */
+    gap: 20px;
+    /* Adjust gap as needed */
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.header3 {
+    display: flex;
+    align-items: center;
+    /* Ensures vertical alignment of items */
+    justify-content: center;
+    /* Centers content horizontally */
     gap: 30px;
+    width: 100%;
+}
+
+.text-in-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Ensures text elements are centered */
+    gap: 15px;
+    /* Adds consistent spacing between elements */
 }
 
 .text-in-header {
