@@ -1,215 +1,206 @@
 document.addEventListener("DOMContentLoaded", function () {
-  let currMode = "light";
-  let secs = document.querySelectorAll("section");
-  let btns = document.querySelectorAll("button");
-  let header1 = document.querySelector("header");
-  let header = document.querySelector("h1");
-  let secHeader = document.querySelectorAll("h2");
-  let listItems = document.querySelectorAll("nav ul li a");
-  let skillsItems = document.querySelectorAll("#skills ul li");
-  let certiItems = document.querySelectorAll("#certificates ul li");
+  // Theme handling with enhanced transitions
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
-  // Get references to the mode toggle button and body
-  const modeButton = document.getElementById("mode");
-  const body = document.body;
+  function setTheme(isDark) {
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+      // Add neon effects to cards in dark mode
+      document
+        .querySelectorAll(".project-card, .contact-item")
+        .forEach((card) => {
+          card.classList.add("shadow-neon");
+        });
+    } else {
+      document.documentElement.classList.remove("dark");
+      // Remove neon effects in light mode
+      document
+        .querySelectorAll(".project-card, .contact-item")
+        .forEach((card) => {
+          card.classList.remove("shadow-neon");
+        });
+    }
+    localStorage.theme = isDark ? "dark" : "light";
+    updateThemeIcon();
+  }
 
-  // Add active class to current section in navigation
-  const sections = document.querySelectorAll("section");
-  const navItems = document.querySelectorAll("nav ul li a");
+  // Initialize theme
+  if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) && prefersDark.matches)
+  ) {
+    setTheme(true);
+  } else {
+    setTheme(false);
+  }
 
-  // Add animation to sections when they come into view
+  // Add theme toggle button
+  const themeToggle = document.createElement("button");
+  themeToggle.className =
+    "fixed top-4 right-4 z-50 bg-white/10 backdrop-blur-md p-3 rounded-full hover:bg-white/20 transition-all duration-300";
+  themeToggle.innerHTML = '<i class="fa-solid fa-moon text-white text-xl"></i>';
+  document.querySelector("header").appendChild(themeToggle);
+
+  // Theme toggle functionality
+  themeToggle.addEventListener("click", () => {
+    const isDark = !document.documentElement.classList.contains("dark");
+    setTheme(isDark);
+  });
+
+  function updateThemeIcon() {
+    const icon = themeToggle.querySelector("i");
+    if (document.documentElement.classList.contains("dark")) {
+      icon.className = "fa-solid fa-sun text-white text-xl";
+    } else {
+      icon.className = "fa-solid fa-moon text-white text-xl";
+    }
+  }
+
+  // Handle system theme changes
+  prefersDark.addEventListener("change", (e) => setTheme(e.matches));
+
+  // Smooth scrolling
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    });
+  });
+
+  // Intersection Observer for animations
   const observerOptions = {
     root: null,
     rootMargin: "0px",
     threshold: 0.1,
   };
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("in-view");
-        // Highlight the corresponding nav item
-        const id = entry.target.getAttribute("id");
-        navItems.forEach((item) => {
-          if (item.getAttribute("href") === `#${id}`) {
-            item.classList.add("active");
-          } else {
-            item.classList.remove("active");
+        // Add stagger delay based on index
+        setTimeout(() => {
+          entry.target.classList.add("opacity-100", "translate-y-0");
+          entry.target.classList.remove("opacity-0", "translate-y-8");
+
+          // Add neon effect in dark mode
+          if (document.documentElement.classList.contains("dark")) {
+            entry.target.classList.add("shadow-neon");
           }
-        });
+        }, index * 200);
       }
     });
   }, observerOptions);
 
-  sections.forEach((section) => {
+  // Initialize sections with animations
+  document.querySelectorAll("section").forEach((section, index) => {
+    section.style.transitionDuration = "0.8s";
+    section.style.transitionTimingFunction = "cubic-bezier(0.4, 0, 0.2, 1)";
+    section.classList.add("opacity-0", "translate-y-8");
     observer.observe(section);
   });
 
-  // Add typing effect to main heading
-  function typeEffect(element, speed) {
-    const text = element.textContent;
-    element.innerHTML = "";
+  // Floating animation for icons
+  document.querySelectorAll(".animate-float").forEach((element) => {
+    element.style.animation = "float 3s ease-in-out infinite";
+  });
 
-    let i = 0;
-    const timer = setInterval(function () {
-      if (i < text.length) {
-        element.append(text.charAt(i));
-        i++;
-      } else {
-        clearInterval(timer);
-      }
-    }, speed);
-  }
+  // Enhanced scroll behavior
+  let lastScroll = 0;
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+    const direction = currentScroll > lastScroll ? "down" : "up";
 
-  // Apply typing effect to the heading
-  const heading = document.querySelector("header h1");
-  if (heading) {
-    typeEffect(heading, 100);
-  }
-
-  // Smooth scrolling for navigation links
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      const targetId = this.getAttribute("href");
-      const targetElement = document.querySelector(targetId);
-
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 50,
-          behavior: "smooth",
-        });
+    // Add scroll direction specific animations
+    document.querySelectorAll("section").forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        if (direction === "down") {
+          section.style.transform = "scale(1)";
+        } else {
+          section.style.transform = "scale(1.02)";
+        }
       }
     });
+
+    lastScroll = currentScroll;
   });
 
-  // Check if the user has a previously saved theme preference
-  if (localStorage.getItem("theme") === "dark") {
-    body.classList.add("dark-mode");
-    applyDarkMode();
-    currMode = "dark";
+  // Typing effect for the header
+  const headerText = document.querySelector("header h1");
+  if (headerText) {
+    const text = headerText.textContent;
+    headerText.innerHTML = "";
+    let index = 0;
+
+    function type() {
+      if (index < text.length) {
+        headerText.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(type, 100);
+      }
+    }
+    type();
   }
 
-  // Toggle dark mode when the button is clicked
-  if (modeButton) {
-    modeButton.addEventListener("click", toggleMode);
+  // Active navigation highlight
+  function updateActiveNavItem() {
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("nav a");
+
+    let currentSection = "";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      if (window.pageYOffset >= sectionTop - 150) {
+        currentSection = section.getAttribute("id");
+      }
+    });
+
+    navItems.forEach((item) => {
+      item.classList.remove("bg-white/20");
+      if (item.getAttribute("href").slice(1) === currentSection) {
+        item.classList.add("bg-white/20");
+      }
+    });
   }
 
-  btns.forEach((btn) => {
-    btn.addEventListener("click", toggleMode);
-  });
+  window.addEventListener("scroll", updateActiveNavItem);
+  updateActiveNavItem();
 
-  function toggleMode() {
-    if (currMode === "light") {
-      applyDarkMode();
-      currMode = "dark";
+  // Add scroll progress functionality
+  const scrollProgress = document.querySelector("#scroll-progress");
+  const backToTop = document.querySelector("#back-to-top");
+
+  window.addEventListener("scroll", () => {
+    // Update scroll progress
+    const winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    scrollProgress.style.width = `${scrolled}%`;
+
+    // Show/hide back to top button
+    if (winScroll > 300) {
+      backToTop.classList.remove("translate-y-20", "opacity-0");
+      backToTop.classList.add("translate-y-0", "opacity-100");
     } else {
-      applyLightMode();
-      currMode = "light";
+      backToTop.classList.add("translate-y-20", "opacity-0");
+      backToTop.classList.remove("translate-y-0", "opacity-100");
     }
+  });
 
-    // Save the theme preference to localStorage
-    localStorage.setItem("theme", currMode);
-  }
-
-  function applyDarkMode() {
-    body.classList.add("dark-mode");
-
-    secs.forEach((sec) => {
-      sec.style.transition =
-        "background-color 0.5s ease, color 0.5s ease, transform 0.5s ease";
-      sec.style.background = "#2a2a2a";
-      sec.style.color = "#f0f0f0";
-      sec.style.borderTop = "5px solid #3498db";
+  // Back to top functionality
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
     });
-
-    header1.style.transition = "background 0.5s ease";
-    header1.style.background = "linear-gradient(135deg, #2c3e50, #1a242f)";
-
-    let icon = document.querySelectorAll("i");
-
-    skillsItems.forEach((skills) => {
-      skills.style.transition = "all 0.5s ease";
-      skills.style.color = "#f0f0f0";
-      skills.style.background = "#3a3a3a";
-    });
-
-    certiItems.forEach((cert) => {
-      cert.style.transition = "all 0.5s ease";
-      cert.style.color = "#f0f0f0";
-      cert.style.background = "#3a3a3a";
-    });
-
-    for (i of icon) {
-      i.style.transition = "color 0.5s ease";
-      i.style.color = "#3498db";
-    }
-
-    header.style.transition = "color 0.5s ease";
-    header.style.color = "#f0f0f0";
-
-    for (heads of secHeader) {
-      heads.style.transition = "color 0.5s ease";
-      heads.style.color = "#3498db";
-    }
-
-    listItems.forEach((item) => {
-      item.style.transition = "color 0.5s ease";
-      item.style.color = "#f0f0f0";
-    });
-  }
-
-  function applyLightMode() {
-    body.classList.remove("dark-mode");
-
-    secs.forEach((sec) => {
-      sec.style.transition =
-        "background-color 0.5s ease, color 0.5s ease, transform 0.5s ease";
-      sec.style.background = "white";
-      sec.style.color = "#333";
-      sec.style.borderTop = "5px solid #3498db";
-    });
-
-    header1.style.transition = "background 0.5s ease";
-    header1.style.background = "linear-gradient(135deg, #3498db, #2ecc71)";
-
-    let icon = document.querySelectorAll("i");
-
-    skillsItems.forEach((skills) => {
-      skills.style.transition = "all 0.5s ease";
-      skills.style.color = "#333";
-      skills.style.background = "#f9f9f9";
-    });
-
-    certiItems.forEach((cert) => {
-      cert.style.transition = "all 0.5s ease";
-      cert.style.color = "#333";
-      cert.style.background = "#f9f9f9";
-    });
-
-    for (i of icon) {
-      i.style.transition = "color 0.5s ease";
-      i.style.color = "#3498db";
-    }
-
-    header.style.transition = "color 0.5s ease";
-    header.style.color = "white";
-
-    for (heads of secHeader) {
-      heads.style.transition = "color 0.5s ease";
-      heads.style.color = "#3498db";
-    }
-
-    listItems.forEach((item) => {
-      item.style.transition = "color 0.5s ease";
-      item.style.color = "white";
-    });
-  }
-
-  // Add animation to skills section
-  const skills = document.querySelectorAll("#skills ul li");
-  skills.forEach((skill, index) => {
-    skill.style.animationDelay = `${index * 0.1}s`;
   });
 });
