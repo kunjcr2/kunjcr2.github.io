@@ -41,12 +41,21 @@ The website is organized into several sections:
 - Grid-based layout for modern content organization
 - Hover effects for sections and interactive elements
 
-### JavaScript Functionality
+## Recent UI/UX Changes (April 2025)
 
-- Theme toggling (light/dark mode)
-- Smooth scrolling to sections
-- Dynamic UI updates with transitions
-- Interactive elements with hover effects
+- The "Contact Me" section has been removed from the bottom of the page.
+- Contact links (GitHub, LinkedIn, Email) are now displayed as small icons directly below the "I'm Kunj Shah" heading for immediate access.
+- Improved mobile responsiveness: Contact icons and header layout are optimized for all screen sizes.
+
+## JavaScript Functionality
+
+- Theme toggling (light/dark mode) with smooth transitions and neon effects in dark mode.
+- Smooth scrolling navigation for all anchor links.
+- Animated section reveals using Intersection Observer for a modern, dynamic feel.
+- Floating and glowing effects for icons and headers.
+- Scroll progress indicator and back-to-top button for enhanced navigation.
+- Typing animation for the main header text.
+- Active navigation highlighting based on scroll position.
 
 ## How to Use
 

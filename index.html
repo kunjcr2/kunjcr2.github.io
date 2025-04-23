@@ -65,53 +65,56 @@
         <i class="fa-solid fa-arrow-up text-xl"></i>
     </button>
 
-    <header class="relative min-h-screen bg-black overflow-hidden sm:p-2">
+    <header class="relative min-h-screen bg-black overflow-hidden sm:p-2 flex items-center justify-center">
         <div class="container mx-auto px-4 flex flex-col justify-center items-center min-h-screen relative z-20 gap-8">
             <nav class="bg-white/10 backdrop-blur-md rounded-xl p-4 mb-8 w-full max-w-6xl hidden md:block">
                 <ul class="flex justify-between gap-4">
                     <li>
-                        <a href="#experience"
-                            class="text-white hover:bg-white/20 px-4 py-2 rounded-lg transition-all duration-300">Experience</a>
+                        <a href="#experience" class="text-white hover:bg-primary/20 hover:text-primary px-4 py-2 rounded-lg transition-all duration-300">Experience</a>
                     </li>
                     <li>
-                        <a href="#hackathons"
-                            class="text-white hover:bg-white/20 px-4 py-2 rounded-lg transition-all duration-300">Hackathons</a>
+                        <a href="#hackathons" class="text-white hover:bg-primary/20 hover:text-primary px-4 py-2 rounded-lg transition-all duration-300">Hackathons</a>
                     </li>
                     <li>
-                        <a href="#projects"
-                            class="text-white hover:bg-white/20 px-4 py-2 rounded-lg transition-all duration-300">Projects</a>
+                        <a href="#projects" class="text-white hover:bg-primary/20 hover:text-primary px-4 py-2 rounded-lg transition-all duration-300">Projects</a>
                     </li>
                     <li>
-                        <a href="#skills"
-                            class="text-white hover:bg-white/20 px-4 py-2 rounded-lg transition-all duration-300">Skills</a>
+                        <a href="#skills" class="text-white hover:bg-primary/20 hover:text-primary px-4 py-2 rounded-lg transition-all duration-300">Skills</a>
                     </li>
                     <li>
-                        <a href="#certificates"
-                            class="text-white hover:bg-white/20 px-4 py-2 rounded-lg transition-all duration-300">Certificates</a>
+                        <a href="#certificates" class="text-white hover:bg-primary/20 hover:text-primary px-4 py-2 rounded-lg transition-all duration-300">Certificates</a>
                     </li>
                     <li>
-                        <a href="#contact"
-                            class="text-white hover:bg-white/20 px-4 py-2 rounded-lg transition-all duration-300">Contact Me</a>
+                        <a href="#aboutme"
+                            class="text-white hover:bg-white/20 px-4 py-2 rounded-lg transition-all duration-300">About Me</a>
                     </li>
                 </ul>
             </nav>
             <div class="flex flex-col md:flex-row items-center gap-8 max-w-6xl">
                 <img src="IMG_3187.jpg" alt="Kunj Shah"
                     class="hidden sm:block w-64 h-96 object-cover rounded-xl shadow-xl hover:scale-105 transition-transform duration-300">
-                <div class="text-center md:text-left">
-                    <h1 class="text-5xl font-bold text-white mb-6 text-shadow animate-glow">I'm Kunj Shah</h1>
-                    <p class="text-lg text-white/90 leading-relaxed max-w-2xl mx-auto md:mx-0">
-                        I am a second-year Computer Science student at San Francisco State University with
-                        expertise in AI/ML and Full-stack development. Currently serving as Tech Director at
-                        SparkSF, I specialize in Machine Learning,
-                        NLP, and MERN stack development. My notable projects include AI-powered applications
-                        like 'theHelper' research assistant and 'Max' voice assistant. I've participated in
-                        multiple hackathons including Cal Hacks 11.0 and SacHacks, creating innovative solutions
-                        like Workout Web App and Web Detective. With strong foundations in Python, JavaScript,
-                        and various AI frameworks including Hugging Face Transformers and OpenCV, I combine
-                        academic excellence (JEE qualifier) with practical development experience to deliver
-                        impactful solutions.
-                    </p>
+                <div class="text-center md:text-left w-full my-3">
+                    <h1 class="text-5xl font-bold text-white mb-4 text-shadow animate-glow">I'm Kunj Shah</h1>
+                    <div class="flex justify-center md:justify-start">
+                        <span class="inline-flex items-center gap-2 bg-black text-gray-400 font-medium py-2 rounded-full text-base">
+                            Passionate about Artificial Intelligence
+                        </span>
+                    </div>
+                    <!-- Contact Icons Below Name -->
+                    <div class="flex justify-center md:justify-start gap-6 my-4">
+                        <a href="https://github.com/kunjcr2" target="_blank" aria-label="GitHub"
+                            class="text-primary hover:text-white bg-black border-2 border-primary hover:bg-primary hover:border-white p-2 rounded-full text-2xl transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-primary w-12 h-12 flex items-center justify-center">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kunjcr2/" target="_blank" aria-label="LinkedIn"
+                            class="text-primary hover:text-white bg-black border-2 border-primary hover:bg-primary hover:border-white p-2 rounded-full text-2xl transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-primary w-12 h-12 flex items-center justify-center">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:kunjcr2@gmail.com" aria-label="Email"
+                            class="text-primary hover:text-white bg-black border-2 border-primary hover:bg-primary hover:border-white p-2 rounded-full text-2xl transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-primary w-12 h-12 flex items-center justify-center">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -124,7 +127,7 @@
                 <i class="fa-solid fa-briefcase"></i> Experience
             </h2>
             <ul class="space-y-8">
-                <li class="bg-black rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:shadow-neon">
+                <li class="bg-black rounded-xl p-6 hover:shadow-lg hover:scale-105 hover:border-primary border border-transparent transition-all duration-300">
                     <strong class="text-xl font-semibold text-primary block mb-2">Tech Director at SparkSF</strong>
                     <i class="text-gray-400 block mb-4">Dec 2024 to Present</i>
                     <p class="text-gray-500 leading-relaxed">
@@ -135,7 +138,7 @@
                         along with a chatbot just for SparksF.
                     </p>
                 </li>
-                <li class="bg-black rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:shadow-neon">
+                <li class="bg-black rounded-xl p-6 hover:shadow-lg hover:scale-105 hover:border-primary border border-transparent transition-all duration-300">
                     <strong class="text-xl font-semibold text-primary block mb-2">Intern, Dyna Grow Design
                         Solutions</strong>
                     <i class="text-gray-400 block mb-4">May 2024 to January 2025</i>
@@ -145,7 +148,7 @@
                         earning a Letter of Recommendation from the founder for delivering lasting impact.
                     </p>
                 </li>
-                <li class="bg-black rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:shadow-neon">
+                <li class="bg-black rounded-xl p-6 hover:shadow-lg hover:scale-105 hover:border-primary border border-transparent transition-all duration-300">
                     <strong class="text-xl font-semibold text-primary block mb-2">Officer, SF Hack | Logistic
                         Department</strong>
                     <i class="text-gray-400 block mb-4">September 2024 to April 2025</i>
@@ -164,7 +167,7 @@
                     <i class="fa-solid fa-mobile-screen-button"></i> Apps
                 </h2>
                 <div class="space-y-8">
-                    <div class="bg-black rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:shadow-neon">
+                    <div class="bg-black rounded-xl p-6 hover:shadow-lg hover:scale-105 hover:border-primary border border-transparent transition-all duration-300">
                         <strong class="text-xl font-semibold text-primary block mb-4">AI Research Assistant
                             (theHelper)</strong>
                         <p class="text-gray-500 leading-relaxed mb-4">
@@ -179,7 +182,7 @@
                             <span>View on GitHub</span>
                         </a>
                     </div>
-                    <div class="bg-black rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:shadow-neon">
+                    <div class="bg-black rounded-xl p-6 hover:shadow-lg hover:scale-105 hover:border-primary border border-transparent transition-all duration-300">
                         <strong class="text-xl font-semibold text-primary block mb-4">Voice-Activated Assistant
                             (Max)</strong>
                         <p class="text-gray-500 leading-relaxed mb-4">
@@ -203,7 +206,7 @@
                     <i class="fa-solid fa-users-rectangle"></i> Hackathons
                 </h2>
                 <div class="space-y-6">
-                    <div class="bg-black rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:shadow-neon">
+                    <div class="bg-black rounded-xl p-6 hover:shadow-lg hover:scale-105 hover:border-primary border border-transparent transition-all duration-300">
                         <strong class="text-xl font-semibold text-primary block mb-3">Cal Hacks 11.0</strong>
                         <div class="space-y-2 text-gray-500">
                             <p><strong class="text-gray-100">Where:</strong> San Francisco, CA</p>
@@ -211,7 +214,7 @@
                             <p><strong class="text-gray-100">Project:</strong> Workout Web App</p>
                         </div>
                     </div>
-                    <div class="bg-black rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:shadow-neon">
+                    <div class="bg-black rounded-xl p-6 hover:shadow-lg hover:scale-105 hover:border-primary border border-transparent transition-all duration-300">
                         <strong class="text-xl font-semibold text-primary block mb-3">SacHacks</strong>
                         <div class="space-y-2 text-gray-500">
                             <p><strong class="text-gray-100">Where:</strong> Virtual Hackathon</p>
@@ -219,7 +222,7 @@
                             <p><strong class="text-gray-100">Project:</strong> Web Detective</p>
                         </div>
                     </div>
-                    <div class="bg-black rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:shadow-neon">
+                    <div class="bg-black rounded-xl p-6 hover:shadow-lg hover:scale-105 hover:border-primary border border-transparent transition-all duration-300">
                         <strong class="text-xl font-semibold text-primary block mb-3">HackMerced</strong>
                         <div class="space-y-2 text-gray-500">
                             <p><strong class="text-gray-100">Where:</strong> University of California, Merced</p>
@@ -237,7 +240,7 @@
                 <i class="fa-solid fa-diagram-project"></i> Projects
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-black rounded-xl p-6 hover:shadow-neon transition-all duration-300 flex flex-col">
+                <div class="bg-black rounded-xl p-6 hover:shadow-neon hover:scale-105 hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
                     <strong class="text-xl font-semibold text-primary block mb-4">Workout Assistant</strong>
                     <p class="text-gray-500 leading-relaxed flex-grow">
                         Created an AI-powered workout assistant in Python with OpenCV, MediaPipe, and Flask to track
@@ -245,7 +248,7 @@
                         via live video, offering feedback and personalized tips using OpenAI-generated routines.
                     </p>
                 </div>
-                <div class="bg-black rounded-xl p-6 hover:shadow-neon transition-all duration-300 flex flex-col">
+                <div class="bg-black rounded-xl p-6 hover:shadow-neon hover:scale-105 hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
                     <strong class="text-xl font-semibold text-primary block mb-4">Web Detective</strong>
                     <p class="text-gray-500 leading-relaxed flex-grow">
                         Built an AI-driven web intelligence tool using Retrieval-Augmented Generation (RAG),
@@ -254,7 +257,7 @@
                         in a team of two.
                     </p>
                 </div>
-                <div class="bg-black rounded-xl p-6 hover:shadow-neon transition-all duration-300 flex flex-col">
+                <div class="bg-black rounded-xl p-6 hover:shadow-neon hover:scale-105 hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
                     <strong class="text-xl font-semibold text-primary block mb-4">Voice-Activated Assistant</strong>
                     <p class="text-gray-500 leading-relaxed flex-grow">
                         Developed a Python assistant using NLP and advanced language models to understand natural
@@ -404,31 +407,22 @@
             </details>
         </section>
 
-        <section id="contact"
-            class="bg-black rounded-2xl shadow-lg p-8 mb-12 transition-all duration-300 animate-slide-up">
+        <section id="aboutme" class="bg-black rounded-2xl shadow-lg p-8 mb-12 transition-all duration-300 animate-slide-up">
             <h2 class="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
-                <i class="fa-solid fa-envelope"></i> Contact Me
+                <i class="fa-solid fa-person"></i> About Me
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                <a href="https://github.com/kunjcr2" target="_blank"
-                    class="group hover:shadow-neon border border-transparent hover:border-primary/20 flex flex-col items-center justify-center p-2 rounded-xl bg-black hover:-translate-y-2 hover:shadow-lg transition-all duration-300">
-                    <i
-                        class="fa-brands fa-github text-4xl mb-3 text-primary group-hover:scale-110 transition-transform"></i>
-                    <span class="font-medium text-gray-300">GitHub</span>
-                </a>
-                <a href="https://www.linkedin.com/in/kunjcr2/" target="_blank"
-                    class="group hover:shadow-neon border border-transparent hover:border-primary/20 flex flex-col items-center justify-center p-2 rounded-xl bg-black hover:-translate-y-2 hover:shadow-lg transition-all duration-300">
-                    <i
-                        class="fa-brands fa-linkedin text-4xl mb-3 text-primary group-hover:scale-110 transition-transform"></i>
-                    <span class="font-medium text-gray-300">LinkedIn</span>
-                </a>
-                <a href="mailto:kunjcr2@gmail.com"
-                    class="group hover:shadow-neon border border-transparent hover:border-primary/20 flex flex-col items-center justify-center p-2 rounded-xl bg-black hover:-translate-y-2 hover:shadow-lg transition-all duration-300">
-                    <i
-                        class="fa-solid fa-envelope text-4xl mb-3 text-primary group-hover:scale-110 transition-transform"></i>
-                    <span class="font-medium text-gray-300">Email</span>
-                </a>
-            </div>
+            <p class="text-lg text-white/90 leading-relaxed mx-auto md:mx-0">
+                I am a second-year Computer Science student at San Francisco State University with
+                expertise in AI/ML and Full-stack development. Currently serving as Tech Director at
+                SparkSF, I specialize in Machine Learning,
+                NLP, and MERN stack development. My notable projects include AI-powered applications
+                like 'theHelper' research assistant and 'Max' voice assistant. I've participated in
+                multiple hackathons including Cal Hacks 11.0 and SacHacks, creating innovative solutions
+                like Workout Web App and Web Detective. With strong foundations in Python, JavaScript,
+                and various AI frameworks including Hugging Face Transformers and OpenCV, I combine
+                academic excellence (JEE qualifier) with practical development experience to deliver
+                impactful solutions.
+            </p>
         </section>
 
         <footer class="bg-black text-white mt-16">
