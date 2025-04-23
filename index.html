@@ -88,6 +88,9 @@
                         <a href="#aboutme"
                             class="text-white hover:bg-white/20 px-4 py-2 rounded-lg transition-all duration-300">About Me</a>
                     </li>
+                    <li>
+                        <a href="#aboutme" class="text-white hover:bg-white/20 px-4 py-2 rounded-lg transition-all duration-300">Connect</a>
+                    </li>
                 </ul>
             </nav>
             <div class="flex flex-col md:flex-row items-center gap-8 max-w-6xl">
@@ -422,21 +425,23 @@
         </section>
 
         <section id="aboutme" class="bg-black rounded-2xl shadow-lg p-8 mb-12 transition-all duration-300 animate-slide-up">
-            <h2 class="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
-                <i class="fa-solid fa-person"></i> About Me
-            </h2>
-            <p class="text-lg text-white/90 leading-relaxed mx-auto md:mx-0">
-                I am a second-year Computer Science student at San Francisco State University with
-                expertise in AI/ML and Full-stack development. Currently serving as Tech Director at
-                SparkSF, I specialize in Machine Learning,
-                NLP, and MERN stack development. My notable projects include AI-powered applications
-                like 'theHelper' research assistant and 'Max' voice assistant. I've participated in
-                multiple hackathons including Cal Hacks 11.0 and SacHacks, creating innovative solutions
-                like Workout Web App and Web Detective. With strong foundations in Python, JavaScript,
-                and various AI frameworks including Hugging Face Transformers and OpenCV, I combine
-                academic excellence (JEE qualifier) with practical development experience to deliver
-                impactful solutions.
-            </p>
+            <div class="flex flex-col lg:flex-row gap-8">
+                <div class="lg:w-1/2 w-full flex items-start flex-col">
+                    <h3 class="text-2xl font-bold text-primary mb-4">About Me</h3>
+                    <p class="text-lg text-white/90 leading-relaxed mx-auto md:mx-0 max-w-xl">
+                        I am a second-year Computer Science student at San Francisco State University with expertise in AI/ML and Full-stack development. Currently serving as Tech Director at SparkSF, I specialize in Machine Learning, NLP, and MERN stack development. My notable projects include AI-powered applications like 'theHelper' research assistant and 'Max' voice assistant. I've participated in multiple hackathons including Cal Hacks 11.0 and SacHacks, creating innovative solutions like Workout Web App and Web Detective. With strong foundations in Python, JavaScript, and various AI frameworks including Hugging Face Transformers and OpenCV, I combine academic excellence (JEE qualifier) with practical development experience to deliver impactful solutions.
+                    </p>
+                </div>
+                <div class="lg:w-1/2 w-full flex flex-col justify-center items-center bg-black rounded-2xl p-6 shadow-lg">
+                    <h3 class="text-2xl font-bold text-primary mb-4">Connect with Me</h3>
+                    <form class="w-full flex flex-col gap-4">
+                        <input type="text" placeholder="Your Name" class="bg-black border-primary/40 rounded-full px-5 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary transition-all" />
+                        <input type="email" placeholder="Your Email" class="bg-black border-primary/40 rounded-full px-5 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary transition-all" />
+                        <textarea placeholder="Anything you want me to know about you?" rows="4" class="bg-black border-primary/40 rounded-2xl px-5 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none"></textarea>
+                        <button type="button" class="bg-primary text-black font-semibold rounded-full px-6 py-3 mt-2 hover:bg-primary/80 transition-all">Send</button>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <footer class="bg-black text-white mt-16">
