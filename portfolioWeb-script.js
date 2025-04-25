@@ -59,15 +59,22 @@ document.addEventListener("DOMContentLoaded", function () {
   // Handle system theme changes
   prefersDark.addEventListener("change", (e) => setTheme(e.matches));
 
-  // Smooth scrolling
+  // Enhanced smooth scrolling with offset
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
-      if (target) {
-        target.scrollIntoView({
+      const targetId = this.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        const headerOffset = window.innerWidth < 768 ? 60 : 80; // Different offset for mobile
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
           behavior: "smooth",
-          block: "start",
         });
       }
     });
