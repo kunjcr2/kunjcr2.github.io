@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunj Shah | Project Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0066CC', // Changed to a single blue color
+                        dark: '#0a192f',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon': '0 0 5px theme(colors.primary), 0 0 20px theme(colors.primary)',
+                    },
+                    animation: {
+                        'slide-up': 'slideUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        slideUp: {
+                            '0%': { transform: 'translateY(100px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/e9df78b01c.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-poppins bg-black text-gray-300">
+    <!-- Back to Home Button -->
+    <div class="fixed top-8 left-8 z-50">
+        <a href="index.html"
+            class="bg-primary/80 hover:bg-primary text-white p-3 rounded-full shadow-lg hover:scale-110 transition-all duration-300 flex items-center justify-center">
+            <i class="fa-solid fa-arrow-left text-xl"></i>
+        </a>
+    </div>
+
+    <main class="container mx-auto px-4 py-16 max-w-5xl">
+        <!-- Project Header -->
+        <header class="mb-12 pt-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6" id="project-title">Project Name</h1>
+            <div class="flex flex-wrap gap-3 mb-6">
+                <span class="bg-primary/20 text-primary px-4 py-1 rounded-full text-sm" id="tag1">Tag 1</span>
+                <span class="bg-primary/20 text-primary px-4 py-1 rounded-full text-sm" id="tag2">Tag 2</span>
+                <span class="bg-primary/20 text-primary px-4 py-1 rounded-full text-sm" id="tag3">Tag 3</span>
+            </div>
+            <p class="text-xl text-gray-400" id="project-summary">A brief summary of the project goes here.</p>
+        </header>
+
+        <!-- Project Overview -->
+        <section class="bg-black border border-white/10 rounded-2xl p-8 mb-8 shadow-lg animate-slide-up">
+            <h2 class="text-2xl font-bold text-primary mb-4">Overview</h2>
+            <p class="text-gray-300 leading-relaxed mb-6" id="project-overview">
+                Detailed overview of the project, its purpose, and what it aims to accomplish.
+            </p>
+            <div class="w-full h-80 bg-black/50 rounded-xl mb-4 flex items-center justify-center border border-white/10"
+                id="project-image">
+                <i class="fa-regular fa-image text-4xl text-gray-600"></i>
+                <span class="ml-4 text-gray-600">Project Screenshot</span>
+            </div>
+        </section>
+
+        <!-- Problem & Solution -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <section class="bg-black border border-white/10 rounded-2xl p-8 shadow-lg animate-slide-up">
+                <h2 class="text-2xl font-bold text-primary mb-4">Problem</h2>
+                <p class="text-gray-300 leading-relaxed" id="project-problem">
+                    Description of the problem or challenge this project addresses.
+                </p>
+            </section>
+            <section class="bg-black border border-white/10 rounded-2xl p-8 shadow-lg animate-slide-up">
+                <h2 class="text-2xl font-bold text-primary mb-4">Solution</h2>
+                <p class="text-gray-300 leading-relaxed" id="project-solution">
+                    How your approach solved the problem and what makes it innovative.
+                </p>
+            </section>
+        </div>
+
+        <!-- Technologies Used -->
+        <section class="bg-black border border-white/10 rounded-2xl p-8 mb-8 shadow-lg animate-slide-up">
+            <h2 class="text-2xl font-bold text-primary mb-4">Technologies Used</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="technologies-container">
+                <div
+                    class="bg-black/40 border border-white/10 rounded-xl p-4 flex flex-col items-center justify-center">
+                    <i class="fa-brands fa-python text-4xl mb-2"></i>
+                    <span>Python</span>
+                </div>
+                <div
+                    class="bg-black/40 border border-white/10 rounded-xl p-4 flex flex-col items-center justify-center">
+                    <i class="fa-solid fa-brain text-4xl mb-2"></i>
+                    <span>Machine Learning</span>
+                </div>
+                <!-- Add more technology items as needed -->
+            </div>
+        </section>
+
+        <!-- Development Process -->
+        <section class="bg-black border border-white/10 rounded-2xl p-8 mb-8 shadow-lg animate-slide-up">
+            <h2 class="text-2xl font-bold text-primary mb-4">Development Process</h2>
+            <div class="relative border-l-2 border-primary/50 pl-8 py-4">
+                <div class="mb-8">
+                    <div class="absolute -left-3 w-6 h-6 bg-primary rounded-full"></div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Research & Planning</h3>
+                    <p class="text-gray-300">Details about the research and planning phase.</p>
+                </div>
+                <div class="mb-8">
+                    <div class="absolute -left-3 w-6 h-6 bg-primary rounded-full"></div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Design & Prototyping</h3>
+                    <p class="text-gray-300">Information about the design and prototyping process.</p>
+                </div>
+                <div class="mb-8">
+                    <div class="absolute -left-3 w-6 h-6 bg-primary rounded-full"></div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Implementation</h3>
+                    <p class="text-gray-300">Details about the implementation phase.</p>
+                </div>
+                <div>
+                    <div class="absolute -left-3 w-6 h-6 bg-primary rounded-full"></div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Testing & Deployment</h3>
+                    <p class="text-gray-300">Information about testing and deployment.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenges & Solutions -->
+        <section class="bg-black border border-white/10 rounded-2xl p-8 mb-8 shadow-lg animate-slide-up">
+            <h2 class="text-2xl font-bold text-primary mb-4">Challenges & Solutions</h2>
+            <div class="space-y-6">
+                <div class="border-l-4 border-primary/70 pl-4">
+                    <h3 class="text-lg font-semibold text-white mb-2">Challenge 1</h3>
+                    <p class="text-gray-300 mb-2">Description of the first challenge faced.</p>
+                    <p class="text-gray-400"><strong>Solution:</strong> How you overcame this challenge.</p>
+                </div>
+                <div class="border-l-4 border-primary/70 pl-4">
+                    <h3 class="text-lg font-semibold text-white mb-2">Challenge 2</h3>
+                    <p class="text-gray-300 mb-2">Description of the second challenge faced.</p>
+                    <p class="text-gray-400"><strong>Solution:</strong> How you overcame this challenge.</p>
+                </div>
+                <!-- Add more challenges as needed -->
+            </div>
+        </section>
+
+        <!-- Results & Outcomes -->
+        <section class="bg-black border border-white/10 rounded-2xl p-8 mb-8 shadow-lg animate-slide-up">
+            <h2 class="text-2xl font-bold text-primary mb-4">Results & Outcomes</h2>
+            <p class="text-gray-300 leading-relaxed mb-6">
+                Discuss the impact and results of your project. What was achieved? What metrics or feedback demonstrates
+                its success?
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                <div class="bg-black/40 border border-white/10 rounded-xl p-6">
+                    <h3 class="text-3xl font-bold text-primary mb-2">100%</h3>
+                    <p class="text-gray-400">Task Completion</p>
+                </div>
+                <div class="bg-black/40 border border-white/10 rounded-xl p-6">
+                    <h3 class="text-3xl font-bold text-primary mb-2">30%</h3>
+                    <p class="text-gray-400">Performance Improvement</p>
+                </div>
+                <div class="bg-black/40 border border-white/10 rounded-xl p-6">
+                    <h3 class="text-3xl font-bold text-primary mb-2">95%</h3>
+                    <p class="text-gray-400">User Satisfaction</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Links & Resources -->
+        <section class="bg-black border border-white/10 rounded-2xl p-8 mb-12 shadow-lg animate-slide-up">
+            <h2 class="text-2xl font-bold text-primary mb-4">Links & Resources</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="#"
+                    class="bg-black/40 border border-white/10 rounded-xl p-4 flex items-center hover:bg-primary/10 transition-all duration-300">
+                    <i class="fa-brands fa-github text-2xl mr-4"></i>
+                    <span>GitHub Repository</span>
+                </a>
+                <a href="#"
+                    class="bg-black/40 border border-white/10 rounded-xl p-4 flex items-center hover:bg-primary/10 transition-all duration-300">
+                    <i class="fa-solid fa-link text-2xl mr-4"></i>
+                    <span>Live Demo</span>
+                </a>
+                <a href="#"
+                    class="bg-black/40 border border-white/10 rounded-xl p-4 flex items-center hover:bg-primary/10 transition-all duration-300">
+                    <i class="fa-solid fa-file-pdf text-2xl mr-4"></i>
+                    <span>Project Documentation</span>
+                </a>
+                <a href="#"
+                    class="bg-black/40 border border-white/10 rounded-xl p-4 flex items-center hover:bg-primary/10 transition-all duration-300">
+                    <i class="fa-solid fa-presentation text-2xl mr-4"></i>
+                    <span>Presentation</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Next Project Navigation -->
+        <div class="flex justify-between items-center mb-12">
+            <a href="#"
+                class="bg-black border border-white/10 rounded-xl p-4 hover:bg-primary/10 transition-all duration-300 flex items-center">
+                <i class="fa-solid fa-arrow-left mr-2"></i>
+                <span>Previous Project</span>
+            </a>
+            <a href="#"
+                class="bg-black border border-white/10 rounded-xl p-4 hover:bg-primary/10 transition-all duration-300 flex items-center">
+                <span>Next Project</span>
+                <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-black text-white py-8 border-t border-white/10">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <p class="mb-4 md:mb-0">&copy; 2025 Kunj Shah | Personal Portfolio</p>
+            <div class="flex gap-8">
+                <a href="index.html#experience" class="hover:text-primary transition-colors">Experience</a>
+                <a href="index.html#projects" class="hover:text-primary transition-colors">Projects</a>
+                <a href="index.html#skills" class="hover:text-primary transition-colors">Skills</a>
+                <a href="index.html#contact" class="hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // This script would be customized for each project
+        // You can load project-specific data here or use server-side rendering
+        document.addEventListener('DOMContentLoaded', function () {
+            // Example of how to populate project details
+            document.getElementById('project-title').textContent = 'theHelper - AI Research Assistant';
+            document.getElementById('project-summary').textContent = 'An AI-powered tool to analyze and summarize PDFs using advanced NLP techniques.';
+            document.getElementById('project-overview').textContent = 'theHelper is an AI research assistant designed to help students and researchers quickly analyze and extract insights from academic papers and research documents. The tool utilizes state-of-the-art NLP models to process PDF content, providing intelligent summarization and semantic search capabilities.';
+            // Continue setting other project details...
+        });
+    </script>
+</body>
+
+</html>
