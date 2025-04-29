@@ -210,4 +210,22 @@ document.addEventListener("DOMContentLoaded", function () {
       behavior: "smooth",
     });
   });
+
+  // Mobile Menu Functionality
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const closeMenuButton = document.getElementById("close-menu");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+
+  function toggleMobileMenu() {
+    mobileMenu.classList.toggle("translate-x-full");
+  }
+
+  mobileMenuButton.addEventListener("click", toggleMobileMenu);
+  closeMenuButton.addEventListener("click", toggleMobileMenu);
+
+  // Close menu when clicking a link
+  mobileMenuLinks.forEach((link) => {
+    link.addEventListener("click", toggleMobileMenu);
+  });
 });
