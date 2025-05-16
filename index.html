@@ -89,6 +89,10 @@
                         <a href="#projects" class="text-white hover:bg-primary/20 hover:text-primary px-4 py-2 rounded-lg transition-all duration-300">Projects</a>
                     </li>
                     <li>
+                        <a href="#llm-projects"
+                            class="text-white hover:bg-primary/20 px-4 py-2 hover:text-primary rounded-lg transition-all duration-300">LLMs</a>
+                    </li>
+                    <li>
                         <a href="#hackathons" class="text-white hover:bg-primary/20 hover:text-primary px-4 py-2 rounded-lg transition-all duration-300">Hackathons</a>
                     </li>
                     <li>
@@ -222,6 +226,44 @@
             </section>
         </div>
 
+        <section id="llm-projects"
+            class="m-8 bg-black rounded-2xl shadow-lg p-8 mb-12 transition-all duration-300 animate-slide-up">
+            <h2 class="text-3xl font-bold text-primary mb-6 flex items-center gap-3">
+                <i class="fa-solid fa-brain"></i> LLM Projects
+            </h2>
+            <div
+                class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:scale-105 hover:border-primary border border-transparent transition-all duration-300">
+                <div class="flex flex-col md:flex-row justify-between items-start gap-6">
+                    <div class="flex-1">
+                        <strong class="text-xl font-semibold text-primary block mb-4">Custom LLM – The Verdict</strong>
+                        <p class="text-gray-500 leading-relaxed mb-4">
+                            Designed and trained a 161M parameter GPT-style language model with 12 transformer blocks and a
+                            256-token context window.
+                            Built from scratch, trained on the novel <em>The Verdict</em>, and deployed with a clean web demo.
+                            Full implementation includes tokenization, attention, training loop, and inference.
+                        </p>
+                        <div class="flex gap-4 mt-4">
+                            <button onclick="window.open('https://github.com/kunjcr2/how-llms-are-made.git', '_blank')"
+                                class="bg-black border-2 border-primary text-primary hover:bg-primary hover:text-black px-6 py-2 rounded-full font-medium transition-all duration-300 flex items-center gap-2">
+                                <i class="fab fa-github"></i>
+                                View on GitHub
+                            </button>
+                        </div>
+                    </div>
+                    <div class="md:w-1/3 w-full flex flex-col gap-4">
+                        <div class="bg-black/50 rounded-lg p-4 border border-primary/20">
+                            <h4 class="text-primary font-semibold mb-2">Model Specs</h4>
+                            <ul class="text-gray-400 space-y-2">
+                                <li><i class="fas fa-microchip text-primary mr-2"></i>161M Parameters</li>
+                                <li><i class="fas fa-layer-group text-primary mr-2"></i>12 Transformer Blocks</li>
+                                <li><i class="fas fa-text-width text-primary mr-2"></i>256 Token Context</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="hackathons" class="bg-black rounded-2xl shadow-lg p-8 mb-12 transition-all duration-300 animate-slide-up">
             <h2 class="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
                 <i class="fa-solid fa-users-rectangle"></i> Hackathons
@@ -252,21 +294,6 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section id="learning"
-            class="m-8 bg-black rounded-2xl shadow-lg p-8 mb-12 transition-all duration-300 animate-slide-up">
-            <h2 class="text-3xl font-bold text-primary mb-6 flex items-center gap-3">
-                <i class="fa-solid fa-graduation-cap"></i> What am I learning
-            </h2>            <p class="text-lg text-white/90 leading-relaxed">                Currently working on <span class="text-primary font-semibold animate-glow">creating GPT2 from scratch</span>, diving deep into transformer architectures, tokenization, and training pipelines. Exploring
-                advanced AI concepts to enhance my understanding and practical skills in generative AI.
-                <br><br>
-                <button onclick="window.open('https://github.com/kunjcr2/how-llms-are-made.git', '_blank')" 
-                    class="bg-black border-2 border-primary text-primary hover:bg-primary hover:text-black px-6 py-2 rounded-full font-medium transition-all duration-300 flex items-center gap-2">
-                    <i class="fa-solid fa-code-branch"></i>
-                    Track my progress
-                </button>
-            </p>
         </section>
 
         <section id="skills" class="bg-black rounded-2xl shadow-lg p-8 mb-12 transition-all duration-300">
