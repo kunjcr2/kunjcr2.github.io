@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kunj Shah | Portfolio</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config: JetBrains Mono Only -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -17,7 +21,8 @@
                         dark: '#0a192f',
                     },
                     fontFamily: {
-                        poppins: ['Poppins', 'sans-serif'],
+                        sans: ['JetBrains Mono', 'monospace'],
+                        mono: ['JetBrains Mono', 'monospace'],
                     },
                     boxShadow: {
                         'neon': '0 0 5px theme(colors.primary), 0 0 20px theme(colors.primary)',
@@ -47,13 +52,18 @@
             }
         }
     </script>
+
+    <!-- JetBrains Mono Font -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/e9df78b01c.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+
+    <!-- Global Styling -->
     <style>
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 80px; /* Adds padding for fixed header */
+            scroll-padding-top: 80px;
         }
 
         @media (max-width: 768px) {
@@ -62,7 +72,7 @@
             }
         }
     </style>
-</head>
+</head>  
 
 <body class="font-poppins bg-black text-gray-300">
     <!-- Scroll Progress Indicator -->
