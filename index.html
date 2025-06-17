@@ -90,6 +90,11 @@
     <header class="relative min-h-screen bg-black overflow-hidden sm:p-2 flex items-center justify-center">
         
         <div class="container mx-auto px-4 flex flex-col justify-center items-center min-h-screen relative z-20 gap-8">
+            <a href="./assets/Kunj_Resume.pdf" download target="_blank"
+                class="absolute top-8 right-8 bg-black border-2 border-primary text-primary hover:bg-primary hover:text-black px-6 py-2 rounded-full font-medium transition-all duration-300 flex items-center gap-2 shadow-lg z-50">
+                <i class="fa-solid fa-file-arrow-down"></i>
+                Download Resume
+            </a>
             <nav class="bg-white/10 backdrop-blur-md rounded-xl p-4 mb-8 w-fit max-w-6xl hidden md:block">
                 <ul class="flex justify-center gap-16">
                     <li>
@@ -185,6 +190,114 @@
                     </p>
                 </li>
             </ul>
+        </section>
+
+        <!-- Skills section moved here -->
+        <section id="skills" class="bg-black rounded-2xl shadow-lg p-8 mb-12 transition-all duration-300">
+            <h2 class="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
+                <i class="fa-solid fa-book"></i> Skills
+            </h2>
+            <div class="space-y-8">
+                <!-- Programming Languages -->
+                <div>
+                    <h3 class="text-xl font-semibold text-primary mb-4">Programming Languages</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://www.python.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-5 h-5" alt="Python" /> Python
+                        </a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-5 h-5" alt="JavaScript" /> JavaScript
+                        </a>
+                        <a href="https://www.oracle.com/java" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-5 h-5" alt="Java" /> Java
+                        </a>
+                        <a href="https://isocpp.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="w-5 h-5" alt="C++" /> C++
+                        </a>
+                        <a href="https://www.w3schools.com/sql" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <i class="fas fa-database text-primary"></i> SQL
+                        </a>
+                    </div>
+                </div>
+                <!-- AI/ML -->
+                <div>
+                    <h3 class="text-xl font-semibold text-primary mb-4">AI/ML</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://pytorch.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" class="w-5 h-5" alt="PyTorch" /> PyTorch
+                        </a>
+                        <a href="https://www.tensorflow.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" class="w-5 h-5" alt="TensorFlow" /> TensorFlow
+                        </a>
+                        <a href="https://scikit-learn.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="https://www.scikit-learn.org/stable/_static/scikit-learn-logo-small.png" class="w-5 h-5 object-contain" alt="Scikit-learn" /> Scikit-learn
+                        </a>
+                        <a href="https://huggingface.co" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="https://huggingface.co/front/assets/huggingface_logo.svg" class="w-5 h-5" alt="Hugging Face" /> Hugging Face
+                        </a>
+                        <a href="https://python.langchain.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="./assets/langchain-color.svg" class="w-5 h-5" alt="LangChain" /> LangChain
+                        </a>
+                        <a href="https://huggingface.co/docs/transformers" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <i class="fas fa-robot text-primary"></i> Transformers
+                        </a>
+                        <a href="https://www.nltk.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <i class="fas fa-brain text-primary"></i> NLP
+                        </a>
+                    </div>
+                </div>
+                <!-- Web Development -->
+                <div>
+                    <h3 class="text-xl font-semibold text-primary mb-4">Web Development</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://react.dev" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-5 h-5" alt="React" /> React
+                        </a>
+                        <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-5 h-5" alt="Node.js" /> Node.js
+                        </a>
+                        <a href="https://expressjs.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" class="w-5 h-5 invert" alt="Express" /> Express
+                        </a>
+                        <a href="https://www.mongodb.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-5 h-5" alt="MongoDB" /> MongoDB
+                        </a>
+                        <a href="https://www.mysql.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-5 h-5" alt="MySQL" /> MySQL
+                        </a>
+                        <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="./assets/tailwindcss.svg" class="w-5 h-5" alt="Tailwind" /> TailwindCSS
+                        </a>
+                        <a href="https://flask.palletsprojects.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="./assets/flask-svgrepo-com.svg" class="w-5 h-5" alt="Flask" /> Flask
+                        </a>
+                    </div>
+                </div>
+                <!-- Tools & Others -->
+                <div>
+                    <h3 class="text-xl font-semibold text-primary mb-4">Tools & Others</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://git-scm.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="w-5 h-5" alt="Git" /> Git
+                        </a>
+                        <a href="https://www.docker.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="w-5 h-5" alt="Docker" /> Docker
+                        </a>
+                        <a href="https://www.linux.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" class="w-5 h-5" alt="Linux" /> Linux
+                        </a>
+                        <a href="https://www.redhat.com/en/topics/api/what-is-a-rest-api" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <i class="fas fa-cloud text-primary"></i> REST APIs
+                        </a>
+                        <a href="https://opencv.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="https://opencv.org/wp-content/uploads/2022/05/logo.png" class="w-5 h-5 object-contain" alt="OpenCV" /> OpenCV
+                        </a>
+                        <a href="https://developers.google.com/mediapipe" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
+                            <img src="./assets/mediapipe.svg" class="w-5 h-5 object-contain" alt="MediaPipe" /> MediaPipe
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <div class="flex gap-8">
@@ -336,118 +449,6 @@
             </div>
         </section>
 
-        <section id="skills" class="bg-black rounded-2xl shadow-lg p-8 mb-12 transition-all duration-300">
-            <h2 class="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
-                <i class="fa-solid fa-book"></i> Skills
-            </h2>
-            <div class="space-y-8">
-                <!-- Programming Languages -->
-                <div>
-                    <h3 class="text-xl font-semibold text-primary mb-4">Programming Languages</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <a href="https://www.python.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-5 h-5" alt="Python" /> Python
-                        </a>
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-5 h-5" alt="JavaScript" /> JavaScript
-                        </a>
-                        <a href="https://www.oracle.com/java" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-5 h-5" alt="Java" /> Java
-                        </a>
-                        <a href="https://isocpp.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="w-5 h-5" alt="C++" /> C++
-                        </a>
-                        <a href="https://www.w3schools.com/sql" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <i class="fas fa-database text-primary"></i> SQL
-                        </a>
-                    </div>
-                </div>
-                <!-- AI/ML -->
-                <div>
-                    <h3 class="text-xl font-semibold text-primary mb-4">AI/ML</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <a href="https://pytorch.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" class="w-5 h-5" alt="PyTorch" /> PyTorch
-                        </a>
-                        <a href="https://www.tensorflow.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" class="w-5 h-5" alt="TensorFlow" /> TensorFlow
-                        </a>
-                        <a href="https://scikit-learn.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://www.scikit-learn.org/stable/_static/scikit-learn-logo-small.png" class="w-5 h-5 object-contain" alt="Scikit-learn" /> Scikit-learn
-                        </a>
-                        <a href="https://huggingface.co" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://huggingface.co/front/assets/huggingface_logo.svg" class="w-5 h-5" alt="Hugging Face" /> Hugging Face
-                        </a>
-                        <a href="https://python.langchain.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="./assets/langchain-color.svg" class="w-5 h-5" alt="LangChain" /> LangChain
-                        </a>
-                        <a href="https://huggingface.co/docs/transformers" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <i class="fas fa-robot text-primary"></i> Transformers
-                        </a>
-                        <a href="https://www.nltk.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <i class="fas fa-brain text-primary"></i> NLP
-                        </a>
-                        <a href="https://langflow.org" target="_blank" rel="noopener noreferrer"
-                            class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="./assets/langflow.svg" class="w-5 h-5"
-                                alt="Langflow" /> Langflow
-                        </a>
-                    </div>
-                </div>
-                <!-- Web Development -->
-                <div>
-                    <h3 class="text-xl font-semibold text-primary mb-4">Web Development</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <a href="https://react.dev" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-5 h-5" alt="React" /> React
-                        </a>
-                        <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-5 h-5" alt="Node.js" /> Node.js
-                        </a>
-                        <a href="https://expressjs.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" class="w-5 h-5 invert" alt="Express" /> Express
-                        </a>
-                        <a href="https://www.mongodb.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-5 h-5" alt="MongoDB" /> MongoDB
-                        </a>
-                        <a href="https://www.mysql.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-5 h-5" alt="MySQL" /> MySQL
-                        </a>
-                        <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="./assets/tailwindcss.svg" class="w-5 h-5" alt="Tailwind" /> TailwindCSS
-                        </a>
-                        <a href="https://flask.palletsprojects.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="./assets/flask-svgrepo-com.svg" class="w-5 h-5" alt="Flask" /> Flask
-                        </a>
-                    </div>
-                </div>
-                <!-- Tools & Others -->
-                <div>
-                    <h3 class="text-xl font-semibold text-primary mb-4">Tools & Others</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <a href="https://git-scm.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="w-5 h-5" alt="Git" /> Git
-                        </a>
-                        <a href="https://www.docker.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="w-5 h-5" alt="Docker" /> Docker
-                        </a>
-                        <a href="https://www.linux.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" class="w-5 h-5" alt="Linux" /> Linux
-                        </a>
-                        <a href="https://www.redhat.com/en/topics/api/what-is-a-rest-api" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <i class="fas fa-cloud text-primary"></i> REST APIs
-                        </a>
-                        <a href="https://opencv.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://opencv.org/wp-content/uploads/2022/05/logo.png" class="w-5 h-5 object-contain" alt="OpenCV" /> OpenCV
-                        </a>
-                        <a href="https://developers.google.com/mediapipe" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="./assets/mediapipe.svg" class="w-5 h-5 object-contain" alt="MediaPipe" /> MediaPipe
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="certificates"
             class="bg-black rounded-2xl shadow-lg p-8 mb-12 transition-all duration-300 animate-slide-up">
             <details class="group">
@@ -536,6 +537,6 @@
         </footer>
 
         <script src="portfolioWeb-script.js"></script>
-</body>
+    </body>
 
-</html>
+    </html>
