@@ -161,9 +161,80 @@
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-16 space-y-16">
-        <section id="experience"
-            class="bg-black rounded-2xl shadow-lg p-8 mb-12 transition-all duration-300 animate-slide-up">
+            <main class="container mx-auto px-4 py-16 space-y-16">
+            <!-- LLM Projects Section - Featured at the top -->
+            <section id="llm-projects"
+                class="bg-black rounded-2xl shadow-lg p-8 mb-12 transition-all duration-300 animate-slide-up border border-primary/30">
+                <h2 class="text-3xl font-bold text-primary mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-brain"></i> 
+                    LLM Research & Development
+                    <span class="text-sm bg-primary/20 text-primary px-3 py-1 rounded-full ml-4">Featured</span>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300">
+                        <div class="flex flex-col justify-between h-full">
+                            <div>
+                                <strong class="text-xl font-semibold text-primary block mb-4">How LLMs Are Made</strong>
+                                <p class="text-gray-500 leading-relaxed mb-4">
+                                    My comprehensive GitHub repository documenting everything about LLM research and development—from GPT architectures to Deepseek and beyond. Explore code, experiments, notes, and resources that chart my journey in building, training, and understanding Large Language Models.
+                                </p>
+                                <div class="space-y-2 text-sm text-gray-400 mb-4">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-book text-primary"></i>
+                                        <span>Research & Learning Notes</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-code text-primary"></i>
+                                        <span>End-to-End LLM Implementations</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-brain text-primary"></i>
+                                        <span>GPT and Deepseek Architectures</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button onclick="window.open('https://github.com/kunjcr2/how-llms-are-made', '_blank')"
+                                class="bg-primary text-black font-semibold px-6 py-2 rounded-full transition-all duration-300 flex items-center gap-2 mt-4 w-fit hover:bg-primary/80">
+                                <i class="fab fa-github"></i>
+                                Explore Repository
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300">
+                        <div class="flex flex-col justify-between h-full">
+                            <div>
+                                <strong class="text-xl font-semibold text-primary block mb-4">5BooksLM - GPT Model</strong>
+                                <p class="text-gray-500 leading-relaxed mb-4">
+                                    Designed and trained a 211M parameter GPT-style language model from scratch with 18 transformer blocks and a 512-token context window. Built on 5 different books with full implementation including tokenization, attention mechanisms, training loop, and inference.
+                                </p>
+                                <div class="space-y-2 text-sm text-gray-400 mb-4">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-microchip text-primary"></i>
+                                        <span>211M Parameters</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-layer-group text-primary"></i>
+                                        <span>18 Transformer Blocks</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-text-width text-primary"></i>
+                                        <span>512 Token Context Window</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button onclick="window.open('https://github.com/kunjcr2/how-llms-are-made/tree/main/LLMs/GPT_211M', '_blank')"
+                                class="bg-primary text-black font-semibold px-6 py-2 rounded-full transition-all duration-300 flex items-center gap-2 mt-4 w-fit hover:bg-primary/80">
+                                <i class="fab fa-github"></i>
+                                View Implementation
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience"
+                class="bg-black rounded-2xl shadow-lg p-8 mb-12 transition-all duration-300 animate-slide-up">
             <h2 class="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
                 <i class="fa-solid fa-briefcase"></i> Experience
             </h2>
@@ -360,71 +431,7 @@
             </section>
         </div>
 
-        <section id="llm-projects"
-            class="m-8 bg-black rounded-2xl shadow-lg p-8 mb-12 transition-all duration-300 animate-slide-up flex flex-col gap-8">
-            <h2 class="text-3xl font-bold text-primary mb-6 flex items-center gap-3">
-                <i class="fa-solid fa-brain"></i> Custom LLMs
-            </h2>
-            <div
-                class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300">
-                <div class="flex flex-col md:flex-row justify-between items-start gap-6">
-                    <div class="flex-1">
-                        <strong class="text-xl font-semibold text-primary block mb-4">LLM repo</strong>
-                        <p class="text-gray-500 leading-relaxed mb-4">
-                            This is my comprehensive GitHub repository documenting everything about my research and learning on Large Language Models (LLMs)—from GPT architectures to Deepseek and beyond. Explore code, experiments, notes, and resources that chart my journey in building, training, and understanding LLMs. If you want to dive deep into how LLMs are made, this is the place to start.
-                        </p>
-                        <div class="flex gap-4 mt-4">
-                            <button onclick="window.open('https://github.com/kunjcr2/how-llms-are-made', '_blank')"
-                                class="bg-black border-2 border-primary text-primary hover:bg-primary hover:text-black px-6 py-2 rounded-full font-medium transition-all duration-300 flex items-center gap-2">
-                                <i class="fab fa-github"></i>
-                                View LLM repo
-                            </button>
-                        </div>
-                    </div>
-                    <div class="md:w-1/3 w-full flex flex-col gap-4">
-                        <div class="bg-black/50 rounded-lg p-4 border border-primary/20">
-                            <h4 class="text-primary font-semibold mb-2">Repo Highlights</h4>
-                            <ul class="text-gray-400 space-y-2">
-                                <li><i class="fas fa-book text-primary mr-2"></i>Research & Learning Notes</li>
-                                <li><i class="fas fa-code text-primary mr-2"></i>End-to-End LLM Implementations</li>
-                                <li><i class="fas fa-brain text-primary mr-2"></i>Architectures: GPT, Deepseek, and more</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300">
-                <div class="flex flex-col md:flex-row justify-between items-start gap-6">
-                    <div class="flex-1">
-                        <strong class="text-xl font-semibold text-primary block mb-4">5BooksLM</strong>
-                        <p class="text-gray-500 leading-relaxed mb-4">
-                            Designed and trained a 211M parameter GPT-style language model with 18 transformer blocks and a
-                            512-token context window.
-                            Built from scratch, trained on the 5 different books which are on the github.
-                            Full implementation includes tokenization, attention, training loop, and inference.
-                        </p>
-                        <div class="flex gap-4 mt-4">
-                            <button onclick="window.open('https://github.com/kunjcr2/how-llms-are-made/tree/main/LLMs/GPT_211M', '_blank')"
-                                class="bg-black border-2 border-primary text-primary hover:bg-primary hover:text-black px-6 py-2 rounded-full font-medium transition-all duration-300 flex items-center gap-2">
-                                <i class="fab fa-github"></i>
-                                View on GitHub
-                            </button>
-                        </div>
-                    </div>
-                    <div class="md:w-1/3 w-full flex flex-col gap-4">
-                        <div class="bg-black/50 rounded-lg p-4 border border-primary/20">
-                            <h4 class="text-primary font-semibold mb-2">Model Specs</h4>
-                            <ul class="text-gray-400 space-y-2">
-                                <li><i class="fas fa-microchip text-primary mr-2"></i>211M Parameters</li>
-                                <li><i class="fas fa-layer-group text-primary mr-2"></i>18 Transformer Blocks</li>
-                                <li><i class="fas fa-text-width text-primary mr-2"></i>512 Token Context</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <section id="hackathons" class="bg-black rounded-2xl shadow-lg p-8 mb-12 transition-all duration-300 animate-slide-up">
             <h2 class="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
