@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kunj Shah | Portfolio</title>
+    <meta name="description" content="I prototype & ship LLM-powered products in <7 days. AI Agent Intern, LLM Developer, ML Researcher. Portfolio of Kunj Shah.">
+    <meta property="og:title" content="Kunj Shah | LLM Developer Portfolio">
+    <meta property="og:description" content="I prototype & ship LLM-powered products in <7 days. AI Agent Intern, LLM Developer, ML Researcher.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kunjcr2.github.io/">
+    <meta property="og:image" content="/assets/headshot.jpg">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -66,6 +72,16 @@
                 scroll-padding-top: 60px;
             }
         }
+        body {
+            line-height: 1.25;
+        }
+        p {
+            margin-bottom: 0.8rem;
+        }
+        .skills-columns li {
+            break-inside: avoid;
+            margin-bottom: 0.8rem;
+        }
     </style>
 </head>  
 
@@ -85,11 +101,6 @@
     <header class="relative min-h-screen bg-black overflow-hidden sm:p-2 flex items-center justify-center">
         
         <div class="container mx-auto px-4 flex flex-col justify-center items-center min-h-screen relative z-20 gap-8">
-            <a href="./assets/Kunj_Shah_Resume.pdf" target="_blank"
-                class="absolute top-8 right-8 bg-black border-2 border-primary text-primary hover:bg-primary hover:text-black px-6 py-2 rounded-full font-medium transition-all duration-300 flex items-center gap-2 shadow-lg z-50">
-                <i class="fa-solid fa-file-arrow-down"></i>
-                View Resume
-            </a>
             <nav class="bg-white/10 backdrop-blur-md rounded-xl p-4 mb-8 w-fit max-w-6xl hidden md:block">
                 <ul class="flex justify-center gap-16">
                     <li>
@@ -99,35 +110,16 @@
                         <a href="#projects" class="text-white hover:bg-primary/20 hover:text-primary px-4 py-2 rounded-lg transition-all duration-300">Projects</a>
                     </li>
                     <li>
-                        <a href="#llm-projects"
-                            class="text-white hover:bg-primary/20 px-4 py-2 hover:text-primary rounded-lg transition-all duration-300">LLMs</a>
-                    </li>
-                    <li>
-                        <a href="#hackathons" class="text-white hover:bg-primary/20 hover:text-primary px-4 py-2 rounded-lg transition-all duration-300">Hackathons</a>
-                    </li>
-                    <li>
                         <a href="#skills" class="text-white hover:bg-primary/20 hover:text-primary px-4 py-2 rounded-lg transition-all duration-300">Skills</a>
                     </li>
                     <li>
-                        <a href="#aboutme"
-                            class="text-white hover:bg-primary/20 px-4 py-2 hover:text-primary rounded-lg transition-all duration-300">About Me</a>
+                        <a href="#contactForm" class="text-white hover:bg-primary/20 hover:text-primary px-4 py-2 rounded-lg transition-all duration-300">Contact</a>
                     </li>
-                    
                 </ul>
             </nav>
-            <div class="flex flex-col md:flex-row items-center gap-8 max-w-6xl">
-                <!-- <img src="IMG_3187.jpg" alt="Kunj Shah" class="hidden sm:block w-64 h-64 object-cover rounded-xl shadow-xl hover:scale-105 transition-transform duration-300"> -->
-                <div class="text-center items-center my-3 justify-center flex flex-col">
-                    <span class="inline-flex items-center bg-black text-gray-400 font-medium text-xl py-4 rounded-full">
-                        Hey, I'm
-                    </span>
-                    <h1 class="text-6xl font-bold text-white mb-4 text-shadow">Kunj Shah</h1>
-                    <div class="flex justify-center md:justify-start">
-                        <span class="inline-flex items-center bg-black text-gray-400 font-medium text-xl py-2 rounded-full">
-                            AI Agent Intern | LLM Developer | ML Researcher
-                        </span>
-                    </div>
-                    <!-- Contact Icons Below Name -->
+            <div class="flex flex-col md:flex-row items-center gap-8 max-w-6xl w-full">
+                <img src="./assets/headshot.jpg" alt="Kunj Shah headshot" class="w-40 h-40 rounded-full object-cover border-4 border-primary shadow-lg mb-6 md:mb-0 md:mr-8 md:self-start mx-auto" />
+                <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
                     <div class="flex justify-center md:justify-start gap-6 my-3">
                         <a href="https://github.com/kunjcr2" target="_blank" aria-label="GitHub" title="GitHub"
                             class="text-primary hover:text-white bg-black border-2 border-primary hover:bg-primary hover:border-white p-2 rounded-full text-2xl transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-primary w-12 h-12 flex items-center justify-center">
@@ -145,11 +137,15 @@
                             class="text-primary hover:text-white bg-black border-2 border-primary hover:bg-primary hover:border-white p-2 rounded-full text-2xl transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-primary w-12 h-12 flex items-center justify-center">
                             <i class="fa-solid fa-envelope"></i>
                         </a>
-                        <!-- Google Developers Profile -->
                         <a href="https://g.dev/kunjcr2" target="_blank" aria-label="Google Developers" title="Google Developers"
                             class="text-primary hover:text-white bg-black border-2 border-primary hover:bg-primary hover:border-white p-2 rounded-full text-2xl transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-primary w-12 h-12 flex items-center justify-center">
                             <img src="./assets/logo_google_for_dev.svg" alt="Google Developers" class="w-7 h-7" style="display:inline;" />
                         </a>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4" style="line-height:1.15;">Kunj Shah</h1>
+                    <div class="text-lg md:text-xl text-primary font-medium mb-6">AI Agent Intern | LLM Developer | ML Researcher</div>
+                    <div class="flex gap-4 flex-wrap justify-center md:justify-start">
+                        <a href="./assets/Kunj_Shah_Resume.pdf" target="_blank" class="px-6 py-3 bg-[#2563EB] text-white font-semibold rounded" style="border-radius:6px;">Download Résumé</a>
                     </div>
                 </div>
             </div>
@@ -164,9 +160,6 @@
                     <i class="fa-solid fa-brain"></i> 
                     LLM Research & Development
                 </h2>
-                <div class="block md:inline ml-0 md:ml-4 mt-2 md:mt-0 w-full md:w-auto text-center md:text-left">
-                    <span class="text-sm bg-primary/20 text-primary px-3 py-1 rounded-full">Featured</span>
-                </div>
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300">
                         <div class="flex flex-col justify-between h-full">
@@ -233,340 +226,227 @@
 
             <section id="experience"
                 class="bg-black rounded-2xl shadow-lg p-4 mb-6 transition-all duration-300 animate-slide-up">
-            <h2 class="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
-                <i class="fa-solid fa-briefcase"></i> Experience
-            </h2>
-            <ul class="space-y-8">
-                <li
-                    class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300">
-                    <strong class="text-xl font-semibold text-primary block mb-2">AI Agent Intern, Dreamable Inc.</strong>
-                    <i class="text-gray-400 block mb-4">June 2024 to Present</i>
-                    <p class="text-gray-500 leading-relaxed">
-                        Collaborating on the development of AI agent solutions that enable developers to build intelligent LLM
-                        workflows 2–3x faster using low-code and no-code tools, focusing on agent orchestration, prompt chaining, and
-                        modular tool integration to simplify complex AI behavior into developer-friendly components.
-                    </p>
-                </li>
-                <li class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300">
-                    <strong class="text-xl font-semibold text-primary block mb-2">Tech Director, SparkSF</strong>
-                    <i class="text-gray-400 block mb-4">Dec 2024 to Present</i>
-                    <p class="text-gray-500 leading-relaxed">
-                        Developed a responsive website for SparksF, an entrepreneurship club at SF State University, to
-                        streamline
-                        member access to announcements and account management, enhancing engagement through user
-                        authentication and real-time updates,
-                        along with a chatbot just for SparksF.
-                    </p>
-                </li>
-                <li class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300">
-                    <strong class="text-xl font-semibold text-primary block mb-2">Intern, Dyna Grow Design Solutions</strong>
-                    <i class="text-gray-400 block mb-4">May 2024 to January 2025</i>
-                    <p class="text-gray-500 leading-relaxed">
-                        Built a responsive, user-friendly website using HTML and CSS to enhance Dyna Grow Design
-                        Solutions' digital presence,
-                        earning a Letter of Recommendation from the founder for delivering lasting impact.
-                    </p>
-                </li>
-            </ul>
-        </section>
-        <div class="border-t border-primary/30 my-6"></div>
-
-        <!-- Skills section moved here -->
-        <section id="skills" class="bg-black rounded-2xl shadow-lg p-4 mb-6 transition-all duration-300">
-            <h2 class="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
-                <i class="fa-solid fa-book"></i> Skills
-            </h2>
-            <div class="space-y-8">
-                <!-- Programming Languages -->
-                <div>
-                    <h3 class="text-xl font-semibold text-primary mb-4">Programming Languages</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <a href="https://www.python.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-5 h-5" alt="Python" /> Python
-                        </a>
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-5 h-5" alt="JavaScript" /> JavaScript
-                        </a>
-                        <a href="https://www.oracle.com/java" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-5 h-5" alt="Java" /> Java
-                        </a>
-                        <a href="https://isocpp.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="w-5 h-5" alt="C++" /> C++
-                        </a>
-                        <a href="https://www.w3schools.com/sql" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <i class="fas fa-database text-primary"></i> SQL
-                        </a>
-                    </div>
-                </div>
-                <!-- AI/ML -->
-                <div>
-                    <h3 class="text-xl font-semibold text-primary mb-4">AI/ML</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <a href="https://pytorch.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" class="w-5 h-5" alt="PyTorch" /> PyTorch
-                        </a>
-                        <a href="https://www.tensorflow.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" class="w-5 h-5" alt="TensorFlow" /> TensorFlow
-                        </a>
-                        <a href="https://scikit-learn.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://www.scikit-learn.org/stable/_static/scikit-learn-logo-small.png" class="w-5 h-5 object-contain" alt="Scikit-learn" /> Scikit-learn
-                        </a>
-                        <a href="https://huggingface.co" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://huggingface.co/front/assets/huggingface_logo.svg" class="w-5 h-5" alt="Hugging Face" /> Hugging Face
-                        </a>
-                        <a href="https://python.langchain.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="./assets/langchain-color.svg" class="w-5 h-5" alt="LangChain" /> LangChain
-                        </a>
-                        <a href="https://huggingface.co/docs/transformers" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <i class="fas fa-robot text-primary"></i> Transformers
-                        </a>
-                        <a href="https://www.nltk.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <i class="fas fa-brain text-primary"></i> NLP
-                        </a><a href="https://n8n.io" target="_blank" rel="noopener noreferrer"
-                            class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="./assets/n8n-logo.svg" class="w-5 h-5 object-contain" alt="n8n" /> n8n
-                        </a>
-                    </div>
-                </div>
-                <!-- Web Development -->
-                <div>
-                    <h3 class="text-xl font-semibold text-primary mb-4">Web Development</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <a href="https://react.dev" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-5 h-5" alt="React" /> React
-                        </a>
-                        <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-5 h-5" alt="Node.js" /> Node.js
-                        </a>
-                        <a href="https://expressjs.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" class="w-5 h-5 invert" alt="Express" /> Express
-                        </a>
-                        <a href="https://www.mongodb.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-5 h-5" alt="MongoDB" /> MongoDB
-                        </a>
-                        <a href="https://www.mysql.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-5 h-5" alt="MySQL" /> MySQL
-                        </a>
-                        <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="./assets/tailwindcss.svg" class="w-5 h-5" alt="Tailwind" /> TailwindCSS
-                        </a>
-                        <a href="https://flask.palletsprojects.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="./assets/flask-svgrepo-com.svg" class="w-5 h-5" alt="Flask" /> Flask
-                        </a>
-                    </div>
-                </div>
-                <!-- Tools & Others -->
-                <div>
-                    <h3 class="text-xl font-semibold text-primary mb-4">Tools & Others</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <a href="https://git-scm.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="w-5 h-5" alt="Git" /> Git
-                        </a>
-                        <a href="https://www.docker.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="w-5 h-5" alt="Docker" /> Docker
-                        </a>
-                        <a href="https://www.linux.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" class="w-5 h-5" alt="Linux" /> Linux
-                        </a>
-                        <a href="https://www.redhat.com/en/topics/api/what-is-a-rest-api" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <i class="fas fa-cloud text-primary"></i> REST APIs
-                        </a>
-                        <a href="https://opencv.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="https://opencv.org/wp-content/uploads/2022/05/logo.png" class="w-5 h-5 object-contain" alt="OpenCV" /> OpenCV
-                        </a>
-                        <a href="https://developers.google.com/mediapipe" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-black hover:bg-primary/10 text-white text-xs font-medium transition-all duration-200">
-                            <img src="./assets/mediapipe.svg" class="w-5 h-5 object-contain" alt="MediaPipe" /> MediaPipe
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="border-t border-primary/30 my-6"></div>
-
-        <div class="flex gap-8">
-            <section id="projects" class="bg-black rounded-2xl shadow-lg p-4 transition-all duration-300 animate-slide-up">
                 <h2 class="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
-                    <i class="fa-solid fa-mobile-screen-button"></i> Projects
+                    <i class="fa-solid fa-briefcase"></i> Experience
+                </h2>
+                <ul class="space-y-8">
+                    <li class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div>
+                            <strong class="text-xl font-semibold text-primary block mb-2">AI Agent Intern, Dreamable Inc.</strong>
+                            <p class="text-gray-500 leading-relaxed mb-2">Collaborating on the development of AI agent solutions that enable developers to build intelligent LLM workflows 2–3x faster using low-code and no-code tools, focusing on agent orchestration, prompt chaining, and modular tool integration to simplify complex AI behavior into developer-friendly components.</p>
+                            <ul class="text-sm text-primary flex flex-wrap gap-4 mb-2">
+                                <li>n8n outreach agent adopted by 14 interns</li>
+                                <li>lead‑quality ↑2.3×</li>
+                            </ul>
+                        </div>
+                        <div class="text-gray-400 text-right min-w-[160px] md:pl-8 md:self-start">June 2024 to Present</div>
+                    </li>
+                    <li class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div>
+                            <strong class="text-xl font-semibold text-primary block mb-2">Tech Director, SparkSF</strong>
+                            <p class="text-gray-500 leading-relaxed mb-2">Developed a responsive website for SparksF, an entrepreneurship club at SF State University, to streamline member access to announcements and account management, enhancing engagement through user authentication and real-time updates, along with a chatbot just for SparksF.</p>
+                        </div>
+                        <div class="text-gray-400 text-right min-w-[160px] md:pl-8 md:self-start">Dec 2024 to Present</div>
+                    </li>
+                    <li class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div>
+                            <strong class="text-xl font-semibold text-primary block mb-2">Intern, Dyna Grow Design Solutions</strong>
+                            <p class="text-gray-500 leading-relaxed mb-2">Built a responsive, user-friendly website using HTML and CSS to enhance Dyna Grow Design Solutions' digital presence, earning a Letter of Recommendation from the founder for delivering lasting impact.</p>
+                            <ul class="text-sm text-primary flex flex-wrap gap-4 mb-2">
+                                <li>SEO & perf tweaks drove 2× qualified inquiries</li>
+                            </ul>
+                        </div>
+                        <div class="text-gray-400 text-right min-w-[160px] md:pl-8 md:self-start">May 2024 to January 2025</div>
+                    </li>
+                </ul>
+            </section>
+            <div class="border-t border-primary/30 my-6"></div>
+
+            <!-- Skills section moved here -->
+            <section id="skills" class="bg-black rounded-2xl shadow-lg p-4 mb-6 transition-all duration-300">
+                <h2 class="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
+                    <i class="fa-solid fa-book"></i> Skills
+                </h2>
+                <ul class="skills-columns" style="column-count:3;column-gap:2rem;list-style:none;padding:0;">
+                    <li><strong class="text-primary">AI/ML:</strong> LLMs · Transformers · RAG · LoRA · PyTorch · TensorFlow · LangChain</li>
+                    <li><strong class="text-primary">Web & Backend:</strong> Node.js · Express.js · React.js · Flask · Tailwind CSS</li>
+                    <li><strong class="text-primary">DB & Tools:</strong> MongoDB · MySQL · Docker · Git · Linux</li>
+                </ul>
+            </section>
+            <div class="border-t border-primary/30 my-6"></div>
+
+            <div class="flex gap-8">
+                <section id="projects" class="bg-black rounded-2xl shadow-lg p-4 transition-all duration-300 animate-slide-up">
+                    <h2 class="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
+                        <i class="fa-solid fa-mobile-screen-button"></i> Projects
+                    </h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- theHelper Card -->
+                        <div class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
+                            <img src="./assets/theHelper-thumb.jpg" alt="theHelper project thumbnail" class="w-full h-48 object-cover rounded-lg mb-4" style="aspect-ratio:16/9;max-width:768px;max-height:432px;" />
+                            <strong class="text-xl font-semibold text-primary block mb-2">theHelper - AIResearchAssistant</strong>
+                            <div class="flex gap-2 mb-3 flex-wrap">
+                                <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">70% faster review</span>
+                                <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">50+ PDFs</span>
+                                <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">BERT/BART/FAISS</span>
+                            </div>
+                            <p class="text-gray-500 leading-relaxed mb-4">Built an AI-powered tool to analyze and summarize PDFs using PyPDF2, Hugging Face Transformers (BERT, BART), and FAISS for semantic search, delivering a Streamlit-based app for document processing and context-aware Q&A.</p>
+                            <a href="./projects/theHelper.html" class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mt-auto"><span>Learn more</span></a>
+                        </div>
+                        <!-- Max Card -->
+                        <div class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
+                            <img src="./assets/max-thumb.jpg" alt="Max project thumbnail" class="w-full h-48 object-cover rounded-lg mb-4" style="aspect-ratio:16/9;max-width:768px;max-height:432px;" />
+                            <strong class="text-xl font-semibold text-primary block mb-2">Max - AI Voice Assistant</strong>
+                            <div class="flex gap-2 mb-3 flex-wrap">
+                                <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">90% voice accuracy</span>
+                                <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">8 tools</span>
+                                <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">Langchain/OpenAI</span>
+                            </div>
+                            <p class="text-gray-500 leading-relaxed mb-4">Developed a voice-activated AI assistant using Langchain, OpenAI, Hugging Face, and SpeechRecognition to automate tasks like web search, YouTube streaming, and emailing, enhancing user experience through hands-free interaction.</p>
+                            <a href="./projects/max.html" class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mt-auto"><span>Learn more</span></a>
+                        </div>
+                        <!-- IdeaCheck Card -->
+                        <div class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
+                            <img src="./assets/ideaCheck-thumb.jpg" alt="IdeaCheck project thumbnail" class="w-full h-48 object-cover rounded-lg mb-4" style="aspect-ratio:16/9;max-width:768px;max-height:432px;" />
+                            <strong class="text-xl font-semibold text-primary block mb-2">IdeaCheck - Start here</strong>
+                            <div class="flex gap-2 mb-3 flex-wrap">
+                                <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">215M params</span>
+                                <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">85% acc</span>
+                                <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">18 blocks</span>
+                            </div>
+                            <p class="text-gray-500 leading-relaxed mb-4">Developed a web application using an AI Agent in backend to evaluate startup ideas based on user input, utilizing OpenAI's GPT-4o-mini and Langchain for idea validation and feedback, enhancing the entrepreneurial journey with personalized insights and suggestions.</p>
+                            <a href="./projects/ideaCheck.html" class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mt-auto"><span>Learn more</span></a>
+                        </div>
+                    </div>
+                    <div class="flex justify-center mt-8">
+                        <span>More projects on 
+                            <a href="https://github.com/kunjcr2" target="_blank" class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors">Github</a>
+                        </span>
+                    </div>
+                </section>
+            </div>
+            <div class="border-t border-primary/30 my-6"></div>
+
+
+
+            <section id="hackathons" class="bg-black rounded-2xl shadow-lg p-4 mb-6 transition-all duration-300 animate-slide-up">
+                <h2 class="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
+                    <i class="fa-solid fa-users-rectangle"></i> Hackathons
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300">
-                        <strong class="text-xl font-semibold text-primary block mb-4">theHelper - AIResearchAssistant</strong>
-                        <p class="text-gray-500 leading-relaxed mb-4">
-                            Built an AI-powered tool to analyze and summarize PDFs using PyPDF2, Hugging Face
-                            Transformers (BERT, BART), and FAISS
-                            for semantic search, delivering a Streamlit-based app for document processing and
-                            context-aware Q&A.
-                        </p>
-                        <a href="./projects/theHelper.html"
-                            class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors">
-                            <span>Click for more info</span>
-                        </a>
+                    <div class="bg-black rounded-xl p-6 hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
+                        <strong class="text-xl font-semibold text-primary block mb-4">Cal Hacks 11.0</strong>
+                        <div class="space-y-2 text-gray-500">
+                            <p><strong class="text-gray-100">Where:</strong> San Francisco, CA</p>
+                            <p><strong class="text-gray-100">When:</strong> October 18, 2024 – October 20, 2024</p>
+                            <p><strong class="text-gray-100">Project:</strong> Workout Web App</p>
+                        </div>
                     </div>
-                    <div class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300">
-                        <strong class="text-xl font-semibold text-primary block mb-4">Max - AI Voice Assistant</strong>
-                        <p class="text-gray-500 leading-relaxed mb-4">
-                            Developed a voice-activated AI assistant using Langchain, OpenAI, Hugging Face, and
-                            SpeechRecognition to automate tasks
-                            like web search, YouTube streaming, and emailing, enhancing user experience through
-                            hands-free interaction.
-                        </p>
-                        <a href="./projects/max.html"
-                            class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors">
-                            <span>Click for more info</span>
-                        </a>
+                    <div class="bg-black rounded-xl p-6 hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
+                        <strong class="text-xl font-semibold text-primary block mb-4">SacHacks</strong>
+                        <div class="space-y-2 text-gray-500">
+                            <p><strong class="text-gray-100">Where:</strong> Virtual Hackathon</p>
+                            <p><strong class="text-gray-100">When:</strong> March 2, 2025 – March 3, 2025</p>
+                            <p><strong class="text-gray-100">Project:</strong> Web Detective</p>
+                        </div>
                     </div>
-                    <div class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300">
-                        <strong class="text-xl font-semibold text-primary block mb-4">IdeaCheck - Start here</strong>
-                        <p class="text-gray-500 leading-relaxed mb-4">
-                            Developed a web application using an AI Agent in backend to evaluate startup ideas based on
-                            user input, utilizing OpenAI's GPT-4o-mini and Langchain for idea validation and feedback,
-                            enhancing the entrepreneurial journey with personalized insights and suggestions.
-                        </p>
-                        <a href="./projects/ideaCheck.html"
-                            class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors">
-                            <span>Click for more info</span>
-                        </a>
+                    <div class="bg-black rounded-xl p-6 hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
+                        <strong class="text-xl font-semibold text-primary block mb-4">HackMerced</strong>
+                        <div class="space-y-2 text-gray-500">
+                            <p><strong class="text-gray-100">Where:</strong> University of California, Merced</p>
+                            <p><strong class="text-gray-100">When:</strong> March 9, 2025 – March 11, 2025</p>
+                            <p><strong class="text-gray-100">Project:</strong> Web Detective (Updated)</p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex justify-center mt-8">
-                    <span>More projects on 
-                        <a href="https://github.com/kunjcr2" target="_blank" class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors">Github</a>
-                    </span>
                 </div>
             </section>
-        </div>
-        <div class="border-t border-primary/30 my-6"></div>
+            <div class="border-t border-primary/30 my-6"></div>
 
+            <section id="certificates"
+                class="bg-black rounded-2xl shadow-lg p-4 mb-6 transition-all duration-300 animate-slide-up">
+                <details class="group" open>
+                    <summary class="cursor-pointer list-none">
+                        <h2 class="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
+                            <i class="fa-solid fa-certificate"></i> Certificates
+                            <i class="fa-solid fa-chevron-down transition-transform group-open:rotate-180 ml-auto text-xl"></i>
+                        </h2>
+                    </summary>
+                    <div class="grid md:grid-cols-2 gap-6 mt-8">
+                        <ul class="space-y-4">
+                            <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Introduction to Generative AI – Google Cloud</li>
+                            <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">TensorFlow Developer – Google</li>
+                            <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Hugging Face Transformers – Hugging Face</li>
+                            <details>
+                                <summary class="text-primary cursor-pointer">Show all certificates</summary>
+                                <ul class="space-y-4 mt-2">
+                                    <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Programming for Everybody (Getting Started with Python) – University of Michigan</li>
+                                    <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Python Data Structures – University of Michigan</li>
+                                    <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Crash course on Python – Google</li>
+                                    <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Calculus through data and modelling: Series and integration – Johns Hopkins University</li>
+                                    <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Calculus through data and modelling: Techniques of integration – Johns Hopkins University</li>
+                                    <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Calculus through data and modelling: Integration Applications – Johns Hopkins University</li>
+                                    <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Calculus through data and modelling: Vector Calculus – Johns Hopkins University</li>
+                                    <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Introduction to Web Development – UC Davis</li>
+                                    <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Understanding Einstein: Special theory of relativity – Stanford University</li>
+                                    <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Introduction to complex analysis – Wesleyan University</li>
+                                    <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Understanding Basic SQL Syntax – Coursera Project Network</li>
+                                    <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">C++ Basics: Selection and Iteration – Codec</li>
+                                    <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Building a Text-based Bank – Coursera Project Network</li>
+                                    <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Create a Supermarket app using Java OOP – Coursera Project Network</li>
+                                    <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Python 101: Develop Your First Python Program – Coursera Project Network</li>
+                                    <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">LOR by Duc Ta - CSC215</li>
+                                    <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">LOR by Maitra Shah - Internship Certificate</li>
+                                </ul>
+                            </details>
+                        </ul>
+                    </div>
+                    <div class="flex justify-center mt-8">
+                        <span>More certificates on 
+                            <a href="https://www.linkedin.com/in/kunjcr2/" target="_blank" class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors">Linkedin</a>
+                        </span>
+                    </div>
+                </details>
+            </section>
+            <div class="border-t border-primary/30 my-6"></div>
 
-
-        <section id="hackathons" class="bg-black rounded-2xl shadow-lg p-4 mb-6 transition-all duration-300 animate-slide-up">
-            <h2 class="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
-                <i class="fa-solid fa-users-rectangle"></i> Hackathons
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-black rounded-xl p-6 hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
-                    <strong class="text-xl font-semibold text-primary block mb-4">Cal Hacks 11.0</strong>
-                    <div class="space-y-2 text-gray-500">
-                        <p><strong class="text-gray-100">Where:</strong> San Francisco, CA</p>
-                        <p><strong class="text-gray-100">When:</strong> October 18, 2024 – October 20, 2024</p>
-                        <p><strong class="text-gray-100">Project:</strong> Workout Web App</p>
+            <section id="aboutme" class="bg-black rounded-2xl shadow-lg p-4 mb-6 transition-all duration-300 animate-slide-up">
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <div class="lg:w-1/2 w-full flex items-start flex-col">
+                        <h3 class="text-2xl font-bold text-primary mb-4">About Me</h3>
+                        <p class="text-lg text-white/90 leading-relaxed mx-auto md:mx-0 max-w-xl">
+                            I am a second-year Computer Science student at San Francisco State University with expertise in AI/ML and Full-stack development. Currently serving as Tech Director at SparkSF, I specialize in Machine Learning, NLP, and MERN stack development. My notable projects include AI-powered applications like 'theHelper' research assistant and 'Max' voice assistant. I've participated in multiple hackathons including Cal Hacks 11.0 and SacHacks, creating innovative solutions like Workout Web App and Web Detective. With strong foundations in Python, JavaScript, and various AI frameworks including Hugging Face Transformers and OpenCV, I combine academic excellence (JEE qualifier) with practical development experience to deliver impactful solutions.
+                        </p>
+                    </div>
+                    <div class="lg:w-1/2 w-full flex flex-col justify-center items-center bg-black rounded-2xl p-6 shadow-lg">
+                        <h3 class="text-2xl font-bold text-primary mb-4">Connect with Me</h3>
+                        <form id="contactForm" action="https://formspree.io/f/mwkgrqzv" method="POST" class="w-full flex flex-col gap-4">
+                            <input type="text" name="name" placeholder="Your Name" required class="bg-black border-primary/40 rounded-full px-5 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary transition-all" />
+                            <input type="email" name="email" placeholder="Your Email" required class="bg-black border-primary/40 rounded-full px-5 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary transition-all" />
+                            <textarea name="message" placeholder="Anything you want me to know about you?" rows="4" required class="bg-black border-primary/40 rounded-2xl px-5 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none"></textarea>
+                            <button type="submit" class="bg-primary text-black font-semibold rounded-full px-6 py-3 mt-2 hover:bg-primary/80 transition-all">Send Message</button>
+                        </form>
+                        <div class="flex gap-6 mt-6 justify-center">
+                            <a href="mailto:kunjcr2@gmail.com" aria-label="Email" target="_blank" class="text-primary hover:text-white bg-black border-2 border-primary hover:bg-primary hover:border-white p-2 rounded-full text-2xl transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-primary w-12 h-12 flex items-center justify-center"><i class="fa-solid fa-envelope"></i></a>
+                            <a href="https://www.linkedin.com/in/kunjcr2/" aria-label="LinkedIn" target="_blank" class="text-primary hover:text-white bg-black border-2 border-primary hover:bg-primary hover:border-white p-2 rounded-full text-2xl transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-primary w-12 h-12 flex items-center justify-center"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/kunjcr2" aria-label="GitHub" target="_blank" class="text-primary hover:text-white bg-black border-2 border-primary hover:bg-primary hover:border-white p-2 rounded-full text-2xl transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-primary w-12 h-12 flex items-center justify-center"><i class="fa-brands fa-github"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="bg-black rounded-xl p-6 hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
-                    <strong class="text-xl font-semibold text-primary block mb-4">SacHacks</strong>
-                    <div class="space-y-2 text-gray-500">
-                        <p><strong class="text-gray-100">Where:</strong> Virtual Hackathon</p>
-                        <p><strong class="text-gray-100">When:</strong> March 2, 2025 – March 3, 2025</p>
-                        <p><strong class="text-gray-100">Project:</strong> Web Detective</p>
+            </section>
+
+            <footer class="bg-black text-white mt-16">
+                <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+                    <p class="mb-4 md:mb-0">&copy; 2025 Kunj Shah | Personal Portfolio</p>
+                    <div class="flex gap-8">
+                        <a href="#experience" class="hover:text-primary transition-colors">Experience</a>
+                        <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
+                        <a href="#skills" class="hover:text-primary transition-colors">Skills</a>
+                        <a href="#contactForm" class="hover:text-primary transition-colors">Contact</a>
                     </div>
                 </div>
-                <div class="bg-black rounded-xl p-6 hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
-                    <strong class="text-xl font-semibold text-primary block mb-4">HackMerced</strong>
-                    <div class="space-y-2 text-gray-500">
-                        <p><strong class="text-gray-100">Where:</strong> University of California, Merced</p>
-                        <p><strong class="text-gray-100">When:</strong> March 9, 2025 – March 11, 2025</p>
-                        <p><strong class="text-gray-100">Project:</strong> Web Detective (Updated)</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="border-t border-primary/30 my-6"></div>
+            </footer>
 
-        <section id="certificates"
-            class="bg-black rounded-2xl shadow-lg p-4 mb-6 transition-all duration-300 animate-slide-up">
-            <details class="group">
-                <summary class="cursor-pointer list-none">
-                    <h2 class="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
-                        <i class="fa-solid fa-certificate"></i> Certificates
-                        <i
-                            class="fa-solid fa-chevron-down transition-transform group-open:rotate-180 ml-auto text-xl"></i>
-                    </h2>
-                </summary>
-                <div class="grid md:grid-cols-2 gap-6 mt-8">
-                    <ul class="space-y-4">
-                        <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Programming for
-                            Everybody (Getting Started with Python) – University of Michigan</li>
-                        <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Python Data
-                            Structures – University of Michigan</li>
-                        <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Introduction to
-                            Generative AI – Google Cloud</li>
-                        <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Crash course on
-                            Python – Google</li>
-                        <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Calculus through
-                            data and modelling: Series and integration – Johns Hopkins University</li>
-                        <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Calculus through
-                            data and modelling: Techniques of integration – Johns Hopkins University</li>
-                        <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Calculus through
-                            data and modelling: Integration Applications – Johns Hopkins University</li>
-                        <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Calculus through
-                            data and modelling: Vector Calculus – Johns Hopkins University</li>
-                        <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Introduction to Web
-                            Development – UC Davis</li>
-                    </ul>
-                    <ul class="space-y-4">
-                        <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Understanding
-                            Einstein: Special theory of relativity – Stanford University</li>
-                        <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Introduction to
-                            complex analysis – Wesleyan University</li>
-                        <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Understanding Basic
-                            SQL Syntax – Coursera Project Network</li>
-                        <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">C++ Basics:
-                            Selection and Iteration – Codec</li>
-                        <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Building a
-                            Text-based Bank – Coursera Project Network</li>
-                        <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Create a
-                            Supermarket app using Java OOP – Coursera Project Network</li>
-                        <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Python 101: Develop
-                            Your First Python Program – Coursera Project Network</li>
-                        <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">LOR by Duc Ta -
-                            CSC215</li>
-                        <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">LOR by Maitra Shah
-                            - Internship Certificate</li>
-                    </ul>
-                </div>
-                <div class="flex justify-center mt-8">
-                    <span>More certificates on 
-                        <a href="https://www.linkedin.com/in/kunjcr2/" target="_blank" class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors">Linkedin</a>
-                    </span>
-                </div>
-            </details>
-        </section>
-        <div class="border-t border-primary/30 my-6"></div>
+            <script src="portfolioWeb-script.js"></script>
+        </body>
 
-        <section id="aboutme" class="bg-black rounded-2xl shadow-lg p-4 mb-6 transition-all duration-300 animate-slide-up">
-            <div class="flex flex-col lg:flex-row gap-8">
-                <div class="lg:w-1/2 w-full flex items-start flex-col">
-                    <h3 class="text-2xl font-bold text-primary mb-4">About Me</h3>
-                    <p class="text-lg text-white/90 leading-relaxed mx-auto md:mx-0 max-w-xl">
-                        I am a second-year Computer Science student at San Francisco State University with expertise in AI/ML and Full-stack development. Currently serving as Tech Director at SparkSF, I specialize in Machine Learning, NLP, and MERN stack development. My notable projects include AI-powered applications like 'theHelper' research assistant and 'Max' voice assistant. I've participated in multiple hackathons including Cal Hacks 11.0 and SacHacks, creating innovative solutions like Workout Web App and Web Detective. With strong foundations in Python, JavaScript, and various AI frameworks including Hugging Face Transformers and OpenCV, I combine academic excellence (JEE qualifier) with practical development experience to deliver impactful solutions.
-                    </p>
-                </div>
-                <div class="lg:w-1/2 w-full flex flex-col justify-center items-center bg-black rounded-2xl p-6 shadow-lg">
-                    <h3 class="text-2xl font-bold text-primary mb-4">Connect with Me</h3>
-                    <form class="w-full flex flex-col gap-4">
-                        <input type="text" placeholder="Your Name" class="bg-black border-primary/40 rounded-full px-5 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary transition-all" />
-                        <input type="email" placeholder="Your Email" class="bg-black border-primary/40 rounded-full px-5 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary transition-all" />
-                        <textarea placeholder="Anything you want me to know about you?" rows="4" class="bg-black border-primary/40 rounded-2xl px-5 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none"></textarea>
-                        <button type="button" class="bg-primary text-black font-semibold rounded-full px-6 py-3 mt-2 hover:bg-primary/80 transition-all">Will be live soon</button>
-                        <!-- <p class="text-white text-center">Will be live soon</p> -->
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <footer class="bg-black text-white mt-16">
-            <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-                <p class="mb-4 md:mb-0">&copy; 2025 Kunj Shah | Personal Portfolio</p>
-                <div class="flex gap-8">
-                    <a href="#experience" class="hover:text-primary transition-colors">Experience</a>
-                    <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
-                    <a href="#skills" class="hover:text-primary transition-colors">Skills</a>
-                    <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
-                </div>
-            </div>
-        </footer>
-
-        <script src="portfolioWeb-script.js"></script>
-    </body>
-
-    </html>
+        </html>

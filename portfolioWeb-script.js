@@ -228,4 +228,6 @@ document.addEventListener("DOMContentLoaded", function () {
   mobileMenuLinks.forEach((link) => {
     link.addEventListener("click", toggleMobileMenu);
   });
+
+  document.documentElement.style.scrollBehavior = "smooth";
 });
