@@ -265,16 +265,106 @@
             </section>
             <div class="border-t border-primary/30 my-6"></div>
 
-            <!-- Skills section moved here -->
+            <!-- Skills section: Grouped badges with icons -->
             <section id="skills" class="bg-black rounded-2xl shadow-lg p-4 mb-6 transition-all duration-300">
                 <h2 class="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
                     <i class="fa-solid fa-book"></i> Skills
                 </h2>
-                <ul class="skills-columns" style="column-count:3;column-gap:2rem;list-style:none;padding:0;">
-                    <li><strong class="text-primary">AI/ML</strong><br>Large Language Models, Transformers, Retrieval-Augmented Generation (RAG), LoRA,<br>PyTorch, TensorFlow, LangChain, LangFlow, n8n, OpenCV, Machine Learning, Deep Learning,<br>Natural Language Processing (NLP)</li>
-                    <li><strong class="text-primary">Web & Database</strong><br>Node.js, Express.js, React.js, Flask, Tailwindcss</li>
-                    <li><strong class="text-primary">Database and Tools</strong><br>MongoDB, MySQL, Git, Docker, VertexAI, Microsoft Azure</li>
-                </ul>
+                <div class="flex flex-col gap-8">
+                    <!-- AI/ML Group -->
+                    <div>
+                        <div class="text-lg font-semibold text-primary mb-3 flex items-center gap-2"><i class="fa-solid fa-brain"></i> AI / ML</div>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <i class="fa-brands fa-python text-xl"></i> Python
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <img src="assets/langchain-color.svg" alt="LangChain" class="w-5 h-5"/> LangChain
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <img src="assets/langflow.svg" alt="LangFlow" class="w-5 h-5"/> LangFlow
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <i class="fa-solid fa-brain text-xl"></i> Transformers
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <i class="fa-solid fa-robot text-xl"></i> LLMs
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <i class="fa-solid fa-microchip text-xl"></i> PyTorch
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <i class="fa-brands fa-tensorflow text-xl"></i> TensorFlow
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <img src="assets/n8n-logo.svg" alt="n8n" class="w-5 h-5"/> n8n
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <img src="assets/langflow.svg" alt="RAG" class="w-5 h-5"/> RAG
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <i class="fa-solid fa-brain text-xl"></i> LoRA
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <i class="fa-solid fa-brain text-xl"></i> NLP
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <i class="fa-solid fa-brain text-xl"></i> Deep Learning
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <i class="fa-solid fa-brain text-xl"></i> Machine Learning
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <i class="fa-brands fa-python text-xl"></i> OpenCV
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Web Group -->
+                    <div>
+                        <div class="text-lg font-semibold text-primary mb-3 flex items-center gap-2"><i class="fa-solid fa-globe"></i> Web</div>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <i class="fa-brands fa-node-js text-xl"></i> Node.js
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <i class="fa-brands fa-react text-xl"></i> React.js
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <img src="assets/flask-svgrepo-com.svg" alt="Flask" class="w-5 h-5"/> Flask
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <img src="assets/tailwindcss.svg" alt="TailwindCSS" class="w-5 h-5"/> TailwindCSS
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <i class="fa-solid fa-database text-xl"></i> Express.js
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Database & Tools Group -->
+                    <div>
+                        <div class="text-lg font-semibold text-primary mb-3 flex items-center gap-2"><i class="fa-solid fa-toolbox"></i> Database & Tools</div>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <i class="fa-solid fa-database text-xl"></i> MongoDB
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <i class="fa-solid fa-database text-xl"></i> MySQL
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <i class="fa-brands fa-git-alt text-xl"></i> Git
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <i class="fa-brands fa-docker text-xl"></i> Docker
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <i class="fa-brands fa-google text-xl"></i> VertexAI
+                            </span>
+                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
+                                <i class="fa-brands fa-microsoft text-xl"></i> Microsoft Azure
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </section>
             <div class="border-t border-primary/30 my-6"></div>
 
