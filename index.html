@@ -268,107 +268,180 @@
             <div class="border-t border-primary/30 my-6"></div>
 
             <!-- Skills section: Grouped badges with icons -->
-            <section id="skills" class="bg-black rounded-2xl shadow-lg p-4 mb-6 transition-all duration-300">
-                <h2 class="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
-                    <i class="fa-solid fa-book"></i> Skills
+            <section id="skills" class="bg-black rounded-2xl p-6 md:p-8 mb-6">
+                <h2 class="text-2xl md:text-3xl font-bold text-primary mb-8 text-left font-mono">
+                    Technical Skills
                 </h2>
-                <div class="flex flex-col gap-8">
-                    <!-- AI/ML Group -->
+            
+                <div class="space-y-8">
+                    <!-- Programming Languages -->
                     <div>
-                        <div class="text-lg font-semibold text-primary mb-3 flex items-center gap-2"><i class="fa-solid fa-brain"></i> AI / ML</div>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <i class="fa-brands fa-python text-xl"></i> Python
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <img src="assets/langchain-color.svg" alt="LangChain" class="w-5 h-5"/> LangChain
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <img src="assets/langflow.svg" alt="LangFlow" class="w-5 h-5"/> LangFlow
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <i class="fa-solid fa-brain text-xl"></i> Transformers
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <i class="fa-solid fa-robot text-xl"></i> LLMs
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <i class="fa-solid fa-microchip text-xl"></i> PyTorch
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <i class="fa-brands fa-tensorflow text-xl"></i> TensorFlow
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <img src="assets/n8n-logo.svg" alt="n8n" class="w-5 h-5"/> n8n
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <img src="assets/langflow.svg" alt="RAG" class="w-5 h-5"/> RAG
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <i class="fa-solid fa-brain text-xl"></i> LoRA
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <i class="fa-solid fa-brain text-xl"></i> NLP
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <i class="fa-solid fa-brain text-xl"></i> Deep Learning
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <i class="fa-solid fa-brain text-xl"></i> Machine Learning
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <i class="fa-brands fa-python text-xl"></i> OpenCV
-                            </span>
-                            <span
-                                class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <i class="fa-solid fa-server text-xl"></i> MCP Servers
-                            </span>
-
+                        <h3 class="text-lg md:text-xl font-semibold text-primary mb-4 pb-2 border-b border-primary/30 font-mono">
+                            Programming Languages
+                        </h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                Python</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                JavaScript</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                TypeScript</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                HTML/CSS</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                SQL</div>
                         </div>
                     </div>
-                    <!-- Web Group -->
+            
+                    <!-- AI Tools & Frameworks -->
                     <div>
-                        <div class="text-lg font-semibold text-primary mb-3 flex items-center gap-2"><i class="fa-solid fa-globe"></i> Web</div>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <i class="fa-brands fa-node-js text-xl"></i> Node.js
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <i class="fa-brands fa-react text-xl"></i> React.js
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <img src="assets/flask-svgrepo-com.svg" alt="Flask" class="w-5 h-5"/> Flask
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <img src="assets/tailwindcss.svg" alt="TailwindCSS" class="w-5 h-5"/> TailwindCSS
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <i class="fa-solid fa-database text-xl"></i> Express.js
-                            </span>
+                        <h3 class="text-lg md:text-xl font-semibold text-primary mb-4 pb-2 border-b border-primary/30 font-mono">
+                            AI Tools & Frameworks
+                        </h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                LangChain</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                LangFlow</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                n8n</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                RAG</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                LLMs</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                Transformers</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                OpenAI API</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                Anthropic API</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                Hugging Face</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                MCP Servers</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                Vector Databases</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                Prompt Engineering</div>
                         </div>
                     </div>
+            
+                    <!-- Machine Learning & Deep Learning -->
+                    <div>
+                        <h3 class="text-lg md:text-xl font-semibold text-primary mb-4 pb-2 border-b border-primary/30 font-mono">
+                            Machine Learning & Deep Learning
+                        </h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                PyTorch</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                TensorFlow</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                Scikit-learn</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                Keras</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                OpenCV</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                Pandas</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                NumPy</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                Matplotlib</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                NLP</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                Computer Vision</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                Transfer Learning</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                Model Finetuning</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                LoRA</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                Neural Networks</div>
+                        </div>
+                    </div>
+            
+                    <!-- Web Development Group -->
+                    <div>
+                        <h3 class="text-lg md:text-xl font-semibold text-primary mb-4 pb-2 border-b border-primary/30 font-mono">
+                            Web Development
+                        </h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                Node.js</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                React.js</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                Flask</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                TailwindCSS</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                Express.js</div>
+                        </div>
+                    </div>
+            
                     <!-- Database & Tools Group -->
                     <div>
-                        <div class="text-lg font-semibold text-primary mb-3 flex items-center gap-2"><i class="fa-solid fa-toolbox"></i> Database & Tools</div>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <i class="fa-solid fa-database text-xl"></i> MongoDB
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <i class="fa-solid fa-database text-xl"></i> MySQL
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <i class="fa-brands fa-git-alt text-xl"></i> Git
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <i class="fa-brands fa-docker text-xl"></i> Docker
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <i class="fa-brands fa-google text-xl"></i> VertexAI
-                            </span>
-                            <span class="flex items-center gap-2 bg-black border border-primary/40 rounded-full px-4 py-2 text-sm font-medium shadow-sm">
-                                <i class="fa-brands fa-microsoft text-xl"></i> Microsoft Azure
-                            </span>
+                        <h3 class="text-lg md:text-xl font-semibold text-primary mb-4 pb-2 border-b border-primary/30 font-mono">
+                            Database & Development Tools
+                        </h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                MongoDB</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                MySQL</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                Git</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                Docker</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                VertexAI</div>
+                            <div
+                                class="bg-black border border-primary/40 text-primary px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary/10 font-mono">
+                                Microsoft Azure</div>
                         </div>
                     </div>
                 </div>
@@ -434,6 +507,15 @@
                     <i class="fa-solid fa-users-rectangle"></i> Hackathons
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div
+                        class="bg-black rounded-xl p-6 hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
+                        <strong class="text-xl font-semibold text-primary block mb-4">MCP AWS Agentic Challange</strong>
+                        <div class="space-y-2 text-gray-500">
+                            <p><strong class="text-gray-100">Where:</strong> AWS Builder Loft, SF</p>
+                            <p><strong class="text-gray-100">When:</strong> 7/25/2025</p>
+                            <p><strong class="text-gray-100">Project:</strong> Nango Automation</p>
+                        </div>
+                    </div>
                     <div class="bg-black rounded-xl p-6 hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
                         <strong class="text-xl font-semibold text-primary block mb-4">Cal Hacks 11.0</strong>
                         <div class="space-y-2 text-gray-500">
