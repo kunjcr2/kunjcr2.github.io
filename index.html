@@ -308,23 +308,22 @@
 						<!-- FLAN-T5 Stack Overflow Finetuning Card -->
 						<div
 							class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
-							<img src="./assets/flan-t5-thumb.png" alt="FLAN-T5 Stack Overflow Finetuning thumbnail"
+							<img src="./assets/llama-3b.png" alt="FLAN-T5 Stack Overflow Finetuning thumbnail"
 								class="w-full h-48 object-cover rounded-lg mb-4"
 								style="aspect-ratio:16/9;max-width:768px;max-height:432px;" />
-							<strong class="text-xl font-semibold text-primary block mb-2">FLAN-T5 Stack Overflow Finetuning</strong>
+							<strong class="text-xl font-semibold text-primary block mb-2">Llama-3.2-3b FInetuned on OpenHermes</strong>
 							<div class="flex gap-2 mb-3 flex-wrap">
-								<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">15.5k SO
-									questions</span>
+								<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">~300k QA Pairs</span>
 								<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">LoRA
 									Finetuning</span>
-								<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">3.2 Eval
+								<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">6.27->2.01 Eval
 									loss</span>
 							</div>
 							<p class="text-gray-500 leading-relaxed mb-4">
-								A fine-tuned FLAN-T5 model trained on 15.5k Stack Overflow questions to help rewrite, summarize, and
-								clarify developer questions. It uses LoRA (Low-Rank Adaptation) for efficient parameter tuning and
-								is deployed on Hugging Face. Ideal for devtools, AI agents, and prompt engineering.
-							</p>
+                                An instruction-tuned Llama-3.2-3B base model trained with LoRA on the OpenHermes dataset, reducing eval loss from 6.27 →
+                                2.01. This run transformed the base model into an instruct-capable assistant with only ~0.75% of parameters updated,
+                                making it lightweight and deployment-friendly for chatbots and AI agents.
+                            </p>
 							<!-- <div class="flex flex-wrap gap-2 mb-4">
 			                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Hugging Face Transformers</span>
 			                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">PEFT (LoRA)</span>
@@ -333,15 +332,14 @@
 			                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Instruction-style finetuning</span>
 			                            </div> -->
                             <div class="flex flex-col sm:flex-row gap-2 mt-auto">
-                                <a href="https://huggingface.co/kunjcr2/stackoverflow-flan-finetune" target="_blank"
-                                    class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-semibold w-full sm:w-auto justify-center">
+                                <a href="https://huggingface.co/kunjcr2/llama3-3b-lora-openhermes" target="_blank"
+                                    class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors w-full sm:w-auto justify-center">
                                     <i class="fa-brands fa-hugging-face"></i>
                                     Hugging Face
-                                </a>
-                                <a href="https://github.com/kunjcr2/how-llms-are-made/tree/main/My%20Models/Finetuned_flan_t5"
+                                </a> | 
+                                <a href="https://github.com/kunjcr2/how-llms-are-made/tree/main/My%20Models/llama-3.2-3b-finetuned"
                                     target="_blank"
-                                    class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-semibold w-full sm:w-auto justify-center">
-                                    <i class="fa-brands fa-github"></i>
+                                    class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors w-full sm:w-auto justify-center">
                                     GitHub
                                 </a>
                             </div>
