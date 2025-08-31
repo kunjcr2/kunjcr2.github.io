@@ -206,34 +206,45 @@
                         </div>
                     </div>
                     
-                    <div class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300">
+                    <div
+                        class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300">
                         <div class="flex flex-col justify-between h-full">
                             <div>
-                                <strong class="text-xl font-semibold text-primary block mb-4">5BooksLM - GPT Model</strong>
+                                <strong class="text-xl font-semibold text-primary block mb-4">GatorGPT</strong>
                                 <p class="text-gray-500 leading-relaxed mb-4">
-                                    Designed and trained a 211M parameter GPT-style language model from scratch with 18 transformer blocks and a 512-token context window. Built on 5 different books with full implementation including tokenization, attention mechanisms, training loop, and inference.
+                                    A lightweight transformer-based language model with modern architecture built for my University. Features Grouped Query
+                                    Attention, RoPE positioning, and SwiGLU activation. Deployed with vLLM and available via Docker
+                                    (kunjcr2/gatorgpt). <br><strong>Eval loss dropped from ~246 to ~1.503</strong>.
                                 </p>
                                 <div class="space-y-2 text-sm text-gray-400 mb-4">
                                     <div class="flex items-center gap-2">
-                                        <i class="fas fa-microchip text-primary"></i>
-                                        <span>211M Parameters</span>
+                                        <i class="fas fa-bolt text-primary"></i>
+                                        <span>Fast Inference with torch.compile & flash attention</span>
                                     </div>
                                     <div class="flex items-center gap-2">
-                                        <i class="fas fa-layer-group text-primary"></i>
-                                        <span>18 Transformer Blocks</span>
+                                        <i class="fas fa-memory text-primary"></i>
+                                        <span>Memory Efficient GQA reduces memory usage</span>
                                     </div>
                                     <div class="flex items-center gap-2">
-                                        <i class="fas fa-text-width text-primary"></i>
-                                        <span>512 Token Context Window</span>
+                                        <i class="fas fa-docker text-primary"></i>
+                                        <span>One-click Docker deployment with vLLM</span>
                                     </div>
                                 </div>
                             </div>
-                            <button onclick="window.open('https://github.com/kunjcr2/how-llms-are-made/tree/main/LLMs/GPT_211M', '_blank')"
-                                class="bg-primary text-black font-semibold px-6 py-2 rounded-full transition-all duration-300 flex items-center gap-2 mt-4 w-fit hover:bg-primary/80">
-                                <i class="fab fa-github"></i>
-                                View Implementation
-                            </button>
+                            <div class="flex gap-3 mt-4">
+                                <button onclick="window.open('https://github.com/kunjcr2/GatorGPT', '_blank')"
+                                    class="bg-primary text-black font-semibold px-6 py-2 rounded-full transition-all duration-300 flex items-center gap-2 w-fit hover:bg-primary/80">
+                                    <i class="fab fa-github"></i>
+                                    GitHub
+                                </button>
+                                <button onclick="window.open('https://huggingface.co/kunjcr2/GatorGPT', '_blank')"
+                                    class="bg-primary text-black font-semibold px-6 py-2 rounded-full transition-all duration-300 flex items-center gap-2 w-fit hover:bg-primary/80">
+                                    <i class="fas fa-robot text-black"></i>
+                                    HuggingFace
+                                </button>
+                            </div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </section>
