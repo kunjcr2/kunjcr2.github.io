@@ -378,26 +378,33 @@
 						<!-- theHelper Card -->
 						<div
 							class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
-							<img src="./assets/theHelper-thumb.jpg" alt="theHelper project thumbnail"
-								class="w-full h-48 object-cover rounded-lg mb-4"
+							<img src="./assets/qwen_image.png" alt="Qwen2.5-0.5B SFT + DPO project thumbnail"
+								class="w-full h-48 object-cover rounded-lg mb-4 object-left"
 								style="aspect-ratio:16/9;max-width:768px;max-height:432px;" />
-							<strong class="text-xl font-semibold text-primary block mb-2">theHelper - AIResearchAssistant</strong>
+							<strong class="text-xl font-semibold text-primary block mb-2">Qwen2.5-0.5B SFT + DPO</strong>
 							<div class="flex gap-2 mb-3 flex-wrap">
-								<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">70% faster
-									review</span>
-								<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">50+
-									PDFs</span>
+								<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">85M tokens (SFT)</span>
+								<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">1.48 val loss (SFT)</span>
 								<span
-									class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">BERT/FAISS</span>
+									class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">66% reward accuracy (DPO)</span>
 							</div>
-							<p class="text-gray-500 leading-relaxed mb-4">Built a RAG System to analyze and summarize PDFs using
-								PyPDF2,
-								Hugging Face Transformers (BERT), and FAISS for semantic search, delivering a Streamlit-based
-								app for
-								document processing and context-aware Q&A.</p>
-							<a href="https://github.com/kunjcr2/theHelper"
-								class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mt-auto"><span>Github</span></a>
-						</div>
+							<p class="text-gray-500 leading-relaxed mb-4">
+                                A two-stage pipeline where the model was first trained on 85M tokens with supervised fine-tuning, reaching a validation
+                                loss of 1.48, and then optimized with Direct Preference Optimization to achieve 66% reward accuracy. This demonstrates
+                                how foundational instruction tuning can be reinforced through preference optimization to improve reasoning quality.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-2 mt-auto">
+                                <a href="https://huggingface.co/kunjcr2/qwen2.5-0.5b-sft-dpo" target="_blank"
+                                    class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors w-full sm:w-auto justify-center">
+                                    <i class="fa-brands fa-hugging-face"></i>
+                                    Hugging Face
+                                </a> |
+                                <a href="https://github.com/kunjcr2/how-llms-are-made/blob/main/docs/ml-and-dl/Reasoning%20Models/RLHF/dpo_training.py" target="_blank"
+                                    class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors w-full sm:w-auto justify-center">
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
 					</div>
 					<div class="flex justify-center mt-8">
 						<span>More projects on
