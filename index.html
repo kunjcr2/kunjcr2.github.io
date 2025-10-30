@@ -325,50 +325,7 @@
 								class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mt-auto"><span>Github</span></a>
 						</div>
 
-						<div
-							class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
-							<img src="./assets/llama-3b.png" alt="FLAN-T5 Stack Overflow Finetuning thumbnail"
-								class="w-full h-48 object-cover rounded-lg mb-4"
-								style="aspect-ratio:16/9;max-width:768px;max-height:432px;" />
-							<strong class="text-xl font-semibold text-primary block mb-2">Llama-3.2-3b FInetuned on OpenHermes</strong>
-							<div class="flex gap-2 mb-3 flex-wrap">
-								<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">~300k QA Pairs</span>
-								<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">LoRA
-									Finetuning</span>
-								<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">1.27->0.21 Train
-									loss</span>
-                                    <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">vLLM and Docker used</span>
-							</div>
-							<p class="text-gray-500 leading-relaxed mb-4">
-                                An instruction-tuned Llama-3.2-3B base model trained with LoRA on the OpenHermes dataset. 
-    This run transformed the base model into an instruct-capable assistant with only ~0.75% of parameters updated, making it lightweight, deployment-friendly, 
-    and packaged as a Docker image (<code>kunjcr2/llama-3.2-3b-openhermes</code>) for reproducible serving with <strong>vLLM</strong>.
-                            </p>
-							<!-- <div class="flex flex-wrap gap-2 mb-4">
-			                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Hugging Face Transformers</span>
-			                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">PEFT (LoRA)</span>
-			                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">PyTorch</span>
-			                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Stack Overflow dataset</span>
-			                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Instruction-style finetuning</span>
-			                            </div> -->
-                            <div class="flex flex-col sm:flex-row gap-2 mt-auto">
-                                <a href="https://huggingface.co/kunjcr2/llama3-3b-lora-openhermes" target="_blank"
-                                    class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors w-full sm:w-auto justify-center">
-                                    <i class="fa-brands fa-hugging-face"></i>
-                                    Hugging Face
-                                </a> | 
-                                <a href="https://github.com/kunjcr2/llama-3.2-3b-openhermes"
-                                    target="_blank"
-                                    class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors w-full sm:w-auto justify-center">
-                                    GitHub
-                                </a>
-                            </div>
-							<!-- <a href="<link_to_be_added>" target="_blank" class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mt-2 font-semibold">
-			                                <i class="fa-brands fa-github"></i>
-			                                View on GitHub
-			                            </a> -->
-						</div>
-						<!-- theHelper Card -->
+						<!-- Qwen Fintune Card -->
 						<div
 							class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
 							<img src="./assets/qwen_image.png" alt="Qwen2.5-0.5B SFT + DPO project thumbnail"
@@ -395,6 +352,35 @@
                                 <a href="https://github.com/kunjcr2/how-llms-are-made/blob/main/docs/ml-and-dl/Reasoning Models/RLHF/DirectPreferenceOptimization.py" target="_blank"
                                     class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors w-full sm:w-auto justify-center">
                                     GitHub
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Kanting Card -->
+                        <div
+                            class="bg-black rounded-xl p-6 hover:shadow-lg hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
+                            <img src="./assets/devpost_kanting.png" alt="Kanting thumbnail"
+                                class="w-full h-48 object-cover rounded-lg mb-4" style="aspect-ratio:16/9;max-width:768px;max-height:432px;" />
+                            <strong class="text-xl font-semibold text-primary block mb-2">Kanting RAG</strong>
+                            <div class="flex gap-2 mb-3 flex-wrap">
+                                <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">MultiModal Retrieval
+                                    Augmented Generation</span>
+                            </div>
+                            <p class="text-gray-500 leading-relaxed mb-4">
+                                Developed <strong>Kanting</strong> as part of the CalHacks 12.0 project — a MultiModal Retrieval-Augmented Generation
+                                (RAG) system built using Python, Flask, Anthropic Claude API, LangChain, ChromaDB, and cloud deployment. The system
+                                exposes REST endpoints for natural-language queries, retrieving and generating both contextual text responses and
+                                precise video clips from YouTube content.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-2 mt-auto">
+                                <a href="https://devpost.com/software/kanting?_gl=1*rvqdp9*_gcl_au*MTk1NTk0MDUxMC4xNzYwNjczOTQ5*_ga*MTAxMzU5NTg5MS4xNzYwNjczOTUw*_ga_0YHJK3Y10M*czE3NjE3OTAxNzQkbzQkZzEkdDE3NjE3OTI0ODUkajUyJGwwJGgw" target="_blank"
+                                    class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors w-full sm:w-auto justify-center">
+                                    Devpost
+                                </a> | 
+                                <a href="https://github.com/kunjcr2/flask-kanting"
+                                    target="_blank"
+                                    class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors w-full sm:w-auto justify-center">
+                                    Github
                                 </a>
                             </div>
                         </div>
@@ -675,24 +661,33 @@
                     <i class="fa-solid fa-users-rectangle"></i> Hackathons
                 </h2>
                     <details>
-                        <summary class="text-primary cursor-pointer">Show all Hackathons</summary>
+                        <summary class="text-primary cursor-pointer p-5">Show all Hackathons</summary>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div
+                                class="bg-black rounded-xl p-6 hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
+                                <strong class="text-xl font-semibold text-primary block mb-4">CalHacks 12.0</strong>
+                                <div class="space-y-2 text-gray-500">
+                                    <p><strong class="text-gray-100">Where:</strong> Palace of Fine Arts, SF</p>
+                                    <p><strong class="text-gray-100">When:</strong> October 24, 2025 - October 26, 2025</p>
+                                    <p><strong class="text-gray-100">Project:</strong> Kanting</p>
+                                </div>
+                            </div>
                             <div
                                 class="bg-black rounded-xl p-6 hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
                                 <strong class="text-xl font-semibold text-primary block mb-4">MCP AWS Agentic Challange</strong>
                                 <div class="space-y-2 text-gray-500">
                                     <p><strong class="text-gray-100">Where:</strong> AWS Builder Loft, SF</p>
-                                    <p><strong class="text-gray-100">When:</strong> 7/25/2025</p>
+                                    <p><strong class="text-gray-100">When:</strong> July 25, 2025</p>
                                     <p><strong class="text-gray-100">Project:</strong> Nango Automation</p>
                                 </div>
                             </div>
                             <div
                                 class="bg-black rounded-xl p-6 hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
-                                <strong class="text-xl font-semibold text-primary block mb-4">Cal Hacks 11.0</strong>
+                                <strong class="text-xl font-semibold text-primary block mb-4">HackMerced</strong>
                                 <div class="space-y-2 text-gray-500">
-                                    <p><strong class="text-gray-100">Where:</strong> San Francisco, CA</p>
-                                    <p><strong class="text-gray-100">When:</strong> October 18, 2024 – October 20, 2024</p>
-                                    <p><strong class="text-gray-100">Project:</strong> Workout Web App</p>
+                                    <p><strong class="text-gray-100">Where:</strong> University of California, Merced</p>
+                                    <p><strong class="text-gray-100">When:</strong> March 9, 2025 – March 11, 2025</p>
+                                    <p><strong class="text-gray-100">Project:</strong> Web Detective (Updated)</p>
                                 </div>
                             </div>
                             <div
@@ -706,11 +701,11 @@
                             </div>
                             <div
                                 class="bg-black rounded-xl p-6 hover:shadow-neon hover:border-primary border border-transparent transition-all duration-300 flex flex-col">
-                                <strong class="text-xl font-semibold text-primary block mb-4">HackMerced</strong>
+                                <strong class="text-xl font-semibold text-primary block mb-4">Cal Hacks 11.0</strong>
                                 <div class="space-y-2 text-gray-500">
-                                    <p><strong class="text-gray-100">Where:</strong> University of California, Merced</p>
-                                    <p><strong class="text-gray-100">When:</strong> March 9, 2025 – March 11, 2025</p>
-                                    <p><strong class="text-gray-100">Project:</strong> Web Detective (Updated)</p>
+                                    <p><strong class="text-gray-100">Where:</strong> San Francisco, CA</p>
+                                    <p><strong class="text-gray-100">When:</strong> October 18, 2024 – October 20, 2024</p>
+                                    <p><strong class="text-gray-100">Project:</strong> Workout Web App</p>
                                 </div>
                             </div>
                         </div>
@@ -726,7 +721,7 @@
                 <div class="grid md:grid-cols-2 gap-6 mt-8">
                     <ul class="space-y-4">
                         <details>
-                            <summary class="text-primary cursor-pointer">Show all certificates</summary>
+                            <summary class="text-primary cursor-pointer p-5">Show all certificates</summary>
                             <ul class="space-y-4 mt-2">
                                 <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Programming for Everybody (Getting Started with Python) – University of Michigan</li>
                                 <li class="bg-black rounded-lg p-4 hover:translate-x-2 transition-transform">Python Data Structures – University of Michigan</li>
