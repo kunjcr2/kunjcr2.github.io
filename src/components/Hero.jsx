@@ -1,5 +1,3 @@
-
-
 function Hero() {
     const handleResumeDownload = () => {
         const link = document.createElement('a')
@@ -19,7 +17,7 @@ function Hero() {
                         <div className="lg:col-span-5 flex flex-col items-center">
                             <div className="relative mb-8">
                                 <img
-                                    src="/assets/headshot.JPG"
+                                    src="../../assets/headshot.JPG"
                                     alt="Kunj Shah headshot"
                                     className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-2 border-gray-400 shadow-md"
                                 />
