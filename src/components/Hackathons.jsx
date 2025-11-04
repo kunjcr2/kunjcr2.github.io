@@ -33,29 +33,26 @@ function Hackathons() {
     return (
         <section
             id="hackathons"
-            className="py-20 bg-white"
+            className="py-16 bg-white"
         >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
-                    <span className="inline-block px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-semibold mb-4">
-                        Competitions
-                    </span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                <div className="mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-mono">
                         Hackathons
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-lg text-gray-600 max-w-2xl">
                         Participating in competitive coding events and building innovative solutions under time constraints
                     </p>
                 </div>
 
-                <div className="max-w-6xl mx-auto">
+                <div className="max-w-5xl mx-auto">
                     <button
                         onClick={() => setIsExpanded(!isExpanded)}
-                        className="w-full md:w-auto mx-auto flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-all duration-300 mb-8"
+                        className="mb-6 px-5 py-2.5 bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition-colors"
                     >
                         {isExpanded ? 'Hide' : 'Show'} all Hackathons
                         <svg
-                            className={`w-5 h-5 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+                            className={`inline-block w-4 h-4 ml-2 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -65,38 +62,24 @@ function Hackathons() {
                     </button>
 
                     {isExpanded && (
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {hackathons.map((hackathon, index) => (
                                 <div
                                     key={index}
-                                    className="bg-gradient-to-br from-white to-gray-50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100"
+                                    className="bg-gray-50 border border-gray-200 p-5 hover:border-gray-300 transition-colors"
                                 >
-                                    <div className="flex items-start gap-4 mb-4">
-                                        <div className="flex-1">
-                                            <h3 className="text-xl font-bold text-gray-900 mb-3">
-                                                {hackathon.name}
-                                            </h3>
-                                            <div className="space-y-2">
-                                                <div className="flex items-center gap-2 text-gray-600">
-                                                    <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                    </svg>
-                                                    <span className="text-sm">{hackathon.where}</span>
-                                                </div>
-                                                <div className="flex items-center gap-2 text-gray-600">
-                                                    <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                                    </svg>
-                                                    <span className="text-sm">{hackathon.when}</span>
-                                                </div>
-                                                <div className="flex items-center gap-2 text-gray-700">
-                                                    <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                                                    </svg>
-                                                    <span className="text-sm font-semibold">{hackathon.project}</span>
-                                                </div>
-                                            </div>
+                                    <h3 className="text-lg font-bold text-gray-900 mb-3 font-mono">
+                                        {hackathon.name}
+                                    </h3>
+                                    <div className="space-y-1.5 text-sm">
+                                        <div className="text-gray-600">
+                                            <span className="font-medium">Location:</span> {hackathon.where}
+                                        </div>
+                                        <div className="text-gray-600">
+                                            <span className="font-medium">Date:</span> {hackathon.when}
+                                        </div>
+                                        <div className="text-gray-900 font-medium">
+                                            <span className="font-medium">Project:</span> {hackathon.project}
                                         </div>
                                     </div>
                                 </div>

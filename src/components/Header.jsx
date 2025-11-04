@@ -35,12 +35,12 @@ function Header() {
     ]
 
     return (
-        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-white/80 backdrop-blur-sm'}`}>
+        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md' : 'bg-white/95'}`}>
             <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-20">
+                <div className="flex items-center justify-between h-16 md:h-20">
                     <div className="flex items-center space-x-2">
-                        <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                            Sup !
+                        <span className="text-xl md:text-2xl font-bold text-gray-900 font-mono tracking-tight">
+                            KS
                         </span>
                     </div>
                     <ul className="hidden md:flex items-center space-x-1">
@@ -48,21 +48,18 @@ function Header() {
                             <li key={item.href}>
                                 <a
                                     href={item.href}
-                                    className={`relative px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-300 ${activeSection === item.href.replace('#', '')
-                                        ? 'text-blue-600 bg-blue-50'
-                                        : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                                    className={`px-4 py-2 text-sm font-medium transition-colors ${activeSection === item.href.replace('#', '')
+                                            ? 'text-gray-900 border-b-2 border-gray-900'
+                                            : 'text-gray-600 hover:text-gray-900'
                                         }`}
                                 >
                                     {item.label}
-                                    {activeSection === item.href.replace('#', '') && (
-                                        <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-blue-600 rounded-full"></span>
-                                    )}
                                 </a>
                             </li>
                         ))}
                     </ul>
                     {/* Mobile menu button */}
-                    <button className="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100">
+                    <button className="md:hidden p-2 text-gray-700 hover:text-gray-900">
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
