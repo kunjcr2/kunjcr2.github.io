@@ -58,7 +58,7 @@ function AboutContact() {
                         </div>
 
                         {/* Contact Form Section */}
-                        <div>
+                        <div className="flex flex-col justify-center">
                             <div className="bg-white border border-gray-200 p-6">
                                 <h3 className="text-xl font-bold text-gray-900 mb-5 font-mono">Contact</h3>
                                 <form

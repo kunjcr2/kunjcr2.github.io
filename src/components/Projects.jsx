@@ -11,7 +11,7 @@ function Projects() {
         },
         {
             title: 'Llama-3.2-3b Finetuned on OpenHermes',
-            image: '',
+            image: '/assets/llama.png',
             tags: ['~300k QA Pairs', 'LoRA Finetuning', '1.27->0.21 Train loss', 'vLLM and Docker used'],
             description: 'An instruction-tuned Llama-3.2-3B base model trained with LoRA on the OpenHermes dataset. This run transformed the base model into an instruct-capable assistant with only ~0.75% of parameters updated, making it lightweight, deployment-friendly, and packaged as a Docker image.',
             links: [

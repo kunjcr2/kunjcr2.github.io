@@ -70,7 +70,7 @@ function Certificates() {
                     </p>
                 </div>
 
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-5xl mx-auto flex justify-start">
                     <button
                         onClick={() => setIsExpanded(!isExpanded)}
                         className="mb-6 px-5 py-2.5 bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition-colors"

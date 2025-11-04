@@ -7,7 +7,7 @@ function Hackathons() {
         {
             name: 'MCP AWS Agentic Challange',
             where: 'AWS Builder Loft, SF',
-            when: '7/25/2025',
+            when: 'July 25, 2025',
             project: 'Nango Automation',
         },
         {
@@ -27,6 +27,12 @@ function Hackathons() {
             where: 'University of California, Merced',
             when: 'March 9, 2025 – March 11, 2025',
             project: 'Web Detective (Updated)',
+        },
+        {
+            name: 'CalHacks 12.0',
+            where: 'Palace of Fine Arts, SF',
+            when: 'October 24, 2025 – October 26, 2025',
+            project: 'Kantin AI',
         }
     ]
 
