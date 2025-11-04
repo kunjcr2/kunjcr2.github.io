@@ -1,72 +1,88 @@
-# Personal Portfolio Website
+# Kunj Shah - Portfolio Website
 
-🌐 Live at: [https://kunjcr2.github.io](https://kunjcr2.github.io)
-
-## Overview
-
-This is my personal portfolio website showcasing my skills, projects, and experience in AI/ML and Full-stack development. Built with modern web technologies and featuring a sleek, responsive design.
+A professional portfolio website built with React, JavaScript, and TailwindCSS.
 
 ## Features
 
-- 🎯 Interactive UI with smooth animations and transitions
-- 🌙 Dark theme with neon accents
-- 📱 Fully responsive design
-- 🔧 Section-based layout including:
-  - Experience
-  - Projects
-  - Hackathons
-  - LLM Projects
-  - Skills
-  - Certificates
-  - About Me
+- ✨ Modern, professional corporate design
+- 🚀 Built with React 18 and Vite
+- 🎨 Styled with TailwindCSS
+- 📱 Fully responsive
+- ⚡ Fast and optimized
+- 📄 Resume download functionality
+- 📧 Contact form integration
 
-## Technology Stack
+## Getting Started
 
-- HTML5
-- TailwindCSS for styling
-- JavaScript for interactivity
-- Font Awesome for icons
-- Custom animations and transitions
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Start the development server:
+
+```bash
+npm run dev
+```
+
+The site will be available at `http://localhost:3000`
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist` folder.
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
 
 ## Project Structure
 
 ```
-├── index.html          # Main portfolio page
-├── portfolioWeb-script.js   # JavaScript functionality
-├── assets/            # Static assets
-│   ├── flask-svgrepo-com.svg
-│   ├── langchain-color.svg
-│   ├── mediapipe.svg
-│   └── tailwindcss.svg
-└── projects/          # Individual project pages
-    ├── ideaCheck.html
-    ├── max.html
-    └── theHelper.html
+├── public/
+│   ├── assets/        # Images and static assets
+│   └── resumes/       # Resume PDFs
+├── src/
+│   ├── components/    # React components
+│   │   ├── Header.jsx
+│   │   ├── Hero.jsx
+│   │   ├── LLMProjects.jsx
+│   │   ├── Experience.jsx
+│   │   ├── Projects.jsx
+│   │   ├── Skills.jsx
+│   │   ├── Hackathons.jsx
+│   │   ├── Certificates.jsx
+│   │   ├── AboutContact.jsx
+│   │   ├── Footer.jsx
+│   │   ├── ScrollProgress.jsx
+│   │   └── BackToTop.jsx
+│   ├── App.jsx        # Main app component
+│   ├── main.jsx       # React entry point
+│   └── index.css      # Global styles
+├── index.html         # HTML template
+├── vite.config.js     # Vite configuration
+└── tailwind.config.js # TailwindCSS configuration
 ```
 
-## Key Sections
+## Technologies Used
 
-1. **Experience**: Details about roles at SparkSF, Dyna Grow Design Solutions, and SF Hack
-2. **Projects**: Showcase of AI and web development projects
-3. **LLM Projects**: Featuring custom GPT-style language model implementations
-4. **Skills**: Comprehensive display of technical skills in:
-   - Programming Languages
-   - AI/ML Technologies
-   - Web Development
-   - Tools & Technologies
-
-## Contact
-
-Feel free to reach out through the contact form on the website or connect via:
-
-- GitHub: [kunjcr2](https://github.com/kunjcr2)
-- LinkedIn: [View Profile](https://www.linkedin.com/in/kunjcr2/)
-
-## Local Development
-
-1. Clone the repository
-2. Open `index.html` in your browser
-3. Make changes and refresh to see updates
+- React 18
+- Vite
+- TailwindCSS
+- JavaScript (ES6+)
 
 ## License
 
