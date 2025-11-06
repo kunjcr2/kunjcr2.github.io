@@ -15,16 +15,9 @@ function Hero() {
                     <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                         {/* Left column - Image and Social Links */}
                         <div className="lg:col-span-5 flex flex-col items-center">
-                            <div className="relative mb-8">
-                                <img
-                                    src="../../assets/headshot.JPG"
-                                    alt="Kunj Shah headshot"
-                                    className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-2 border-gray-400 shadow-md"
-                                />
-                            </div>
 
                             {/* Social Links Grid */}
-                            <div className="grid grid-cols-5 gap-3 w-full max-w-xs">
+                            <div className="flex flex-row gap-3 max-w-xs md:flex md:flex-col">
                                 <a
                                     href="https://github.com/kunjcr2"
                                     target="_blank"
