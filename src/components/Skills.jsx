@@ -55,38 +55,41 @@ function Skills() {
     return (
         <section
             id="skills"
-            className="py-16 bg-white"
+            className="py-20 bg-slate-50"
         >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-mono">
+                <div className="mb-16 text-center md:text-left">
+                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 font-serif">
                         Technical Skills
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-2xl">
-                        A comprehensive toolkit spanning AI/ML, full-stack development, and modern software engineering practices
+                    <div className="w-20 h-1 bg-slate-900 rounded-full mb-6 md:mx-0 mx-auto"></div>
+                    <p className="text-lg text-slate-600 max-w-2xl">
+                        A comprehensive toolkit spanning AI/ML, full-stack development, and modern software engineering practices.
                     </p>
                 </div>
-                <div className="max-w-5xl mx-auto">
-                    <div className="bg-gray-50 border border-gray-200 p-6 md:p-8">
-                        <div className="space-y-6">
-                            {skillCategories.map((category, index) => (
-                                <div key={index}>
-                                    <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 pb-2 border-b border-gray-300 font-mono">
-                                        {category.title}
-                                    </h3>
-                                    <div className="flex flex-wrap gap-2">
-                                        {category.skills.map((skill, i) => (
-                                            <span
-                                                key={i}
-                                                className="inline-flex items-center border border-gray-300 text-gray-700 px-3 py-1 text-sm font-medium font-mono hover:bg-gray-100 transition-colors"
-                                            >
-                                                {skill}
-                                            </span>
-                                        ))}
-                                    </div>
+
+                <div className="max-w-6xl mx-auto">
+                    <div className="grid md:grid-cols-2 gap-6">
+                        {skillCategories.map((category, index) => (
+                            <div
+                                key={index}
+                                className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300"
+                            >
+                                <h3 className="text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 font-serif">
+                                    {category.title}
+                                </h3>
+                                <div className="flex flex-wrap gap-2">
+                                    {category.skills.map((skill, i) => (
+                                        <span
+                                            key={i}
+                                            className="inline-flex items-center px-3 py-1.5 bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-md hover:bg-slate-100 transition-colors"
+                                        >
+                                            {skill}
+                                        </span>
+                                    ))}
                                 </div>
-                            ))}
-                        </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

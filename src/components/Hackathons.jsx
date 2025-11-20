@@ -39,59 +39,64 @@ function Hackathons() {
     return (
         <section
             id="hackathons"
-            className="py-16 bg-white"
+            className="py-20 bg-white"
         >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-mono">
+                <div className="mb-16 text-center md:text-left">
+                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 font-serif">
                         Hackathons
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-2xl">
-                        Participating in competitive coding events and building innovative solutions under time constraints
+                    <div className="w-20 h-1 bg-slate-900 rounded-full mb-6 md:mx-0 mx-auto"></div>
+                    <p className="text-lg text-slate-600 max-w-2xl">
+                        Participating in competitive coding events and building innovative solutions under time constraints.
                     </p>
                 </div>
 
                 <div className="max-w-5xl mx-auto">
-                    <button
-                        onClick={() => setIsExpanded(!isExpanded)}
-                        className="mb-6 px-5 py-2.5 bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition-colors"
-                    >
-                        {isExpanded ? 'Hide' : 'Show'} all Hackathons
-                        <svg
-                            className={`inline-block w-4 h-4 ml-2 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
+                    <div className="flex justify-end mb-6">
+                        <button
+                            onClick={() => setIsExpanded(!isExpanded)}
+                            className="inline-flex items-center gap-2 px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:bg-slate-50 transition-colors shadow-sm"
                         >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
+                            {isExpanded ? 'Show Less' : 'Show All Hackathons'}
+                            <svg
+                                className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                    </div>
 
-                    {isExpanded && (
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {hackathons.map((hackathon, index) => (
-                                <div
-                                    key={index}
-                                    className="bg-gray-50 border border-gray-200 p-5 hover:border-gray-300 transition-colors"
-                                >
-                                    <h3 className="text-lg font-bold text-gray-900 mb-3 font-mono">
-                                        {hackathon.name}
-                                    </h3>
-                                    <div className="space-y-1.5 text-sm">
-                                        <div className="text-gray-600">
-                                            <span className="font-medium">Location:</span> {hackathon.where}
-                                        </div>
-                                        <div className="text-gray-600">
-                                            <span className="font-medium">Date:</span> {hackathon.when}
-                                        </div>
-                                        <div className="text-gray-900 font-medium">
-                                            <span className="font-medium">Project:</span> {hackathon.project}
-                                        </div>
+                    <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 transition-all duration-500 ${isExpanded ? 'opacity-100' : 'opacity-100'}`}>
+                        {/* Always show first 2, or all if expanded */}
+                        {(isExpanded ? hackathons : hackathons.slice(0, 2)).map((hackathon, index) => (
+                            <div
+                                key={index}
+                                className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-md transition-all duration-300"
+                            >
+                                <h3 className="text-xl font-bold text-slate-900 mb-4 font-serif">
+                                    {hackathon.name}
+                                </h3>
+                                <div className="space-y-3 text-sm">
+                                    <div className="flex items-start gap-3">
+                                        <div className="min-w-[80px] font-medium text-slate-500">Location:</div>
+                                        <div className="text-slate-700">{hackathon.where}</div>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <div className="min-w-[80px] font-medium text-slate-500">Date:</div>
+                                        <div className="text-slate-700">{hackathon.when}</div>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <div className="min-w-[80px] font-medium text-slate-500">Project:</div>
+                                        <div className="text-slate-900 font-semibold">{hackathon.project}</div>
                                     </div>
                                 </div>
-                            ))}
-                        </div>
-                    )}
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

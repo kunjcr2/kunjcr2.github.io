@@ -58,46 +58,50 @@ function Certificates() {
     return (
         <section
             id="certificates"
-            className="py-16 bg-gray-50"
+            className="py-20 bg-slate-50"
         >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-mono">
+                <div className="mb-16 text-center md:text-left">
+                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 font-serif">
                         Certificates & Courses
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-2xl">
-                        Continuous learning through online courses and certifications from top universities and platforms
+                    <div className="w-20 h-1 bg-slate-900 rounded-full mb-6 md:mx-0 mx-auto"></div>
+                    <p className="text-lg text-slate-600 max-w-2xl">
+                        Continuous learning through online courses and certifications from top universities and platforms.
                     </p>
                 </div>
 
-                <div className="max-w-5xl mx-auto flex justify-start">
-                    <button
-                        onClick={() => setIsExpanded(!isExpanded)}
-                        className="mb-6 px-5 py-2.5 bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition-colors"
-                    >
-                        {isExpanded ? 'Hide' : 'Show'} all certificates
-                        <svg
-                            className={`inline-block w-4 h-4 ml-2 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
+                <div className="max-w-6xl mx-auto">
+                    <div className="flex justify-end mb-6">
+                        <button
+                            onClick={() => setIsExpanded(!isExpanded)}
+                            className="inline-flex items-center gap-2 px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:bg-slate-50 transition-colors shadow-sm"
                         >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
+                            {isExpanded ? 'Show Less' : 'Show All Certificates'}
+                            <svg
+                                className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                    </div>
 
-                    {isExpanded && (
-                        <div className="grid md:grid-cols-2 gap-3">
-                            {certificates.map((cert, index) => (
-                                <div
-                                    key={index}
-                                    className="bg-white border border-gray-200 p-3 hover:border-gray-300 transition-colors"
-                                >
-                                    <p className="text-gray-700 text-sm leading-relaxed">{cert}</p>
-                                </div>
-                            ))}
-                        </div>
-                    )}
+                    <div className={`grid md:grid-cols-2 gap-4 transition-all duration-500 ${isExpanded ? 'opacity-100' : 'opacity-100'}`}>
+                        {(isExpanded ? certificates : certificates.slice(0, 6)).map((cert, index) => (
+                            <div
+                                key={index}
+                                className="bg-white border border-slate-200 rounded-lg p-4 hover:shadow-sm transition-all duration-300 flex items-start gap-3"
+                            >
+                                <svg className="w-5 h-5 text-slate-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <p className="text-slate-700 text-sm leading-relaxed font-medium">{cert}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
