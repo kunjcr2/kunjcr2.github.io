@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ArrowUp } from 'lucide-react'
 
 function BackToTop() {
     const [isVisible, setIsVisible] = useState(false)
@@ -21,22 +23,20 @@ function BackToTop() {
     }
 
     return (
-        <button
-            onClick={scrollToTop}
-            className={`fixed bottom-8 right-8 z-50 bg-primary hover:bg-primary/90 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-                }`}
-            aria-label="Back to top"
-        >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-            >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-            </svg>
-        </button>
+        <AnimatePresence>
+            {isVisible && (
+                <motion.button
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.5 }}
+                    onClick={scrollToTop}
+                    className="fixed bottom-8 right-8 z-50 bg-slate-900/80 backdrop-blur border border-cyan-500/30 text-cyan-400 p-3 rounded-full shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:bg-cyan-500 hover:text-white transition-all duration-300 group"
+                    aria-label="Back to top"
+                >
+                    <ArrowUp size={24} className="group-hover:-translate-y-1 transition-transform" />
+                </motion.button>
+            )}
+        </AnimatePresence>
     )
 }
 

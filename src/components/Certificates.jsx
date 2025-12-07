@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Award, ChevronDown, CheckCircle2 } from 'lucide-react'
 
 function Certificates() {
     const [isExpanded, setIsExpanded] = useState(false)
@@ -56,51 +58,50 @@ function Certificates() {
     ]
 
     return (
-        <section
-            id="certificates"
-            className="py-20 bg-slate-50"
-        >
+        <section id="certificates" className="py-20 relative">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="mb-16 text-center md:text-left">
-                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 font-serif">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-16 text-center md:text-left"
+                >
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-display flex items-center gap-3">
+                        <Award className="text-purple-400" size={32} />
                         Certificates & Courses
                     </h2>
-                    <div className="w-20 h-1 bg-slate-900 rounded-full mb-6 md:mx-0 mx-auto"></div>
-                    <p className="text-lg text-slate-600 max-w-2xl">
+                    <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-6"></div>
+                    <p className="text-lg text-slate-400 max-w-2xl">
                         Continuous learning through online courses and certifications from top universities and platforms.
                     </p>
-                </div>
+                </motion.div>
 
                 <div className="max-w-6xl mx-auto">
                     <div className="flex justify-end mb-6">
                         <button
                             onClick={() => setIsExpanded(!isExpanded)}
-                            className="inline-flex items-center gap-2 px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:bg-slate-50 transition-colors shadow-sm"
+                            className="inline-flex items-center gap-2 px-5 py-2 bg-slate-900 border border-slate-700 text-slate-300 text-sm font-medium rounded-lg hover:bg-slate-800 transition-colors"
                         >
                             {isExpanded ? 'Show Less' : 'Show All Certificates'}
-                            <svg
-                                className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                            </svg>
+                            <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
                         </button>
                     </div>
 
-                    <div className={`grid md:grid-cols-2 gap-4 transition-all duration-500 ${isExpanded ? 'opacity-100' : 'opacity-100'}`}>
-                        {(isExpanded ? certificates : certificates.slice(0, 6)).map((cert, index) => (
-                            <div
-                                key={index}
-                                className="bg-white border border-slate-200 rounded-lg p-4 hover:shadow-sm transition-all duration-300 flex items-start gap-3"
-                            >
-                                <svg className="w-5 h-5 text-slate-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                <p className="text-slate-700 text-sm leading-relaxed font-medium">{cert}</p>
-                            </div>
-                        ))}
+                    <div className="grid md:grid-cols-2 gap-4">
+                        <AnimatePresence>
+                            {(isExpanded ? certificates : certificates.slice(0, 6)).map((cert, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: 'auto' }}
+                                    exit={{ opacity: 0, height: 0 }}
+                                    className="bg-slate-900/40 border border-slate-800/50 rounded-lg p-4 hover:border-purple-500/30 transition-all duration-300 flex items-start gap-3"
+                                >
+                                    <CheckCircle2 className="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0" />
+                                    <p className="text-slate-300 text-sm leading-relaxed font-medium">{cert}</p>
+                                </motion.div>
+                            ))}
+                        </AnimatePresence>
                     </div>
                 </div>
             </div>

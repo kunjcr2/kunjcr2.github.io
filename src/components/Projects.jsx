@@ -1,19 +1,22 @@
+import { motion } from 'framer-motion'
+import { Github, ExternalLink } from 'lucide-react'
+
 function Projects() {
     const projects = [
         {
             title: 'Max - AI Voice Assistant',
             image: '/assets/max_thumb.jpg',
             tags: ['90% voice accuracy', '8 tools', 'Langchain/OpenAI'],
-            description: 'Developed a voice-activated AI assistant using Langchain, OpenAI, Hugging Face, and SpeechRecognition to automate tasks like web search, YouTube streaming, and emailing, enhancing user experience through hands-free interaction.',
+            description: 'Developed a voice-activated AI assistant using Langchain, OpenAI, Hugging Face, and SpeechRecognition to automate tasks like web search, YouTube streaming, and emailing.',
             links: [
                 { label: 'GitHub', url: 'https://github.com/kunjcr2/Max' }
             ]
         },
         {
-            title: 'Llama-3.2-3b Finetuned on OpenHermes',
+            title: 'Llama-3.2-3b Finetuned',
             image: '/assets/llama.png',
-            tags: ['~300k QA Pairs', 'LoRA Finetuning', '1.27->0.21 Train loss', 'vLLM and Docker used'],
-            description: 'An instruction-tuned Llama-3.2-3B base model trained with LoRA on the OpenHermes dataset. This run transformed the base model into an instruct-capable assistant with only ~0.75% of parameters updated, making it lightweight, deployment-friendly, and packaged as a Docker image.',
+            tags: ['~300k QA Pairs', 'LoRA', 'vLLM', 'Docker'],
+            description: 'An instruction-tuned Llama-3.2-3B base model trained with LoRA on the OpenHermes dataset. This run transformed the base model into an instruct-capable assistant with only ~0.75% of parameters updated.',
             links: [
                 { label: 'Hugging Face', url: 'https://huggingface.co/kunjcr2/llama3-3b-lora-openhermes' },
                 { label: 'GitHub', url: 'https://github.com/kunjcr2/llama-3.2-3b-openhermes' }
@@ -22,8 +25,8 @@ function Projects() {
         {
             title: 'Qwen2.5-0.5B SFT + DPO',
             image: '/assets/qwen_image.png',
-            tags: ['85M tokens (SFT)', '1.48 val loss (SFT)', '66% reward accuracy (DPO)'],
-            description: 'A two-stage pipeline where the model was first trained on 85M tokens with supervised fine-tuning, reaching a validation loss of 1.48, and then optimized with Direct Preference Optimization to achieve 66% reward accuracy.',
+            tags: ['85M tokens', '1.48 val loss', '66% reward acc'],
+            description: 'A two-stage pipeline where the model was first trained on 85M tokens with supervised fine-tuning, and then optimized with Direct Preference Optimization to achieve 66% reward accuracy.',
             links: [
                 { label: 'Hugging Face', url: 'https://huggingface.co/kunjcr2/qwen2.5-0.5b-sft-dpo' },
                 { label: 'GitHub', url: 'https://github.com/kunjcr2/how-llms-are-made/blob/main/docs/ml-and-dl/Reasoning Models/RLHF/DirectPreferenceOptimization.py' }
@@ -32,92 +35,92 @@ function Projects() {
     ]
 
     return (
-        <section
-            id="projects"
-            className="py-20 bg-white"
-        >
+        <section id="projects" className="py-20 relative">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="mb-16 text-center md:text-left">
-                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 font-serif">
-                        Projects
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-16 text-center md:text-left"
+                >
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-display flex items-center gap-3">
+                        <Github className="text-cyan-400" size={32} />
+                        Open Source
                     </h2>
-                    <div className="w-20 h-1 bg-slate-900 rounded-full mb-6 md:mx-0 mx-auto"></div>
-                    <p className="text-lg text-slate-600 max-w-2xl">
+                    <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full mb-6"></div>
+                    <p className="text-lg text-slate-400 max-w-2xl">
                         A collection of AI-powered applications and machine learning projects.
                     </p>
-                </div>
+                </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                     {projects.map((project, index) => (
-                        <div
+                        <motion.div
                             key={index}
-                            className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/30 hover:shadow-lg transition-all duration-300 flex flex-col group"
                         >
-                            {/* Image */}
-                            <div className="relative h-48 overflow-hidden bg-slate-100 border-b border-slate-100">
+                            {/* Image Placeholder if image fails or just a consistent gradient */}
+                            <div className="relative h-48 overflow-hidden bg-slate-800 border-b border-slate-800">
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10"></div>
                                 <img
                                     src={project.image}
                                     alt={`${project.title} thumbnail`}
-                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
+                                    onError={(e) => {
+                                        e.target.style.display = 'none';
+                                        e.target.parentElement.classList.add('bg-gradient-to-br', 'from-cyan-900', 'to-slate-800');
+                                    }}
                                 />
                             </div>
 
-                            {/* Content */}
                             <div className="p-6 flex flex-col flex-grow">
-                                <h3 className="text-xl font-bold text-slate-900 mb-3 font-serif">
+                                <h3 className="text-xl font-bold text-white mb-3 font-display group-hover:text-cyan-400 transition-colors">
                                     {project.title}
                                 </h3>
 
-                                {/* Tags */}
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     {project.tags.map((tag, i) => (
-                                        <span
-                                            key={i}
-                                            className="px-2.5 py-1 bg-slate-50 border border-slate-200 text-slate-600 text-xs font-medium rounded-md"
-                                        >
+                                        <span key={i} className="px-2.5 py-1 bg-slate-950 border border-slate-800 text-slate-400 text-xs font-mono rounded-md">
                                             {tag}
                                         </span>
                                     ))}
                                 </div>
 
-                                {/* Description */}
-                                <p className="text-slate-600 leading-relaxed mb-6 text-sm flex-grow">
+                                <p className="text-slate-400 leading-relaxed mb-6 text-sm flex-grow">
                                     {project.description}
                                 </p>
 
-                                {/* Links */}
-                                <div className="flex flex-wrap gap-4 mt-auto pt-4 border-t border-slate-100">
+                                <div className="flex flex-wrap gap-4 mt-auto pt-4 border-t border-slate-800">
                                     {project.links.map((link, i) => (
                                         <a
                                             key={i}
                                             href={link.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-1.5 text-slate-900 hover:text-blue-700 text-sm font-medium transition-colors group"
+                                            className="inline-flex items-center gap-1.5 text-slate-300 hover:text-cyan-400 text-sm font-medium transition-colors"
                                         >
                                             {link.label}
-                                            <svg className="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                            </svg>
+                                            <ExternalLink size={14} />
                                         </a>
                                     ))}
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
 
-                {/* More projects link */}
                 <div className="text-center mt-16">
                     <a
                         href="https://github.com/kunjcr2/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-8 py-3 bg-slate-900 text-white text-sm font-medium rounded-lg hover:bg-slate-800 transition-all shadow-md hover:shadow-lg"
+                        className="inline-flex items-center gap-2 px-8 py-3 bg-slate-900 text-white border border-slate-700 text-sm font-medium rounded-lg hover:bg-slate-800 transition-all hover:border-cyan-500/50"
                     >
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                        </svg>
+                        <Github size={20} />
                         View All Projects on GitHub
                     </a>
                 </div>

@@ -11,6 +11,7 @@ import Hackathons from './components/Hackathons'
 import Certificates from './components/Certificates'
 import AboutContact from './components/AboutContact'
 import Footer from './components/Footer'
+import BackgroundLayout from './components/BackgroundLayout'
 
 function App() {
     useEffect(() => {
@@ -64,12 +65,12 @@ function App() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
+        <BackgroundLayout>
             <ScrollProgress />
             <BackToTop />
             <Header />
             <Hero />
-            <main>
+            <main className="space-y-24 pb-24">
                 <LLMProjects />
                 <Experience />
                 <Projects />
@@ -79,7 +80,7 @@ function App() {
                 <AboutContact />
             </main>
             <Footer />
-        </div>
+        </BackgroundLayout>
     )
 }
 
