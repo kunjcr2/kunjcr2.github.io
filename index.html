@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>K</text></svg>" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Kunj Shah | Deep Learning & LLM Engineer Portfolio. Specialize in pre-training, fine-tuning, and alignment of Large Language Models." />
+  <title>Kunj Shah | Deep Learning Engineer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Elegant minimalist scrollbar */
+    ::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .dark ::-webkit-scrollbar-thumb {
+      background: #27272a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #e4e4e7;
+    }
+
+    .dark ::-webkit-scrollbar-thumb:hover {
+      background: #3f3f46;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d4d4d8;
+    }
+
+    /* Page Fade-in Animation */
+    @keyframes pageFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-page {
+      animation: pageFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .scrollbar-none::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-none {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+
+<body
+  class="bg-[#faf9f6] text-zinc-900 dark:bg-[#121212] dark:text-zinc-100 font-sans min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Single Unified Header (Wider container, Sticky, Single Row) -->
+  <header
+    class="border-b border-zinc-200/50 dark:border-zinc-800/50 sticky top-0 bg-[#faf9f6]/95 dark:bg-[#121212]/95 backdrop-blur-md z-50 transition-colors duration-200">
+    <div
+      class="max-w-5xl mx-auto px-6 py-4 md:py-0 md:h-24 flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-0">
+
+      <div class="flex items-baseline justify-between md:justify-start gap-3 w-full md:w-auto">
+        <a href="#home"
+          class="font-serif text-3xl md:text-4xl font-semibold tracking-tight hover:opacity-75 transition-opacity">Kunj
+          Shah</a>
+        <span class="text-xs md:text-[13px] font-mono text-zinc-400">DL & LLM Engineer</span>
+      </div>
+
+      <!-- Navigation & Controls -->
+      <div class="flex items-center justify-between md:justify-end gap-5 md:gap-7 w-full md:w-auto">
+        <nav class="flex gap-4 md:gap-5 font-mono text-xs md:text-[13px] overflow-x-auto scrollbar-none py-1">
+          <a href="#home" data-nav-target="home"
+            class="nav-link py-1 text-zinc-900 dark:text-zinc-100 border-b-2 border-zinc-900 dark:border-zinc-100 font-medium transition-all">
+            Home
+          </a>
+          <a href="#experience" data-nav-target="experience"
+            class="nav-link py-1 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 border-b-2 border-transparent transition-all">
+            Experience
+          </a>
+          <a href="#projects" data-nav-target="projects"
+            class="nav-link py-1 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 border-b-2 border-transparent transition-all">
+            Projects
+          </a>
+          <a href="#skills" data-nav-target="skills"
+            class="nav-link py-1 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 border-b-2 border-transparent transition-all">
+            Skills & Credentials
+          </a>
+          <a href="#contact" data-nav-target="contact"
+            class="nav-link py-1 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 border-b-2 border-transparent transition-all">
+            Contact
+          </a>
+        </nav>
+
+        <span class="h-4 w-px bg-zinc-200 dark:bg-zinc-800 hidden sm:inline"></span>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle"
+          class="p-1.5 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50 rounded transition-colors text-zinc-500 dark:text-zinc-400 flex-shrink-0"
+          aria-label="Toggle theme">
+          <i data-lucide="sun" class="w-4.5 h-4.5 hidden dark:block"></i>
+          <i data-lucide="moon" class="w-4.5 h-4.5 block dark:hidden"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Content Frame (Widen to max-w-5xl, removed left margin guide-line to center the content columns) -->
+  <div class="flex-grow max-w-5xl mx-auto w-full px-6 py-10 md:py-12">
+    <main class="min-w-0">
+
+      <!-- ==================== HOME PAGE VIEW ==================== -->
+      <section id="page-home" class="page-view animate-page space-y-10">
+        <!-- Title & Subtitle -->
+        <div class="space-y-4 max-w-4xl">
+          <h1
+            class="font-serif text-3xl font-light tracking-tight md:text-4xl text-zinc-900 dark:text-zinc-50 leading-tight">
+            Large Language Models: architecture, pre-training, and alignment safety.
+          </h1>
+          <p class="text-zinc-600 dark:text-zinc-300 leading-relaxed text-sm md:text-base max-w-3xl font-light">
+            I am a deep learning engineer focused on optimizing model capability, safety frameworks, and scaling
+            efficiency. I research transformer pre-training architectures and develop safety-critical alignment
+            frameworks to prevent prompt injections and tool exploitation.
+          </p>
+        </div>
+
+        <!-- Meta Grid -->
+        <div
+          class="pt-6 border-t border-zinc-200/50 dark:border-zinc-850 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-y-3 font-mono text-xs text-zinc-550 w-full">
+          <span>San Jose, CA</span>
+          <div class="flex flex-wrap gap-x-6 gap-y-2">
+            <a href="mailto:kunjcr2@gmail.com"
+              class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Email</a>
+            <a href="https://github.com/kunjcr2" target="_blank" rel="noopener noreferrer"
+              class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">GitHub</a>
+            <a href="https://huggingface.co/kunjcr2" target="_blank" rel="noopener noreferrer"
+              class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors font-medium">Hugging Face</a>
+            <a href="https://www.linkedin.com/in/kunjcr2/" target="_blank" rel="noopener noreferrer"
+              class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">LinkedIn</a>
+            <a href="public/resumes/Kunj P. Shah.pdf" target="_blank"
+              class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors font-medium">Resume (PDF)</a>
+          </div>
+        </div>
+
+        <!-- Research Focus -->
+        <div class="space-y-6 pt-10 border-t border-zinc-200/50 dark:border-zinc-850">
+          <h2 class="text-xs font-mono tracking-widest uppercase text-zinc-400 dark:text-zinc-500">Core Areas</h2>
+          <div class="grid gap-8 md:grid-cols-2">
+            <div class="space-y-2">
+              <h3 class="font-serif text-lg font-medium text-zinc-800 dark:text-zinc-200">Pre-training & Adaptation</h3>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed font-light">
+                Pre-training medical and domain-specific transformers using SwiGLU, Grouped Query Attention, and Rotary
+                Embeddings. Architecting memory-efficient adaptations using LoRA/QLoRA on cloud clusters.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <h3 class="font-serif text-lg font-medium text-zinc-800 dark:text-zinc-200">Alignment & Model Safety</h3>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed font-light">
+                Implementing alignment feedback loops (SFT, DPO, GRPO) for safety and instruction compliance. Developing
+                inline BERT-based firewalls that run with low latency (~20ms) to filter prompt injections.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Status -->
+        <div class="pt-8 border-t border-zinc-200/50 dark:border-zinc-850 text-xs font-mono text-zinc-400">
+          Incoming Deep Learning Intern at <a href="https://www.a10networks.com/" target="_blank"
+            rel="noopener noreferrer" class="underline hover:text-zinc-900 dark:hover:text-zinc-100">A10 Networks</a>
+          (May 2026).
+        </div>
+      </section>
+
+      <!-- ==================== EXPERIENCE PAGE VIEW ==================== -->
+      <section id="page-experience" class="page-view hidden animate-page space-y-12">
+        <div class="space-y-1">
+          <h1 class="font-serif text-2xl font-light">Experience & Education</h1>
+          <p class="text-xs font-mono text-zinc-400">Chronology of professional internships and academic coursework.</p>
+        </div>
+
+        <!-- Experience Timeline -->
+        <div class="space-y-8 pt-6 border-t border-zinc-200/50 dark:border-zinc-850">
+
+          <!-- Experience 1 -->
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="md:col-span-1 space-y-1">
+              <p class="text-xs font-mono text-zinc-500 whitespace-nowrap">May 2026 — Aug 2026</p>
+              <p class="text-xs font-semibold text-zinc-700 dark:text-zinc-300">A10 Networks</p>
+              <p class="text-[10px] text-zinc-400">San Jose, CA</p>
+            </div>
+            <div class="md:col-span-3 space-y-2">
+              <h3 class="font-serif text-lg font-medium text-zinc-800 dark:text-zinc-200">
+                Deep Learning Intern <span class="font-sans text-xs font-normal text-zinc-500">— LLM Research & Model
+                  Safety</span>
+              </h3>
+              <p class="text-xs text-zinc-600 dark:text-zinc-300 leading-relaxed font-light">
+                Incoming intern focusing on Large Language Model (LLM) safety frameworks, alignment strategies, and
+                interpretability research. Special emphasis on building robust alignment feedback evaluations.
+              </p>
+              <div class="font-mono text-[10px] text-zinc-400">
+                PyTorch · Transformers · LLMs · Model Safety · Alignment
+              </div>
+            </div>
+          </div>
+
+          <hr class="border-zinc-200/40 dark:border-zinc-850" />
+
+          <!-- Experience 2 -->
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="md:col-span-1 space-y-1">
+              <p class="text-xs font-mono text-zinc-500 whitespace-nowrap">Oct 2025 — Present</p>
+              <p class="text-xs font-semibold text-zinc-700 dark:text-zinc-300">Routes Technologies</p>
+              <p class="text-[10px] text-zinc-400">Remote, TX</p>
+            </div>
+            <div class="md:col-span-3 space-y-2">
+              <h3 class="font-serif text-lg font-medium text-zinc-800 dark:text-zinc-200">
+                AI Engineering Intern
+              </h3>
+              <p class="text-xs text-zinc-600 dark:text-zinc-300 leading-relaxed font-light">
+                Collaborating with the team to train, benchmark, and deploy AI models. Responsible for dataset
+                pipelines, robust tool integration, and cloud serving infrastructure.
+              </p>
+              <ul class="list-disc pl-4 space-y-1.5 text-xs text-zinc-500 leading-relaxed font-light">
+                <li>Engineered a fully functional Web Crawler with Scrapy and BeautifulSoup4, enabling ethical
+                  extraction of company-relevant data from open web sources.</li>
+                <li>Developed a Flask-based Instagram Graph API integration leveraging Python and Pydantic, featuring
+                  OAuth Authentication and intelligent hashtag/recipe detection.</li>
+                <li>Deployed AI model endpoints via Azure ML Studio managed endpoints, configuring load balancing and
+                  auto-scaling for production-grade reliability.</li>
+              </ul>
+              <div class="font-mono text-[10px] text-zinc-400 pt-1">
+                Python · PyTorch · Transformers · Azure ML · Weights & Biases · Flask · Scrapy · BeautifulSoup4
+              </div>
+            </div>
+          </div>
+
+          <hr class="border-zinc-200/40 dark:border-zinc-850" />
+
+          <!-- Experience 3 -->
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="md:col-span-1 space-y-1">
+              <p class="text-xs font-mono text-zinc-500 whitespace-nowrap">May 2025 — Aug 2025</p>
+              <p class="text-xs font-semibold text-zinc-700 dark:text-zinc-300">Dreamable Inc.</p>
+              <p class="text-[10px] text-zinc-400">San Francisco, CA</p>
+            </div>
+            <div class="md:col-span-3 space-y-2">
+              <h3 class="font-serif text-lg font-medium text-zinc-800 dark:text-zinc-200">
+                AI Engineering Intern
+              </h3>
+              <p class="text-xs text-zinc-600 dark:text-zinc-300 leading-relaxed font-light">
+                Contributed to fine-tuning Qwen-2.5-7B using Hugging Face, PyTorch, and LoRA on Lambda Cloud for cost
+                and memory efficient training — deployed on GCP Cloud Run.
+              </p>
+              <ul class="list-disc pl-4 space-y-1.5 text-xs text-zinc-500 leading-relaxed font-light">
+                <li>Spearheaded dataset curation pipeline using Pandas, NumPy, and Hugging Face Datasets library for Q&A
+                  task optimization.</li>
+                <li>Tuned model hyperparameters to achieve low validation loss, tracking runs and metrics via Weights &
+                  Biases.</li>
+                <li>Built an AI-powered Outreach Agent using LangChain, Exa.ai, and OpenAI API to automate and scale
+                  messaging workflows.</li>
+              </ul>
+              <div class="font-mono text-[10px] text-zinc-400 pt-1">
+                Hugging Face · PyTorch · LoRA · GCP Cloud Run · Lambda · LangChain · OpenAI · Weights & Biases
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Education History -->
+        <div class="space-y-6 pt-10 border-t border-zinc-200/50 dark:border-zinc-850">
+          <h2 class="text-xs font-mono tracking-widest uppercase text-zinc-400 dark:text-zinc-500">Education</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Education 1 -->
+            <div class="space-y-2">
+              <div class="flex justify-between items-baseline gap-1">
+                <h3 class="font-serif text-base font-medium text-zinc-850 dark:text-zinc-150">San Jose State University
+                </h3>
+                <span class="text-xs font-mono text-zinc-400">Jan 2026 — May 2027</span>
+              </div>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 font-mono">B.S., Computer Science · GPA 3.94 / 4.00</p>
+              <ul class="list-disc pl-4 text-xs text-zinc-500 space-y-1 leading-relaxed font-light">
+                <li>Researching Next Sentence Prediction mechanisms with Professor William.</li>
+                <li>Participated in CodePath Advanced Data Structures & Algorithms training.</li>
+                <li>Dean's List Honoree.</li>
+              </ul>
+              <p class="text-[10px] font-mono text-zinc-400 pt-1">
+                Coursework: Advanced Data Structures & Algorithms · Computer Architecture · Full Stack Software
+                Engineering
+              </p>
+            </div>
+
+            <!-- Education 2 -->
+            <div class="space-y-2">
+              <div class="flex justify-between items-baseline gap-1">
+                <h3 class="font-serif text-base font-medium text-zinc-850 dark:text-zinc-150">San Francisco State
+                  University</h3>
+                <span class="text-xs font-mono text-zinc-400">Jul 2023 — Dec 2025</span>
+              </div>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 font-mono">Computer Science (Transferred)</p>
+              <ul class="list-disc pl-4 text-xs text-zinc-500 space-y-1 leading-relaxed font-light">
+                <li>Vice President of AI Club & Tech Lead at SparkSF.</li>
+                <li>Hosted SFHacks (400+ attendees).</li>
+                <li>Dean's List Honoree.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ==================== PROJECTS & MODELS PAGE VIEW ==================== -->
+      <section id="page-projects" class="page-view hidden animate-page space-y-12">
+        <div class="space-y-1">
+          <h1 class="font-serif text-2xl font-light">Projects & Models</h1>
+          <p class="text-xs font-mono text-zinc-400">Pre-trained models, adapters, and open source repositories.</p>
+        </div>
+
+        <!-- Code Repositories in a 2-Column Grid to reduce space -->
+        <div class="space-y-6 pt-6 border-t border-zinc-200/50 dark:border-zinc-850">
+          <h2 class="text-xs font-mono tracking-widest uppercase text-zinc-400 dark:text-zinc-500">Repositories</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Project 1 -->
+            <div
+              class="border border-zinc-200/60 dark:border-zinc-800/60 p-6 rounded-lg bg-zinc-100/10 dark:bg-zinc-900/10 hover:border-zinc-350 dark:hover:border-zinc-700 transition-colors flex flex-col justify-between space-y-3">
+              <div class="space-y-2">
+                <h3 class="font-serif text-base font-medium text-zinc-850 dark:text-zinc-150">LLM Firewall for Agentic
+                  Tool-Calling</h3>
+                <p class="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed font-light">
+                  Low-latency inline defense intercepting prompt injections before tools execute.
+                </p>
+                <ul class="list-disc pl-4 text-[11px] text-zinc-500 space-y-1 leading-relaxed font-light">
+                  <li>Fine-tuned GPT-2 attacker loop reduced bypass from 23.1% to 3.72%.</li>
+                  <li>BERT classifier with LoRA adapter adds only ~20ms latency.</li>
+                </ul>
+              </div>
+              <a href="https://github.com/kunjcr2/llms-from-scratch/tree/main/models/llm-firewall" target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-[10px] font-mono text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline self-start">
+                GitHub Source <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+
+            <!-- Project 2 -->
+            <div
+              class="border border-zinc-200/60 dark:border-zinc-800/60 p-6 rounded-lg bg-zinc-100/10 dark:bg-zinc-900/10 hover:border-zinc-350 dark:hover:border-zinc-700 transition-colors flex flex-col justify-between space-y-3">
+              <div class="space-y-2">
+                <h3 class="font-serif text-base font-medium text-zinc-850 dark:text-zinc-150">theHelper — AI Research
+                  Assistant</h3>
+                <p class="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed font-light">
+                  Production RAG service backed by local FAISS vector index, LangChain recursive chunking, and
+                  cross-encoder reranking.
+                </p>
+                <ul class="list-disc pl-4 text-[11px] text-zinc-500 space-y-1 leading-relaxed font-light">
+                  <li>Local observability layer tracing query-metrics into daily JSONL.</li>
+                  <li>Automated QA evaluation gated in a regression-prevention CI pipeline.</li>
+                </ul>
+              </div>
+              <a href="https://github.com/kunjcr2/theHelper" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-[10px] font-mono text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline self-start">
+                GitHub Source <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+
+            <!-- Project 3 -->
+            <div
+              class="border border-zinc-200/60 dark:border-zinc-800/60 p-6 rounded-lg bg-zinc-100/10 dark:bg-zinc-900/10 hover:border-zinc-350 dark:hover:border-zinc-700 transition-colors flex flex-col justify-between space-y-3">
+              <div class="space-y-2">
+                <h3 class="font-serif text-base font-medium text-zinc-850 dark:text-zinc-150">Kanting — Video RAG System
+                </h3>
+                <p class="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed font-light">
+                  Indices YouTube video transcripts utilizing Whisper. Performs semantic search across
+                  Sentence-Transformers database returning Claude clip coordinates.
+                </p>
+              </div>
+              <a href="https://github.com/kunjcr2/kanting" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-[10px] font-mono text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline self-start">
+                GitHub Source <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+
+            <!-- Project 4 -->
+            <div
+              class="border border-zinc-200/60 dark:border-zinc-800/60 p-6 rounded-lg bg-zinc-100/10 dark:bg-zinc-900/10 hover:border-zinc-350 dark:hover:border-zinc-700 transition-colors flex flex-col justify-between space-y-3">
+              <div class="space-y-2">
+                <h3 class="font-serif text-base font-medium text-zinc-850 dark:text-zinc-150">End-to-End LLM
+                  Post-Pretraining Pipeline</h3>
+                <p class="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed font-light">
+                  Production post-pretraining script covering Supervised Fine-Tuning (SFT) and GRPO policy alignment.
+                  Configured on StableLM 1.6B datasets.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-x-3 gap-y-1 font-mono text-[9px] text-zinc-400">
+                <a href="https://github.com/kunjcr2/end-to-end-post-pretraining" target="_blank"
+                  rel="noopener noreferrer" class="hover:text-zinc-900 dark:hover:text-zinc-100 underline">
+                  GitHub
+                </a>
+                <a href="https://huggingface.co/kunjcr2/stablelm-1.6b-finetuned-aligned" target="_blank"
+                  rel="noopener noreferrer" class="hover:text-zinc-900 dark:hover:text-zinc-100 underline">
+                  HF Model
+                </a>
+                <a href="https://wandb.ai/kunjcr2-dreamable/huggingface/runs/qds5kqi2" target="_blank"
+                  rel="noopener noreferrer" class="hover:text-zinc-900 dark:hover:text-zinc-100 underline">
+                  WandB Run
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div
+              class="border border-zinc-200/60 dark:border-zinc-800/60 p-6 rounded-lg bg-zinc-100/10 dark:bg-zinc-900/10 hover:border-zinc-350 dark:hover:border-zinc-700 transition-colors flex flex-col justify-between space-y-3">
+              <div class="space-y-2">
+                <h3 class="font-serif text-base font-medium text-zinc-850 dark:text-zinc-150">GatorGPT</h3>
+                <p class="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed font-light">
+                  63M parameter transformer model optimized for consumer GPUs. Implements Grouped Query Attention (GQA)
+                  and RoPE architecture.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-3 font-mono text-[9px] text-zinc-400">
+                <a href="https://github.com/kunjcr2/GatorGPT" target="_blank" rel="noopener noreferrer"
+                  class="hover:text-zinc-900 dark:hover:text-zinc-100 underline">
+                  GitHub
+                </a>
+                <a href="https://huggingface.co/kunjcr2/GatorGPT2" target="_blank" rel="noopener noreferrer"
+                  class="hover:text-zinc-900 dark:hover:text-zinc-100 underline">
+                  HF Model
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div
+              class="border border-zinc-200/60 dark:border-zinc-800/60 p-6 rounded-lg bg-zinc-100/10 dark:bg-zinc-900/10 hover:border-zinc-350 dark:hover:border-zinc-700 transition-colors flex flex-col justify-between space-y-3">
+              <div class="space-y-2">
+                <h3 class="font-serif text-base font-medium text-zinc-850 dark:text-zinc-150">How LLMs Are Made</h3>
+                <p class="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed font-light">
+                  Deep architectural logs and code constructing GPT-2, DeepSeek MoE, and Kimi from absolute scratch.
+                </p>
+              </div>
+              <a href="https://github.com/kunjcr2/how-llms-are-made" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-[10px] font-mono text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline self-start">
+                GitHub Source <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Trained Models -->
+        <div class="space-y-6 pt-10 border-t border-zinc-200/50 dark:border-zinc-850">
+          <h2 class="text-xs font-mono tracking-widest uppercase text-zinc-400 dark:text-zinc-500">Hugging Face Weights
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Model 1 -->
+            <div class="space-y-1">
+              <div class="flex items-baseline gap-2">
+                <h3 class="font-serif text-base font-medium text-zinc-800 dark:text-zinc-200">MedAssistGPT</h3>
+                <span class="text-[10px] font-mono text-zinc-400">303M & 401M</span>
+              </div>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                Medical-domain transformers pretrained on PubMed scientific papers. Implements SwiGLU, Grouped Query
+                Attention, and Rotary Embeddings.
+              </p>
+              <a href="https://huggingface.co/kunjcr2/MedAssistGPT" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-[10px] font-mono text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline">
+                Hugging Face Weights <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+
+            <!-- Model 2 -->
+            <div class="space-y-1">
+              <div class="flex items-baseline gap-2">
+                <h3 class="font-serif text-base font-medium text-zinc-800 dark:text-zinc-200">Qwen2.5-0.5B SFT+DPO</h3>
+                <span class="text-[10px] font-mono text-zinc-400">0.5B</span>
+              </div>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                Fine-tuned chat model using Supervised Fine-Tuning and Direct Preference Optimization adapters on
+                instruction-following datasets.
+              </p>
+              <a href="https://huggingface.co/kunjcr2/qwen2.5-0.5b-sft-dpo" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-[10px] font-mono text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline">
+                Hugging Face Weights <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+
+            <!-- Model 3 -->
+            <div class="space-y-1">
+              <div class="flex items-baseline gap-2">
+                <h3 class="font-serif text-base font-medium text-zinc-800 dark:text-zinc-200">Llama-3.2-3B OpenHermes
+                </h3>
+                <span class="text-[10px] font-mono text-zinc-400">3B</span>
+              </div>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                QLoRA adaptation of Llama-3.2-3B on filtered OpenHermes conversational datasets, tracking low validation
+                scores.
+              </p>
+              <a href="https://huggingface.co/kunjcr2/llama3-3b-lora-openhermes" target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-[10px] font-mono text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline">
+                Hugging Face Weights <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+
+            <!-- Model 4 -->
+            <div class="space-y-1">
+              <div class="flex items-baseline gap-2">
+                <h3 class="font-serif text-base font-medium text-zinc-800 dark:text-zinc-200">StableLM 1.6B SFT+GRPO
+                </h3>
+                <span class="text-[10px] font-mono text-zinc-400">1.6B</span>
+              </div>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                A StableLM base model aligned via Group Relative Policy Optimization on PKU safety preferences for
+                secure utility.
+              </p>
+              <a href="https://huggingface.co/kunjcr2/stablelm-1.6b-finetuned-aligned" target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-[10px] font-mono text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline">
+                Hugging Face Weights <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ==================== SKILLS & CREDENTIALS PAGE VIEW ==================== -->
+      <section id="page-skills" class="page-view hidden animate-page space-y-12">
+        <div class="space-y-1">
+          <h1 class="font-serif text-2xl font-light">Skills & Credentials</h1>
+          <p class="text-xs font-mono text-zinc-400">Technical expertise, hackathons, and certifications.</p>
+        </div>
+
+        <!-- Skills Grid -->
+        <div
+          class="grid gap-8 pt-6 border-t border-zinc-200/50 dark:border-zinc-850 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- Programming -->
+          <div class="space-y-3">
+            <h3 class="font-serif text-base font-medium text-zinc-800 dark:text-zinc-200">Programming</h3>
+            <p class="text-[11px] text-zinc-550 dark:text-zinc-400 leading-relaxed font-mono">
+              Python · SQL · Java · JavaScript · C++ · HTML5/CSS · TailwindCSS · Bash · R · Git · Linux
+            </p>
+          </div>
+
+          <!-- Machine Learning & NLP -->
+          <div class="space-y-3">
+            <h3 class="font-serif text-base font-medium text-zinc-800 dark:text-zinc-200">ML & NLP</h3>
+            <p class="text-[11px] text-zinc-550 dark:text-zinc-400 leading-relaxed font-mono">
+              PyTorch · TensorFlow · Scikit-learn · Pandas · NumPy · Neural Networks · LangChain · OpenCV · FAISS ·
+              Sentence Transformers · Whisper · BART · Matplotlib
+            </p>
+          </div>
+
+          <!-- LLM Engineering -->
+          <div class="space-y-3">
+            <h3 class="font-serif text-base font-medium text-zinc-800 dark:text-zinc-200">LLM Engineering</h3>
+            <p class="text-[11px] text-zinc-550 dark:text-zinc-400 leading-relaxed font-mono">
+              Transformers · SFT/DPO/GRPO/PPO · Model Training & Inference · vLLM · LoRA/PEFT · TRL · Quantization ·
+              Vector Databases · Prompt Engineering
+            </p>
+          </div>
+
+          <!-- Backend Systems -->
+          <div class="space-y-3">
+            <h3 class="font-serif text-base font-medium text-zinc-800 dark:text-zinc-200">Backend & Cloud</h3>
+            <p class="text-[11px] text-zinc-550 dark:text-zinc-400 leading-relaxed font-mono">
+              FastAPI · Flask · Streamlit · PostgreSQL · MongoDB · MySQL · Pydantic · Docker · Azure ML Studio · GCP ·
+              Scrapy · BeautifulSoup · OAuth · Nginx · CI/CD
+            </p>
+          </div>
+        </div>
+
+        <hr class="border-t border-dashed border-zinc-200 dark:border-zinc-800 my-4" />
+
+        <!-- Hackathons & Certifications Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 pt-4">
+
+          <!-- Left Column: Hackathons -->
+          <div class="space-y-6">
+            <h2 class="text-xs font-mono tracking-widest uppercase text-zinc-400 dark:text-zinc-500">Hackathons</h2>
+
+            <div class="space-y-4 text-xs">
+              <div class="space-y-1">
+                <div class="flex justify-between items-baseline gap-1">
+                  <span class="font-serif text-sm font-medium text-zinc-850 dark:text-zinc-150">CalHacks 12.0</span>
+                  <span class="text-[10px] font-mono text-zinc-400">Oct 2025</span>
+                </div>
+                <p class="text-zinc-400 font-mono text-[10px]">Palace of Fine Arts, SF · Project: Kanting</p>
+              </div>
+
+              <div class="space-y-1">
+                <div class="flex justify-between items-baseline gap-1">
+                  <span class="font-serif text-sm font-medium text-zinc-850 dark:text-zinc-150">MCP AWS Agentic
+                    Challenge</span>
+                  <span class="text-[10px] font-mono text-zinc-400">Jul 2025</span>
+                </div>
+                <p class="text-zinc-400 font-mono text-[10px]">AWS Builder Loft, SF · Project: Nango Automation</p>
+              </div>
+
+              <div class="space-y-1">
+                <div class="flex justify-between items-baseline gap-1">
+                  <span class="font-serif text-sm font-medium text-zinc-850 dark:text-zinc-150">SacHacks</span>
+                  <span class="text-[10px] font-mono text-zinc-400">Mar 2025</span>
+                </div>
+                <p class="text-zinc-400 font-mono text-[10px]">Virtual · Project: Web Detective</p>
+              </div>
+
+              <div class="space-y-1">
+                <div class="flex justify-between items-baseline gap-1">
+                  <span class="font-serif text-sm font-medium text-zinc-850 dark:text-zinc-150">HackMerced</span>
+                  <span class="text-[10px] font-mono text-zinc-400">Mar 2025</span>
+                </div>
+                <p class="text-zinc-400 font-mono text-[10px]">UC Merced · Project: Web Detective</p>
+              </div>
+
+              <div class="space-y-1">
+                <div class="flex justify-between items-baseline gap-1">
+                  <span class="font-serif text-sm font-medium text-zinc-850 dark:text-zinc-150">Cal Hacks 11.0</span>
+                  <span class="text-[10px] font-mono text-zinc-400">Oct 2024</span>
+                </div>
+                <p class="text-zinc-400 font-mono text-[10px]">San Francisco, CA · Project: Workout Web App</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Certificates -->
+          <div class="space-y-6">
+            <h2 class="text-xs font-mono tracking-widest uppercase text-zinc-400 dark:text-zinc-500">Certificates</h2>
+
+            <!-- All Certificates List -->
+            <ul class="list-disc pl-4 text-xs text-zinc-500 space-y-2 leading-relaxed font-light">
+              <li>AI Memory: Exploring and Building LLM Memory Systems — LinkedIn (Jul 2025)</li>
+              <li>Automate Development Tasks with OpenAI's Codex — LinkedIn (Jul 2025)</li>
+              <li>Fine-Tuning for LLMs: From Beginner to Advanced — LinkedIn (Jul 2025)</li>
+              <li>Model Context Protocol (MCP): Hands-On with Agentic AI — LinkedIn (Jul 2025)</li>
+              <li>Introduction to Generative AI — Google Cloud Education (Jan 2024)</li>
+              <li>Crash Course on Python — Google Career Certificates (Jan 2024)</li>
+              <li>Introduction to Programming Using Python — University of Michigan (Apr 2023)</li>
+              <li>Python — University of Michigan</li>
+              <li>Introduction to Web Development — UC Davis (Jan 2024)</li>
+              <li>Introduction to Complex Analysis — Wesleyan University (Jul 2022)</li>
+              <li>Understanding Einstein: The Special Theory of Relativity — Stanford University (Mar 2022)</li>
+              <li>Calculus through Data & Modelling: Integration Applications — Johns Hopkins University</li>
+              <li>Calculus through Data & Modelling: Series and Integration — Johns Hopkins University</li>
+              <li>Calculus through Data & Modelling: Techniques of Integration — Johns Hopkins University</li>
+              <li>Calculus through Data & Modelling: Vector Calculus — Johns Hopkins University</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== CONTACT PAGE VIEW ==================== -->
+      <section id="page-contact" class="page-view hidden animate-page space-y-8">
+        <div class="space-y-1">
+          <h1 class="font-serif text-2xl font-light">Get in Touch</h1>
+          <p class="text-xs font-mono text-zinc-400">Send a brief message to open collaboration.</p>
+        </div>
+
+        <div class="grid md:grid-cols-5 gap-8 pt-6 border-t border-zinc-200/50 dark:border-zinc-850">
+
+          <div class="md:col-span-2 space-y-4 text-xs font-mono text-zinc-500">
+            <p class="leading-relaxed font-light">
+              If you have inquiries about custom fine-tuning runs, alignment evaluation, or model safety audits, get in
+              touch directly:
+            </p>
+            <div class="space-y-1">
+              <p class="text-[10px] uppercase text-zinc-400 dark:text-zinc-500">Direct</p>
+              <a href="mailto:kunjcr2@gmail.com"
+                class="underline text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 font-medium">kunjcr2@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="md:col-span-3">
+            <div
+              class="w-full overflow-hidden rounded border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/10">
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdLanvgNt7DR23VJYfHKKmYYnuA5r8l1YqwXqsspJUcCMkggg/viewform?embedded=true"
+                class="w-full" height="380" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Footer -->
+  <footer
+    class="border-t border-zinc-200/50 dark:border-zinc-850 py-8 bg-zinc-100/30 dark:bg-zinc-900/10 transition-colors duration-200 mt-auto">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-[10px] font-mono text-zinc-400">
+        &copy; 2026 Kunj Shah · Single HTML portfolio page.
+      </div>
+      <div class="flex gap-4 text-[10px] font-mono text-zinc-400">
+        <a href="https://github.com/kunjcr2" target="_blank" rel="noopener noreferrer"
+          class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">GitHub</a>
+        <a href="https://www.linkedin.com/in/kunjcr2/" target="_blank" rel="noopener noreferrer"
+          class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">LinkedIn</a>
+        <a href="mailto:kunjcr2@gmail.com"
+          class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Single-file Application JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // ==================== THEME HANDLER ====================
+      const themeToggle = document.getElementById("theme-toggle");
+
+      function setTheme(isDark) {
+        if (isDark) {
+          document.documentElement.classList.add("dark");
+          localStorage.theme = "dark";
+        } else {
+          document.documentElement.classList.remove("dark");
+          localStorage.theme = "light";
+        }
+      }
+
+      // Initialize Theme
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        setTheme(true);
+      } else {
+        setTheme(false);
+      }
+
+      themeToggle.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.contains("dark");
+        setTheme(!isDark);
+      });
+
+      // ==================== ROUTING / STATE SWITCHER ====================
+      const navLinks = document.querySelectorAll(".nav-link");
+      const pageSections = document.querySelectorAll(".page-view");
+
+      function navigateTo(targetId) {
+        let activeId = targetId.replace("#", "") || "home";
+        if (activeId === "credentials") activeId = "skills";
+
+        // Hide all views, show target view with animation
+        pageSections.forEach(section => {
+          if (section.id === `page-${activeId}`) {
+            section.classList.remove("hidden");
+            // Retrigger animation
+            section.classList.remove("animate-page");
+            void section.offsetWidth; // Trigger reflow to restart animation
+            section.classList.add("animate-page");
+          } else {
+            section.classList.add("hidden");
+          }
+        });
+
+        // Update nav links styling
+        navLinks.forEach(link => {
+          const navTarget = link.getAttribute("data-nav-target");
+          if (navTarget === activeId) {
+            link.className = "nav-link py-1 text-zinc-900 dark:text-zinc-100 border-b-2 border-zinc-900 dark:border-zinc-100 font-medium transition-all";
+          } else {
+            link.className = "nav-link py-1 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 border-b-2 border-transparent transition-all";
+          }
+        });
+      }
+
+      // Router listeners
+      window.addEventListener("hashchange", () => {
+        navigateTo(window.location.hash);
+      });
+
+      // Handle direct load with hash
+      if (window.location.hash) {
+        navigateTo(window.location.hash);
+      } else {
+        navigateTo("home");
+      }
+
+
+    });
+  </script>
+</body>
+
+</html>
