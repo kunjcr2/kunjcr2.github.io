@@ -21,6 +21,8 @@ The site is designed to be a fast, modern, and minimalist single-page applicatio
 ```text
 kunjcr2.github.io/
 ├── index.html       # Single-file HTML containing structure, custom styles, and router logic
+├── Kunj.pdf         # Professional Resume (PDF format)
+├── Kunj.docx        # Professional Resume (DOCX format)
 └── README.md        # Project documentation (this file)
 ```
 
@@ -45,7 +47,7 @@ Custom design system configurations (such as custom colors and typography scales
 
 ---
 
-## Notes & Missing Assets
+## Technical Notes
 
-1. **Resume Link**: The site links to `Kunj.pdf` in the root directory of this repository. Make sure you place your resume file with the name `Kunj.pdf` in this directory so that the "Resume (PDF)" button functions correctly.
+1. **Resume Link**: The website's resume button points to `Kunj.pdf` located in the root directory of this repository.
 2. **Tailwind Class Support**: Several non-standard utility classes (e.g. `zinc-850`, `zinc-550`, `zinc-150`, `zinc-350`, and `w-4.5`/`h-4.5`) are configured directly in the inline `tailwind.config` to extend Tailwind's default palette and spacing scale dynamically.
