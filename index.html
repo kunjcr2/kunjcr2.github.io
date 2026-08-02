@@ -312,11 +312,11 @@
               <div class="md:col-span-3 space-y-2">
                 <h3 class="font-serif text-base font-medium">Deep Learning Engineer Intern <span class="font-sans text-xs font-normal text-zinc-500">— AI Security Team</span></h3>
                 <ul class="list-disc pl-4 space-y-1.5 text-xs text-zinc-500 leading-relaxed font-light">
-                  <li>Developed a multimodal input/output guardrail system for VLM-powered applications, fine-tuning a compact language model with SFT and chain-of-thought rationales — serving sub-200ms inference on Hopper GPUs via vLLM and outperforming leading public guardrail benchmarks by a wide margin.</li>
-                  <li>Built a custom multi-stage data annotation and verification pipeline to overcome the scarcity and noise of publicly available multimodal safety datasets, producing a curated training corpus with inter-annotator agreement metrics and automated quality filtering.</li>
-                  <li>Designed a systematic evaluation framework with false-negative-rate diagnostics across safety policy categories, collaborating within a 3-person AI Security team with weekly syncs and Weights &amp; Biases experiment tracking.</li>
+                  <li>Built and deployed a multimodal ML guardrail system spanning text, image+text, and multi-turn modalities in Python/PyTorch, serving production inference on in-house Hopper GPU infrastructure with a 5-person AI Security team.</li>
+                  <li>Trained two separate LLM guardrail models (text-only and multimodal) with SFT and chain-of-thought rationales, then performed SLERP model merging for unified generative-AI safety coverage without retraining on combined data — deployed via vLLM with CI/CD at sub-200ms latency, outperforming leading public guardrail benchmarks.</li>
+                  <li>Built a multi-stage data annotation and feature engineering pipeline (Pandas, Hugging Face) with automated quality filtering and inter-annotator agreement metrics, versioned with Git; designed a Weights &amp; Biases evaluation framework to communicate diagnostics to non-technical stakeholders and drive safety policy decisions.</li>
                 </ul>
-                <p class="text-[10px] font-mono text-zinc-400 pt-1">Vision Language Models · SFT · vLLM · AI Safety · Guardrails · W&amp;B</p>
+                <p class="text-[10px] font-mono text-zinc-400 pt-1">Python · PyTorch · SFT · SLERP · vLLM · Hugging Face · W&amp;B · CI/CD</p>
               </div>
             </div>
 
@@ -329,13 +329,13 @@
                 <p class="text-[10px] text-zinc-400">Remote, TX</p>
               </div>
               <div class="md:col-span-3 space-y-2">
-                <h3 class="font-serif text-base font-medium">AI Engineering Intern</h3>
+                <h3 class="font-serif text-base font-medium">AI Engineer Intern</h3>
                 <ul class="list-disc pl-4 space-y-1.5 text-xs text-zinc-500 leading-relaxed font-light">
-                  <li>Architected an LLM-powered NL-to-SQL RAG pipeline with few-shot prompting, 470+ synonym mappings, parameterized SQL sanitization, session memory, and W&amp;B observability — deployed across 5 Azure ML managed endpoints.</li>
-                  <li>Built SVD collaborative filtering (scikit-surprise) with NDCG@5 / Precision@K evaluation, paired with an LLM-driven taste profiler via nightly ETL.</li>
-                  <li>Engineered multi-source recipe ingestion: Scrapy, Instagram Graph API, TikTok oEmbed, GPT-4o-mini classification, and faster-whisper audio fallback.</li>
+                  <li>Architected AI/ML pipelines in Python, SQL, and Azure Cloud, deploying models in production across 5 managed online endpoints with CI/CD and Weights &amp; Biases observability.</li>
+                  <li>Built an LLM-powered NL-to-SQL pipeline with few-shot prompting, 470+ synonym mappings for input normalization, and parameterized SQL sanitization; developed an SVD collaborative filtering recommender (scikit-learn, Pandas) evaluated via NDCG@5 and Precision/Recall@K through a nightly ETL job.</li>
+                  <li>Engineered multi-source data ingestion (Scrapy, GPT-4o-mini classification) and an ingredient normalization pipeline using sentence-transformer embeddings (all-MiniLM-L6-v2) with tiered matching — exact match → 5,400+ synonym table → cosine similarity — deployed as chained Azure ML pipelines achieving 99%+ resolution coverage.</li>
                 </ul>
-                <p class="text-[10px] font-mono text-zinc-400 pt-1">Python · Azure ML · OpenAI API · scikit-surprise · W&amp;B · Scrapy</p>
+                <p class="text-[10px] font-mono text-zinc-400 pt-1">Python · SQL · Azure ML · scikit-learn · Sentence-Transformers · W&amp;B · Scrapy</p>
               </div>
             </div>
 
@@ -348,13 +348,13 @@
                 <p class="text-[10px] text-zinc-400">San Francisco, CA</p>
               </div>
               <div class="md:col-span-3 space-y-2">
-                <h3 class="font-serif text-base font-medium">AI Engineering Intern</h3>
+                <h3 class="font-serif text-base font-medium">AI/ML Engineering Intern</h3>
                 <ul class="list-disc pl-4 space-y-1.5 text-xs text-zinc-500 leading-relaxed font-light">
-                  <li>Fine-tuned Qwen-2.5-7B using Hugging Face, PyTorch, and LoRA on Lambda Cloud — deployed on GCP Cloud Run.</li>
-                  <li>Spearheaded dataset curation pipeline using Pandas, NumPy, and HF Datasets for Q&amp;A task optimization.</li>
-                  <li>Built an AI-powered Outreach Agent using LangChain, Exa.ai, and OpenAI API.</li>
+                  <li>Trained, tuned, and deployed ML models in a production Cloud environment using Python, PyTorch, TensorFlow, and Hugging Face, working collaboratively with a cross-functional team.</li>
+                  <li>Fine-tuned Qwen-2.5-7B via LoRA on GCP Cloud to lower training cost while delivering a Q&amp;A model with comparable accuracy within budget, tracking experiments with Weights &amp; Biases.</li>
+                  <li>Curated NLP datasets (Pandas, NumPy, Hugging Face Datasets) to improve training data quality, and built a generative-AI outreach agent with LangChain and the OpenAI API to automate messaging workflows and increase response rates.</li>
                 </ul>
-                <p class="text-[10px] font-mono text-zinc-400 pt-1">Hugging Face · PyTorch · LoRA · GCP Cloud Run · LangChain · W&amp;B</p>
+                <p class="text-[10px] font-mono text-zinc-400 pt-1">Python · PyTorch · TensorFlow · Hugging Face · LoRA · GCP · LangChain · W&amp;B</p>
               </div>
             </div>
 
