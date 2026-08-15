@@ -209,8 +209,13 @@
       <p class="font-serif text-xl font-semibold leading-tight">Kunj Shah</p>
       <p class="text-[11px] font-mono text-zinc-500 dark:text-zinc-400">DL &amp; LLM Engineer</p>
       <div class="pt-1 space-y-0.5">
-        <p class="text-[10px] font-mono text-zinc-400 dark:text-zinc-500">Currently</p>
-        <p class="text-[11px] font-mono text-zinc-600 dark:text-zinc-300">Deep Learning Engineer Intern</p>
+        <p class="text-[10px] font-mono text-zinc-600 dark:text-zinc-300">Currently</p>
+        <p class="text-[11px] font-mono text-zinc-600 dark:text-zinc-300">AI Engineer</p>
+        <p class="text-[10px] font-mono text-zinc-600 dark:text-zinc-300">Routes Technologies · Remote</p>
+      </div>
+      <div class="pt-1 space-y-0.5">
+        <p class="text-[10px] font-mono text-zinc-400 dark:text-zinc-500">Previously</p>
+        <p class="text-[11px] font-mono text-zinc-400 dark:text-zinc-500">Deep Learning Engineer Intern</p>
         <p class="text-[10px] font-mono text-zinc-400 dark:text-zinc-500">A10 Networks · San Jose, CA</p>
       </div>
     </div>
@@ -312,9 +317,9 @@
               <div class="md:col-span-3 space-y-2">
                 <h3 class="font-serif text-base font-medium">Deep Learning Engineer Intern <span class="font-sans text-xs font-normal text-zinc-500">— AI Firewall Team</span></h3>
                 <ul class="list-disc pl-4 space-y-1.5 text-xs text-zinc-500 leading-relaxed font-light">
-                  <li>Built and deployed a multimodal ML guardrail system spanning text, image+text, and multi-turn modalities in Python/PyTorch, serving production inference on in-house Hopper GPU infrastructure with the AI Firewall team.</li>
-                  <li>Trained LLM guardrail models for text-only and multimodal safety coverage with SFT and chain-of-thought rationales, then performed SLERP model merging for unified generative-AI safety coverage without retraining on combined data.</li>
-                  <li>Built a data annotation and feature engineering pipeline (Pandas, Hugging Face) with automated quality filtering and inter-annotator agreement metrics, versioned with Git; designed a Weights &amp; Biases evaluation framework to communicate diagnostics to non-technical stakeholders and drive safety policy decisions.</li>
+                  <li>Architected and trained TrooperViz, a multimodal safety guardrail model built with Python, PyTorch, and Hugging Face Transformers, enabling comprehensive evaluation of text, image-text inputs, multi-turn conversations, and assistant-generated outputs across diverse safety categories.</li>
+                  <li>Fine-tuned a vision-language model for multimodal safety classification and merged it with a text-only guardrail model using SLERP, creating a unified safety system with broader coverage across visual, conversational, and generative-AI interactions.</li>
+                  <li>Engineered end-to-end data and evaluation workflows—including annotation, Pandas-based preprocessing, synthetic multi-turn conversation generation, model benchmarking, and interactive inference via Gradio and vLLM—streamlining the testing pipeline and accelerating safety assessments.</li>
                 </ul>
                 <p class="text-[10px] font-mono text-zinc-400 pt-1">Python · PyTorch · SFT · SLERP · vLLM · Hugging Face · W&amp;B · CI/CD</p>
               </div>
@@ -331,9 +336,9 @@
               <div class="md:col-span-3 space-y-2">
                 <h3 class="font-serif text-base font-medium">AI Engineer Intern</h3>
                 <ul class="list-disc pl-4 space-y-1.5 text-xs text-zinc-500 leading-relaxed font-light">
-                  <li>Architected AI/ML pipelines in Python, SQL, and Azure Cloud, deploying models in production across 5 managed online endpoints with CI/CD and Weights &amp; Biases observability.</li>
-                  <li>Built an LLM-powered NL-to-SQL pipeline with few-shot prompting, 470+ synonym mappings for input normalization, and parameterized SQL sanitization; developed an SVD collaborative filtering recommender (scikit-learn, Pandas) evaluated via NDCG@5 and Precision/Recall@K through a nightly ETL job.</li>
-                  <li>Engineered multi-source data ingestion (Scrapy, GPT-4o-mini classification) and an ingredient normalization pipeline using sentence-transformer embeddings (all-MiniLM-L6-v2) with tiered matching — exact match → 5,400+ synonym table → cosine similarity — deployed as chained Azure ML pipelines achieving 99%+ resolution coverage.</li>
+                  <li>Architected an LLM-powered NL-to-SQL RAG pipeline with few-shot prompting, input normalization (470+ synonym mappings), parameterized SQL sanitization, session memory, and Weights &amp; Biases observability—deployed across 5 Azure ML managed online endpoints.</li>
+                  <li>Built an SVD collaborative-filtering recommendation pipeline on Azure ML, evaluated with precision, recall, and MAP metrics, and paired it with an LLM-driven taste profiler that batch-generates user preference vectors in a nightly ETL job, resulting in more relevant recommendations and faster cold-start handling.</li>
+                  <li>Engineered a multi-source recipe ingestion system using a Scrapy crawler with JSON-LD extraction, Instagram Graph API and TikTok oEmbed integrations, GPT-4o-mini for recipe classification, lingua for language filtering, and faster-whisper for audio transcription fallback, which expanded the recipe catalog and cut ingestion latency.</li>
                 </ul>
                 <p class="text-[10px] font-mono text-zinc-400 pt-1">Python · SQL · Azure ML · scikit-learn · Sentence-Transformers · W&amp;B · Scrapy</p>
               </div>
