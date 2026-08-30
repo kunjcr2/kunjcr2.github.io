@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Astrophotography by Kunj Shah">
+  <title>Astrophotography | Kunj Shah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark');
+    tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'], mono: ['JetBrains Mono', 'monospace'] } } } };
+  </script>
+  <style>
+    html { -webkit-font-smoothing: antialiased; }
+    .gallery { columns: 1; column-gap: 1.25rem; }
+    .photo-card { break-inside: avoid; display: block; margin: 0 0 1.25rem; border-radius: .5rem; overflow: hidden; background: #18181b; }
+    .photo-card img { width: 100%; display: block; transition: transform 500ms cubic-bezier(.16,1,.3,1); }
+    .photo-card img + .fallback { display: none; }
+    .photo-card:hover img { transform: scale(1.025); }
+    .photo-caption { opacity: 0; transform: translateY(5px); transition: opacity 180ms ease, transform 180ms ease; }
+    .photo-card:hover .photo-caption, .photo-card:focus-visible .photo-caption { opacity: 1; transform: translateY(0); }
+    .fallback { min-height: 17rem; display: flex; align-items: end; padding: 1.25rem; background: linear-gradient(145deg, #151925, #07080d); }
+    @media (min-width: 640px) { .gallery { columns: 2; } }
+    @media (min-width: 1024px) { .gallery { columns: 3; } }
+  </style>
+</head>
+<body class="min-h-screen bg-[#faf9f6] text-zinc-900 dark:bg-[#111111] dark:text-zinc-100 font-sans transition-colors duration-200">
+  <header class="sticky top-0 z-10 border-b border-zinc-200/70 dark:border-zinc-800 bg-[#faf9f6]/90 dark:bg-[#111111]/90 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-xs font-mono text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors"><i data-lucide="arrow-left" class="w-4 h-4"></i> Portfolio</a>
+      <button id="theme-toggle" class="p-2 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" aria-label="Toggle theme"><i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i><i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i></button>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 sm:px-10 py-12 md:py-16">
+    <section id="gallery-view">
+      <div class="max-w-2xl mb-12">
+        <p class="text-[10px] font-mono tracking-[0.18em] uppercase text-zinc-400 mb-3">Outside of the terminal</p>
+        <h1 class="font-serif text-4xl md:text-5xl font-light">Astrophotography</h1>
+        <p class="mt-4 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">A collection of quiet nights, distant light, and the long exposure between them.</p>
+      </div>
+      <div id="gallery" class="gallery" aria-label="Astrophotography gallery"></div>
+    </section>
+
+    <section id="detail-view" class="hidden">
+      <a href="astrophotography.html" class="inline-flex items-center gap-2 text-xs font-mono text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors mb-8"><i data-lucide="arrow-left" class="w-4 h-4"></i> All photographs</a>
+      <div class="grid lg:grid-cols-[minmax(0,1.55fr)_minmax(19rem,.75fr)] gap-8 lg:gap-14 items-start">
+        <figure class="bg-zinc-950 rounded-sm overflow-hidden"><img id="detail-image" class="w-full max-h-[78vh] object-contain" alt=""></figure>
+        <div class="lg:pt-4">
+          <p id="detail-type" class="text-[10px] font-mono tracking-[0.18em] uppercase text-zinc-400"></p>
+          <h1 id="detail-title" class="font-serif text-4xl font-light mt-3"></h1>
+          <p id="detail-note" class="hidden text-sm leading-relaxed text-zinc-500 dark:text-zinc-400 mt-6"></p>
+          <dl class="grid grid-cols-2 gap-x-8 gap-y-6 mt-9 text-xs font-mono">
+            <div><dt class="text-zinc-400">Exposure</dt><dd id="detail-exposure" class="mt-1 text-zinc-800 dark:text-zinc-200"></dd></div>
+            <div><dt class="text-zinc-400">ISO</dt><dd id="detail-iso" class="mt-1 text-zinc-800 dark:text-zinc-200"></dd></div>
+            <div><dt class="text-zinc-400">Focal length</dt><dd id="detail-focal" class="mt-1 text-zinc-800 dark:text-zinc-200"></dd></div>
+            <div><dt class="text-zinc-400">Aperture</dt><dd id="detail-aperture" class="mt-1 text-zinc-800 dark:text-zinc-200"></dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      lucide.createIcons();
+      document.getElementById('theme-toggle').addEventListener('click', () => {
+        const isDark = !document.documentElement.classList.contains('dark');
+        document.documentElement.classList.toggle('dark', isDark);
+        localStorage.theme = isDark ? 'dark' : 'light';
+      });
+
+      const gallery = document.getElementById('gallery');
+      try {
+        const response = await fetch('assets/astrophotography/gallery.json');
+        if (!response.ok) throw new Error('Unable to load the gallery.');
+        const photos = await response.json();
+        const selected = Number(new URLSearchParams(window.location.search).get('photo'));
+        const photo = Number.isInteger(selected) && photos[selected] ? photos[selected] : null;
+
+        if (photo) {
+          document.getElementById('gallery-view').classList.add('hidden');
+          document.getElementById('detail-view').classList.remove('hidden');
+          document.title = `${photo.title} | Astrophotography | Kunj Shah`;
+          document.getElementById('detail-image').src = photo.src;
+          document.getElementById('detail-image').alt = photo.title;
+          document.getElementById('detail-title').textContent = photo.title;
+          document.getElementById('detail-type').textContent = photo.type;
+          document.getElementById('detail-exposure').textContent = photo.exposure;
+          document.getElementById('detail-iso').textContent = photo.iso;
+          document.getElementById('detail-focal').textContent = photo.focal;
+          document.getElementById('detail-aperture').textContent = photo.aperture;
+          if (photo.note) { const note = document.getElementById('detail-note'); note.textContent = photo.note; note.classList.remove('hidden'); }
+        } else if (Array.isArray(photos) && photos.length) {
+          gallery.innerHTML = photos.map((item, index) => `<a class="photo-card relative group" href="astrophotography.html?photo=${index}"><img src="${item.src}" alt="${item.title}" loading="lazy" onerror="this.remove()"><div class="fallback"><div><p class="font-serif text-2xl text-white">${item.title}</p><p class="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mt-2">${item.type}</p></div></div><div class="photo-caption absolute inset-0 p-5 flex flex-col justify-end text-white bg-gradient-to-t from-black/80 via-black/10 to-transparent"><p class="font-serif text-xl">${item.title}</p><p class="text-[10px] font-mono mt-2 text-zinc-300">${item.exposure} · ${item.focal} · ${item.iso}</p></div></a>`).join('');
+        } else {
+          gallery.innerHTML = '<p class="text-sm text-zinc-500">No photographs have been added yet.</p>';
+        }
+      } catch (error) {
+        gallery.innerHTML = `<p class="text-sm text-zinc-500">${error.message} Run the site through a local web server or GitHub Pages.</p>`;
+      }
+    });
+  </script>
+</body>
+</html>

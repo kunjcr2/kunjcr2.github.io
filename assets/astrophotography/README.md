@@ -1,12 +1,22 @@
 # Astrophotography images
 
-Place the gallery images in this folder. The page is preconfigured to look for:
+Place the gallery images in this folder, then add a matching object to `gallery.json`. The site loads this file automatically, so you never need to edit JavaScript to add a photo.
 
-- `orion-nebula.jpg`
-- `andromeda.jpg`
-- `milky-way.jpg`
-- `pleiades.jpg`
-- `moon.jpg`
-- `rosette-nebula.jpg`
+Each entry needs these fields:
 
-You can instead use any filename: update the matching `src` value in the `astroPhotos` list near the end of `index.html`. Update the rest of that entry with the photo's title, capture details, and a short note.
+```json
+{
+  "src": "assets/astrophotography/my-photo.jpg",
+  "title": "North America Nebula",
+  "type": "Emission nebula",
+  "iso": "ISO 800",
+  "focal": "300 mm",
+  "exposure": "3h total",
+  "aperture": "f/4",
+  "note": "A short note about the capture or processing."
+}
+```
+
+Keep the objects inside the surrounding square brackets and separate each object with a comma. The image path is relative to the website root.
+
+You can use any filename; just set it in that entry's `src` field.

@@ -1,0 +1,22 @@
+[
+  {
+    "src": "assets/astrophotography/andromeda.jpg",
+    "title": "Andromeda Galaxy",
+    "type": "Spiral galaxy",
+    "iso": "ISO 1600",
+    "focal": "120 mm",
+    "exposure": "27 Minutes",
+    "aperture": "f/5.6",
+    "note": ""
+  },
+  {
+    "src": "assets/astrophotography/ngc7000.jpg",
+    "title": "North America Nebula",
+    "type": "Emission Nebula",
+    "iso": "ISO 3200",
+    "focal": "70 mm",
+    "exposure": "15 Minutes",
+    "aperture": "f/5.6",
+    "note": ""
+  }
+]
