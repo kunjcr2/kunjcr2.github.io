@@ -1,22 +1,22 @@
 [
   {
-    "src": "assets/astrophotography/andromeda.jpg",
+    "src": "assets/astrophotography/andromeda-optimized.jpg",
     "title": "Andromeda Galaxy",
     "type": "Spiral galaxy",
     "iso": "ISO 1600",
     "focal": "120 mm",
     "exposure": "27 Minutes",
     "aperture": "f/5.6",
-    "note": ""
+    "note": "This is Andromeda galaxy and its satellite galaxy M110 (top of it). Took it on a real bright sky with full moon, so look out for a newer version."
   },
   {
-    "src": "assets/astrophotography/ngc7000.jpg",
+    "src": "assets/astrophotography/ngc7000-optimized.jpg",
     "title": "North America Nebula",
     "type": "Emission Nebula",
     "iso": "ISO 3200",
     "focal": "70 mm",
     "exposure": "15 Minutes",
     "aperture": "f/5.6",
-    "note": ""
+    "note": "This is lower part of Cygnus and for reference the brightest star is Deneb in middle. This includes The Wall, North America Nebula (Right below Deneb), Sadr Region (Top left of Deneb, below Cygnus Star). You can also see some extra structures laying around which are part of the sab hill region."
   }
 ]
