@@ -38,5 +38,15 @@
     "exposure": "Null",
     "aperture": "Null",
     "note": "This is Jupiter with its 4 biggest moons; Io, Europa, Ganymede and Callisto. I took this through my phone from the eyepiece of a telescope, Celestron Powerseeker 70AZ. On the same day I saw Saturn as well, but wasnt lucky enough to take a photo."
+  },
+  {
+    "src": "assets/astrophotography/moon.jpg",
+    "title": "Moon",
+    "type": "Moon",
+    "iso": "200",
+    "focal": "150 mm",
+    "exposure": "1/250 seconds",
+    "aperture": "f/4.5",
+    "note": "I mean c'mon dude. This is literally moon. Everyone has taken pics of the moon once in their life. I just took it with a better camera."
   }
 ]
