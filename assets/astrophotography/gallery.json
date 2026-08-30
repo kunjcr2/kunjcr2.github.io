@@ -48,5 +48,15 @@
     "exposure": "1/250 seconds",
     "aperture": "f/4.5",
     "note": "I mean c'mon dude. This is literally moon. Everyone has taken pics of the moon once in their life. I just took it with a better camera."
+  },
+  {
+    "src": "assets/astrophotography/orion.jpg",
+    "title": "Orion Nebula",
+    "type": "Nebula",
+    "iso": "6400",
+    "focal": "150 mm",
+    "exposure": "4 minutes",
+    "aperture": "f/4.5",
+    "note": "One of my first target for deep sky photography. I have tones of photos of these but none of them are good enough. I learnt a lots of new things, its just I cant see it up in the sky right now and hence stay tuned until I come up with a fire pic of this nebula."
   }
 ]
