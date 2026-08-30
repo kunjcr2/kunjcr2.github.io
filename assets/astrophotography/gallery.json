@@ -28,5 +28,15 @@
     "exposure": "3 Minutes",
     "aperture": "f/5.6",
     "note": "This is Pleiades. One of the brightest star cluster in night sky and pretty much visible with naked eyes. Though you can not see the actual start structure from naked eyes, and that's the only reason why it is here."
+  },
+  {
+    "src": "assets/astrophotography/jupiter.jpg",
+    "title": "Jupiter and moons",
+    "type": "Planet",
+    "iso": "Null",
+    "focal": "Null",
+    "exposure": "Null",
+    "aperture": "Null",
+    "note": "This is Jupiter with its 4 biggest moons; Io, Europa, Ganymede and Callisto. I took this through my phone from the eyepiece of a telescope, Celestron Powerseeker 70AZ. On the same day I saw Saturn as well, but wasnt lucky enough to take a photo."
   }
 ]
