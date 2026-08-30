@@ -18,5 +18,15 @@
     "exposure": "15 Minutes",
     "aperture": "f/5.6",
     "note": "This is lower part of Cygnus and for reference the brightest star is Deneb in middle. This includes The Wall, North America Nebula (Right below Deneb), Sadr Region (Top left of Deneb, below Cygnus Star). You can also see some extra structures laying around which are part of the sab hill region."
+  },
+  {
+    "src": "assets/astrophotography/pleiades-optimized.jpg",
+    "title": "Pleiades",
+    "type": "Star Cluster",
+    "iso": "ISO 800",
+    "focal": "85 mm",
+    "exposure": "3 Minutes",
+    "aperture": "f/5.6",
+    "note": "This is Pleiades. One of the brightest star cluster in night sky and pretty much visible with naked eyes. Though you can not see the actual start structure from naked eyes, and that's the only reason why it is here."
   }
 ]
