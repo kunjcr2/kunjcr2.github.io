@@ -58,5 +58,35 @@
     "exposure": "4 minutes",
     "aperture": "f/4.5",
     "note": "One of my first target for deep sky photography. I have tones of photos of these but none of them are good enough. I learnt a lots of new things, its just I cant see it up in the sky right now and hence stay tuned until I come up with a fire pic of this nebula."
+  },
+  {
+    "src": "assets/astrophotography/commet_ztf.jpg",
+    "title": "Comet C/2022 E3 (ZTF)",
+    "type": "Commet",
+    "iso": "3200",
+    "focal": "150 mm",
+    "exposure": "1/5 seconds",
+    "aperture": "f/4.5",
+    "note": "This was the commet that did a flyby of earth for the first time in 50000 YEARS. YES 50K. Its also called the 'Green commet' coming from Oort cloud. This is highly edited, but I was able to see the trail just like the image."
+  },
+  {
+    "src": "assets/astrophotography/lagoon.jpg",
+    "title": "Lagoon Nebula",
+    "type": "Nebula",
+    "iso": "6400",
+    "focal": "50 mm (Zoomed in)",
+    "exposure": "1/4 seconds",
+    "aperture": "f/4.5",
+    "note": "This image is from the Mt Abu in India. Single click photo covering Lagoon Nebula (Bottom fuzzy thing) and Trifid Nebula (Top W shape). This was part of a big image containing a lots of important points of the Milkyway. Will try this one more time, with better techniques and better software usage."
+  },
+  {
+    "src": "assets/astrophotography/ring.jpg",
+    "title": "Ring Nebula",
+    "type": "Nebula",
+    "iso": "6400",
+    "focal": "150 mm (Zoomed in)",
+    "exposure": "5 seconds",
+    "aperture": "f/4.5",
+    "note": "Was trying to get Vega the star, but ended up capturing a faint part of Ring Nebula, which I edited as per the nebula's color leading to a nice representation of the same. Btw this is about ~2570 ly."
   }
 ]
