@@ -113,14 +113,47 @@
     }
     /* Home section locked to viewport — no outer padding on wrapper */
     .home-hero {
-      height: calc(100vh - var(--topbar-h));
+      min-height: auto;
+      height: auto;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
       overflow: hidden;
-      padding: 2.5rem 2.5rem 1.5rem;
+      padding: 3.5rem 3rem 2rem;
     }
-
+    .home-hero footer { margin-top: 3rem; }
+    .hero-topline {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      color: #a1a1aa;
+      font-size: .65rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .hero-topline::before { content: ''; width: 2.5rem; height: 1px; background: currentColor; }
+    .hero-layout { display: grid; grid-template-columns: minmax(0, 1fr) 13rem; gap: 3rem; align-items: end; }
+    .hero-title { max-width: 52rem; letter-spacing: -.04em; }
+    .hero-side-note { border-left: 1px solid rgba(113,113,122,.5); padding-left: 1rem; }
+    .hero-side-note dt { color: #71717a; font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; }
+    .hero-side-note dd { margin-top: .35rem; color: #a1a1aa; font-size: .7rem; line-height: 1.6; }
+    .hero-link-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .7rem 1rem;
+      border: 1px solid #a1a1aa;
+      border-radius: 999px;
+      transition: background .2s ease, color .2s ease, border-color .2s ease;
+    }
+    .hero-link-primary:hover { background: #f4f4f5; border-color: #f4f4f5; color: #18181b; }
+    .dark .hero-link-primary:hover { background: #f4f4f5; color: #18181b; }
+    @media (max-width: 767px) {
+      .home-hero { min-height: auto; height: auto; padding: 2rem 1.25rem 1.25rem; overflow: visible; }
+      .hero-layout { display: block; }
+      .hero-side-note { display: none; }
+      .hero-title { letter-spacing: -.025em; }
+    }
     /* ── Mobile ──────────────────────────────────────── */
     .mob-bar { display: none; }
     .sidebar-overlay {
@@ -142,7 +175,7 @@
       .dark .sidebar { background: #121212; }
       .sidebar.open { transform: translateX(0); }
       .main-wrap { margin-left: 0; padding-top: var(--mob-bar-h); }
-      .home-hero { height: calc(100vh - var(--mob-bar-h)); padding: 1.5rem 1.25rem 1rem; }
+      .home-hero { min-height: auto; height: auto; padding: 1.5rem 1.25rem 1rem; }
       .mob-bar {
         display: flex;
         position: sticky; top: 0; z-index: 35;
@@ -240,11 +273,11 @@
     <!-- Name + title + status (plain text, no box) -->
     <div class="space-y-1">
       <p class="font-serif text-xl font-semibold leading-tight">Kunj Shah</p>
-      <p class="text-[11px] font-mono text-zinc-500 dark:text-zinc-400">DL &amp; LLM Engineer</p>
+      <p class="text-[11px] font-mono text-zinc-500 dark:text-zinc-400">Computer Science Student</p>
       <div class="pt-1 space-y-0.5">
-        <p class="text-[10px] font-mono text-zinc-400 dark:text-zinc-500">Previously</p>
-        <p class="text-[11px] font-mono text-zinc-400 dark:text-zinc-500">Deep Learning Engineer Intern</p>
-        <p class="text-[10px] font-mono text-zinc-400 dark:text-zinc-500">A10 Networks · San Jose, CA</p>
+        <p class="text-[11px] font-mono text-zinc-400 dark:text-zinc-500">Previously</p>
+        <p class="text-[12px] font-mono text-zinc-400 dark:text-zinc-500">Deep Learning Engineer Intern</p>
+        <p class="text-[12px] font-mono text-zinc-400 dark:text-zinc-500">A10 Networks · San Jose, CA</p>
       </div>
     </div>
 
@@ -253,7 +286,7 @@
       <a href="#home"        data-nav="home"        class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Home</a>
       <a href="#experience"  data-nav="experience"  class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Experience</a>
       <a href="#projects"    data-nav="projects"    class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Projects</a>
-      <a href="astrophotography.html" class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Astrophotography</a>
+      <a href="#astrophotography" data-nav="astrophotography" class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Astrophotography</a>
       <a href="#credentials" data-nav="credentials" class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Credentials</a>
       <a href="#contact"     data-nav="contact"     class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Contact</a>
     </nav>
@@ -264,12 +297,12 @@
     <!-- Bottom: Resume + theme toggle -->
     <div class="w-full space-y-2.5 pt-4 border-t border-zinc-200/40 dark:border-zinc-800/40">
       <a href="Kunj.pdf" target="_blank"
-        class="flex items-center gap-2 font-mono text-[11px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors justify-center">
+        class="flex items-center gap-2 font-mono text-[12px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors justify-center">
         <i data-lucide="file-text" class="w-3.5 h-3.5 shrink-0"></i>
         Resume (PDF)
       </a>
       <button id="theme-toggle"
-        class="flex items-center gap-2 font-mono text-[11px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors w-full justify-center"
+        class="flex items-center gap-2 font-mono text-[12px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors w-full justify-center"
         aria-label="Toggle theme">
         <i data-lucide="sun"  class="w-3.5 h-3.5 hidden dark:block shrink-0"></i>
         <i data-lucide="moon" class="w-3.5 h-3.5 block dark:hidden shrink-0"></i>
@@ -287,39 +320,31 @@
         <!-- ══ HOME ══════════════════════════════════ -->
         <section id="page-home" class="page-view home-hero">
 
-          <div class="space-y-7 max-w-3xl">
-            <h1 class="font-serif text-3xl md:text-4xl font-light leading-snug text-zinc-900 dark:text-zinc-50">
-              I build AI systems that are useful, reliable, and ready to ship.
-            </h1>
-            <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed text-sm md:text-base font-light max-w-2xl">
-              I’m Kunj, a deep learning engineer working across LLMs, multimodal models, evaluation, and production.
-              I enjoy turning complex ideas into practical tools that people can use.
-            </p>
-            <a href="https://github.com/kunjcr2/llms-from-scratch" target="_blank" rel="noopener noreferrer" class="inline-block text-xs font-mono text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline transition-colors">
-              Explore my work ↗
-            </a>
-          </div>
-
-          <div class="pt-8 border-t border-zinc-200/50 dark:border-zinc-800 space-y-5 max-w-3xl">
-            <h2 class="text-[10px] font-mono tracking-widest uppercase text-zinc-400 dark:text-zinc-500">What I work on</h2>
-            <div class="grid gap-6 md:grid-cols-2">
-              <div class="space-y-2">
-                <h3 class="font-serif text-base font-medium text-zinc-800 dark:text-zinc-200">Models &amp; applications</h3>
-                <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed font-light">
-                  Training and adapting language and multimodal models for real-world use cases.
-                </p>
-              </div>
-              <div class="space-y-2">
-                <h3 class="font-serif text-base font-medium text-zinc-800 dark:text-zinc-200">Evaluation &amp; reliability</h3>
-                <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed font-light">
-                  Building evaluation workflows, guardrails, and reliable systems around AI models.
-                </p>
+          <div class="hero-layout">
+            <div>
+              <p class="hero-topline">Computer science student · deep learning researcher</p>
+              <h1 class="hero-title mt-6 font-serif text-4xl md:text-6xl font-light leading-[1.04] text-zinc-900 dark:text-zinc-50">
+                I am Kunj Shah &<br> I am an average Deep Learning Enjoyer.
+              </h1>
+              <p class="mt-7 text-zinc-600 dark:text-zinc-400 leading-relaxed text-sm md:text-base font-light max-w-2xl">
+                I’m Kunj, a computer science student focused on deep learning research. Working on all kinds of deep learning models.
+                I explore how language and multimodal models learn, adapt, and behave through careful experiments and open work.
+              </p>
+              <div class="mt-4 flex flex-wrap items-center gap-4 text-xs font-mono text-zinc-500 dark:text-zinc-400">
+                <a href="#page-projects" data-nav="projects" class="hero-link-primary">Explore my research and experiments <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/kunjcr2/llms-from-scratch" target="_blank" rel="noopener noreferrer" class="underline underline-offset-4 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
+                  Read my LLM notes and experiments
+                </a>
               </div>
             </div>
+            <dl class="hero-side-note hidden md:block space-y-5 text-xs font-mono">
+              <div><dt>Research</dt><dd>Deep learning<br>Language models<br>Model safety</dd></div>
+              <div><dt>Method</dt><dd>Read deeply.<br>Test carefully.</dd></div>
+            </dl>
           </div>
 
-          <footer class="border-t border-zinc-200/40 dark:border-zinc-800/40 pt-4">
-            <p class="text-[10px] font-mono text-zinc-400 dark:text-zinc-500">© 2025 Kunj Shah · Built with curiosity · San Jose, CA</p>
+          <footer class="border-zinc-200/40 dark:border-zinc-800/40 pt-4">
+            <p class="text-[10px] font-mono text-zinc-400 dark:text-zinc-500">© 2026 Kunj Shah · Built with Codex (Obviously) · San Jose, CA</p>
           </footer>
 
         </section>
