@@ -5,14 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Astrophotography by Kunj Shah">
   <title>Astrophotography | Kunj Shah</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark');
-    tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'], mono: ['JetBrains Mono', 'monospace'] } } } };
+    tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Arial', 'Helvetica', 'sans-serif'], serif: ['Arial', 'Helvetica', 'sans-serif'], mono: ['Arial', 'Helvetica', 'sans-serif'] } } } };
   </script>
   <style>
     html { -webkit-font-smoothing: antialiased; }
