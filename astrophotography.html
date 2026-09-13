@@ -78,7 +78,7 @@
     #gallery-view h1,
     #detail-view h1 {
       color: var(--page-text) !important;
-      font-family: Georgia, "Times New Roman", serif !important;
+      font-family: Arial, Helvetica, sans-serif !important;
       font-weight: 400 !important;
     }
     #gallery-view h1 { font-size: 34px !important; }
@@ -97,6 +97,22 @@
       .gallery { columns: 1; }
       body > header > div { align-items: flex-start; gap: .75rem; }
       body > header a.hidden { display: none !important; }
+    }
+
+    /* One typeface and one link treatment throughout the site. */
+    body,
+    body *,
+    body *::before,
+    body *::after {
+      font-family: Arial, Helvetica, sans-serif !important;
+    }
+    body a,
+    body a:visited,
+    body a:hover,
+    body a:focus,
+    body a:active {
+      color: var(--page-link) !important;
+      font-family: Arial, Helvetica, sans-serif !important;
     }
   </style>
 </head>

@@ -278,6 +278,25 @@
     }
     .topbar-links { gap: 1rem; flex-wrap: wrap; justify-content: flex-end; }
     .topbar a { color: var(--page-link) !important; }
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+    .topbar button {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--page-link) !important;
+      font-size: 13px;
+      line-height: 1.5;
+      cursor: pointer;
+    }
+    .topbar button:hover { text-decoration: underline; }
     .mob-bar,
     .sidebar-overlay { display: none !important; }
 
@@ -310,7 +329,7 @@
     }
     .profile-intro > .space-y-1 > p:first-child {
       color: var(--page-text);
-      font-family: Georgia, "Times New Roman", serif !important;
+      font-family: Arial, Helvetica, sans-serif !important;
       font-size: 34px !important;
       font-weight: 400 !important;
       line-height: 1.1;
@@ -393,7 +412,7 @@
       max-width: 720px;
       margin-top: .8rem !important;
       color: var(--page-text) !important;
-      font-family: Georgia, "Times New Roman", serif !important;
+      font-family: Arial, Helvetica, sans-serif !important;
       font-size: clamp(28px, 5vw, 39px) !important;
       font-weight: 400 !important;
       line-height: 1.2 !important;
@@ -430,7 +449,7 @@
 
     main section > div:first-child > h1 {
       color: var(--page-text) !important;
-      font-family: Georgia, "Times New Roman", serif !important;
+      font-family: Arial, Helvetica, sans-serif !important;
       font-size: 27px !important;
       font-weight: 400 !important;
     }
@@ -438,7 +457,7 @@
     main h2,
     main h3 { color: var(--page-text) !important; }
     main h2 { font-size: 12px !important; letter-spacing: .08em !important; }
-    main h3 { font-family: Georgia, "Times New Roman", serif !important; font-size: 16px !important; }
+    main h3 { font-family: Arial, Helvetica, sans-serif !important; font-size: 16px !important; }
     main p,
     main li { color: var(--page-muted); }
     main hr,
@@ -470,9 +489,10 @@
 
     @media (max-width: 640px) {
       body { width: min(100% - 2rem, 850px); }
-      .topbar { align-items: flex-start; gap: .5rem; }
-      .topbar > span { display: none; }
-      .topbar-links { justify-content: flex-start; }
+      .topbar { display: block !important; }
+      .topbar-left { justify-content: flex-start; }
+      .topbar-left > span { display: none; }
+      .topbar-links { justify-content: flex-start; margin-top: .65rem; }
       .sidebar { padding: 1.5rem 0 1.75rem; }
       .profile-intro { grid-template-columns: 92px minmax(0, 1fr); gap: 1rem; }
       .profile-intro > img { width: 92px !important; height: 92px !important; }
@@ -487,6 +507,22 @@
       #page-contact > .grid { display: block !important; }
       #page-contact iframe { margin-top: 1.5rem; min-height: 560px; }
     }
+
+    /* One typeface and one link treatment throughout the site. */
+    body,
+    body *,
+    body *::before,
+    body *::after {
+      font-family: Arial, Helvetica, sans-serif !important;
+    }
+    body a,
+    body a:visited,
+    body a:hover,
+    body a:focus,
+    body a:active {
+      color: var(--page-link) !important;
+      font-family: Arial, Helvetica, sans-serif !important;
+    }
   </style>
 </head>
 
@@ -494,7 +530,14 @@
 
   <!-- ── Fixed Top Bar (desktop) ─────────────────────── -->
   <div class="topbar font-mono text-[11px] text-zinc-500 dark:text-zinc-400">
-    <span class="text-zinc-400 dark:text-zinc-500 shrink-0">San Jose, CA</span>
+    <div class="topbar-left">
+      <button id="theme-toggle" aria-label="Toggle theme">
+        <i data-lucide="sun" class="w-3.5 h-3.5 hidden dark:block shrink-0"></i>
+        <i data-lucide="moon" class="w-3.5 h-3.5 block dark:hidden shrink-0"></i>
+        Toggle theme
+      </button>
+      <span class="text-zinc-400 dark:text-zinc-500 shrink-0">San Jose, CA</span>
+    </div>
     <div class="topbar-links">
       <a href="mailto:kunjcr2@gmail.com"                                  class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Email</a>
       <a href="https://github.com/kunjcr2"           target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">GitHub</a>
@@ -554,20 +597,13 @@
     <!-- Spacer -->
     <div class="flex-1"></div>
 
-    <!-- Bottom: Resume + theme toggle -->
+    <!-- Resume shortcut -->
     <div class="profile-actions w-full space-y-2.5 pt-4 border-t border-zinc-200/40 dark:border-zinc-800/40">
       <a href="Kunj.pdf" target="_blank"
         class="flex items-center gap-2 font-mono text-[12px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors justify-center">
         <i data-lucide="file-text" class="w-3.5 h-3.5 shrink-0"></i>
         Resume (PDF)
       </a>
-      <button id="theme-toggle"
-        class="flex items-center gap-2 font-mono text-[12px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors w-full justify-center"
-        aria-label="Toggle theme">
-        <i data-lucide="sun"  class="w-3.5 h-3.5 hidden dark:block shrink-0"></i>
-        <i data-lucide="moon" class="w-3.5 h-3.5 block dark:hidden shrink-0"></i>
-        Toggle theme
-      </button>
     </div>
 
   </aside>
