@@ -286,7 +286,7 @@
       <a href="#home"        data-nav="home"        class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Home</a>
       <a href="#experience"  data-nav="experience"  class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Experience</a>
       <a href="#projects"    data-nav="projects"    class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Projects</a>
-      <a href="#astrophotography" data-nav="astrophotography" class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Astrophotography</a>
+      <a href="astrophotography.html" class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Astrophotography</a>
       <a href="#credentials" data-nav="credentials" class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Credentials</a>
       <a href="#contact"     data-nav="contact"     class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Contact</a>
     </nav>
@@ -585,19 +585,6 @@
         </section>
 
         <!-- ══ CONTACT ════════════════════════════════ -->
-        <!-- Astrophotography -->
-        <section id="page-astrophotography" class="page-view hidden space-y-8 px-6 sm:px-10 py-10 md:py-12">
-          <div class="max-w-2xl">
-            <p class="text-[10px] font-mono tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-3">Outside of the terminal</p>
-            <h1 class="font-serif text-3xl font-light">Astrophotography</h1>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mt-3 font-light">A growing collection of the night sky. Hover over a photograph for its capture details, or select one to view it closer.</p>
-          </div>
-          <div class="border-t border-zinc-200/50 dark:border-zinc-800 pt-6">
-            <div id="astro-gallery" class="astro-wall" aria-label="Astrophotography gallery"></div>
-          </div>
-          <p class="text-[10px] font-mono text-zinc-400 dark:text-zinc-500">Click any image to enlarge it and see its capture details.</p>
-        </section>
-
         <!-- Contact -->
         <section id="page-contact" class="page-view hidden space-y-8 px-6 sm:px-10 py-10 md:py-12">
           <div>
@@ -635,6 +622,7 @@
       let astroPhotos = [];
 
       const gallery = document.getElementById('astro-gallery');
+      if (gallery) {
       const field = (label, value) => value ? `<div><dt class="text-zinc-400 dark:text-zinc-500">${label}</dt><dd class="text-zinc-700 dark:text-zinc-200 mt-0.5">${value}</dd></div>` : '';
       function renderAstroGallery() {
         if (!astroPhotos.length) {
@@ -676,6 +664,8 @@
       document.addEventListener('keydown', event => { if (event.key === 'Escape') closeAstroModal(); });
 
       // ── Theme ──────────────────────────────────────
+      }
+
       function setTheme(dark) {
         document.documentElement.classList.toggle('dark', dark);
         localStorage.theme = dark ? 'dark' : 'light';
