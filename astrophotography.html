@@ -13,6 +13,7 @@
   </script>
   <style>
     html { -webkit-font-smoothing: antialiased; }
+    .hidden { display: none !important; }
     .gallery { columns: 2; column-gap: .75rem; }
     .photo-card { break-inside: avoid; display: block; margin: 0 0 .75rem; border-radius: .35rem; overflow: hidden; background: #18181b; }
     .photo-card img { width: 100%; display: block; transition: transform 500ms cubic-bezier(.16,1,.3,1); }
@@ -23,12 +24,86 @@
     .fallback { min-height: 17rem; display: flex; align-items: end; padding: 1.25rem; background: linear-gradient(145deg, #151925, #07080d); }
     @media (min-width: 640px) { .gallery { columns: 3; } }
     @media (min-width: 1024px) { .gallery { columns: 4; } }
+
+    :root {
+      --page-bg: #ffffff;
+      --page-text: #242424;
+      --page-muted: #666666;
+      --page-rule: #dedede;
+      --page-link: #2457a7;
+    }
+    .dark {
+      --page-bg: #171717;
+      --page-text: #eeeeee;
+      --page-muted: #b6b6b6;
+      --page-rule: #3a3a3a;
+      --page-link: #8ab4f8;
+    }
+    body {
+      width: min(100% - 2.5rem, 850px);
+      margin: 0 auto !important;
+      background: var(--page-bg) !important;
+      color: var(--page-text) !important;
+      font-family: Arial, Helvetica, sans-serif !important;
+      font-size: 15px;
+      line-height: 1.55;
+      transition: none !important;
+    }
+    body a { color: var(--page-link) !important; }
+    body a:hover { text-decoration: underline; }
+    body > header {
+      position: static !important;
+      border-color: var(--page-rule) !important;
+      background: transparent !important;
+      backdrop-filter: none !important;
+    }
+    body > header > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: none !important;
+      height: auto !important;
+      padding: 1.4rem 0 .75rem !important;
+    }
+    body > header > div > a,
+    body > header > div > div { display: flex; align-items: center; gap: .55rem; }
+    body > header a.hidden { display: inline-flex !important; }
+    #theme-toggle { padding: .35rem; border: 0; background: transparent; color: var(--page-link); cursor: pointer; }
+    #theme-toggle::after { content: "Theme"; }
+    body > main {
+      max-width: none !important;
+      padding: 2.5rem 0 4rem !important;
+    }
+    #gallery-view > div:first-child { max-width: 690px !important; margin-bottom: 2rem !important; }
+    #gallery-view h1,
+    #detail-view h1 {
+      color: var(--page-text) !important;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-weight: 400 !important;
+    }
+    #gallery-view h1 { font-size: 34px !important; }
+    #gallery-view p,
+    #detail-view p,
+    #detail-view dt { color: var(--page-muted) !important; }
+    .gallery { columns: 2; column-gap: 1rem; }
+    .photo-card {
+      margin-bottom: 1rem;
+      border: 1px solid var(--page-rule);
+      border-radius: 2px;
+    }
+    .photo-caption { opacity: 1; transform: none; }
+    @media (max-width: 560px) {
+      body { width: min(100% - 2rem, 850px); }
+      .gallery { columns: 1; }
+      body > header > div { align-items: flex-start; gap: .75rem; }
+      body > header a.hidden { display: none !important; }
+    }
   </style>
 </head>
 <body class="min-h-screen bg-[#faf9f6] text-zinc-900 dark:bg-[#111111] dark:text-zinc-100 font-sans transition-colors duration-200">
   <header class="sticky top-0 z-10 border-b border-zinc-200/70 dark:border-zinc-800 bg-[#faf9f6]/90 dark:bg-[#111111]/90 backdrop-blur">
     <div class="max-w-7xl mx-auto px-6 sm:px-10 h-16 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2 text-xs font-mono text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors"><i data-lucide="arrow-left" class="w-4 h-4"></i> Portfolio</a>
+      <a href="index.html#page-home" class="flex items-center gap-2 text-xs font-mono text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors"><i data-lucide="arrow-left" class="w-4 h-4"></i> Portfolio</a>
       <div class="flex items-center gap-3">
         <a href="https://www.staracle.com/staracle/staracle.php?Tycho=10099489507" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 text-[11px] font-mono text-black dark:text-white hover:text-zinc-900 dark:hover:text-zinc-500 transition-colors">A star named after me <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></a>
         <button id="theme-toggle" class="p-2 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" aria-label="Toggle theme"><i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i><i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i></button>
@@ -91,7 +166,7 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
-      lucide.createIcons();
+      if (window.lucide) lucide.createIcons();
       document.getElementById('theme-toggle').addEventListener('click', () => {
         const isDark = !document.documentElement.classList.contains('dark');
         document.documentElement.classList.toggle('dark', isDark);

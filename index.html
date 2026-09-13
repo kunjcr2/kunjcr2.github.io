@@ -229,6 +229,264 @@
     .astro-dialog { background: rgba(9,9,11,.84); }
     @media (min-width: 640px) { .astro-wall { columns: 2; } }
     @media (min-width: 1024px) { .astro-wall { columns: 3; } }
+
+    /* Simple academic layout inspired by classic research homepages. */
+    :root {
+      --page-bg: #ffffff;
+      --page-text: #242424;
+      --page-muted: #666666;
+      --page-faint: #8a8a8a;
+      --page-rule: #dedede;
+      --page-link: #2457a7;
+    }
+    .dark {
+      --page-bg: #171717;
+      --page-text: #eeeeee;
+      --page-muted: #b6b6b6;
+      --page-faint: #929292;
+      --page-rule: #3a3a3a;
+      --page-link: #8ab4f8;
+    }
+    html { scroll-padding-top: 1.5rem; }
+    body {
+      width: min(100% - 2.5rem, 850px);
+      margin: 0 auto !important;
+      padding: 0 0 4rem;
+      background: var(--page-bg) !important;
+      color: var(--page-text) !important;
+      font-family: Arial, Helvetica, sans-serif !important;
+      font-size: 15px;
+      line-height: 1.55;
+      transition: none !important;
+    }
+    body a { color: var(--page-link); }
+    body a:hover { text-decoration: underline; }
+
+    .topbar {
+      position: static;
+      display: flex !important;
+      width: 100%;
+      height: auto;
+      padding: 1.4rem 0 .75rem;
+      border: 0;
+      border-bottom: 1px solid var(--page-rule);
+      background: transparent !important;
+      color: var(--page-muted) !important;
+      backdrop-filter: none;
+      font-family: Arial, Helvetica, sans-serif !important;
+      font-size: 13px !important;
+    }
+    .topbar-links { gap: 1rem; flex-wrap: wrap; justify-content: flex-end; }
+    .topbar a { color: var(--page-link) !important; }
+    .mob-bar,
+    .sidebar-overlay { display: none !important; }
+
+    .sidebar {
+      position: static;
+      display: block;
+      width: auto;
+      height: auto;
+      padding: 2rem 0 2.25rem;
+      border: 0;
+      border-bottom: 1px solid var(--page-rule);
+      background: transparent !important;
+      text-align: left;
+      overflow: visible;
+      transform: none !important;
+    }
+    .profile-intro {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 1.75rem;
+      align-items: center;
+    }
+    .profile-intro > img {
+      width: 150px !important;
+      height: 150px !important;
+      margin: 0 !important;
+      border: 1px solid var(--page-rule) !important;
+      border-radius: 3px !important;
+      object-fit: cover;
+    }
+    .profile-intro > .space-y-1 > p:first-child {
+      color: var(--page-text);
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: 34px !important;
+      font-weight: 400 !important;
+      line-height: 1.1;
+    }
+    .profile-intro > .space-y-1 p { margin: .15rem 0; color: var(--page-muted) !important; font-family: Arial, Helvetica, sans-serif !important; font-size: 13px !important; }
+    .profile-intro .pt-1 { margin-top: .45rem; }
+    .sidebar nav {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: wrap;
+      gap: .25rem 1rem !important;
+      width: auto !important;
+      margin: 1.2rem 0 0 !important;
+      font-family: Arial, Helvetica, sans-serif !important;
+      font-size: 14px !important;
+    }
+    .sidebar .nav-link {
+      margin: 0 !important;
+      padding: 0 !important;
+      border: 0 !important;
+      color: var(--page-link) !important;
+      font-weight: 400 !important;
+    }
+    .sidebar .nav-link.active { text-decoration: underline; }
+    .sidebar > .flex-1 { display: none; }
+    .profile-actions {
+      display: flex !important;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      width: auto !important;
+      margin-top: .65rem;
+      padding: 0 !important;
+      border: 0 !important;
+    }
+    .profile-actions a,
+    .profile-actions button {
+      width: auto !important;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--page-link) !important;
+      font-family: Arial, Helvetica, sans-serif !important;
+      font-size: 13px !important;
+      cursor: pointer;
+    }
+
+    .main-wrap { margin: 0; padding: 0; }
+    .main-wrap > div { max-width: none !important; }
+    .main-wrap,
+    .main-wrap main,
+    .hero-layout,
+    .hero-layout > div,
+    main section { min-width: 0; max-width: 100%; }
+    main .page-view,
+    main .page-view.hidden {
+      display: block !important;
+      padding: 2.75rem 0 !important;
+      border-top: 1px solid var(--page-rule);
+      animation: none;
+      scroll-margin-top: 1rem;
+    }
+    main #page-home {
+      min-height: 0;
+      height: auto;
+      padding: 2.5rem 0 3rem !important;
+      border-top: 0;
+      overflow: visible;
+    }
+    .hero-layout { display: block; }
+    .hero-topline {
+      gap: 0;
+      color: var(--page-muted) !important;
+      font-size: 13px;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .hero-topline::before { display: none; }
+    .hero-title {
+      max-width: 720px;
+      margin-top: .8rem !important;
+      color: var(--page-text) !important;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(28px, 5vw, 39px) !important;
+      font-weight: 400 !important;
+      line-height: 1.2 !important;
+      letter-spacing: -.02em;
+    }
+    #page-home .hero-title + p {
+      max-width: 720px;
+      margin-top: 1rem !important;
+      color: var(--page-muted) !important;
+      font-size: 15px !important;
+      line-height: 1.65;
+      overflow-wrap: anywhere;
+    }
+    #page-home .hero-title + p + div { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem 1.25rem; }
+    .hero-link-primary {
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      color: var(--page-link) !important;
+    }
+    .hero-link-primary:hover { background: transparent !important; color: var(--page-link) !important; }
+    .hero-side-note {
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      max-width: 460px;
+      margin-top: 2rem;
+      padding: 1rem 0 0;
+      border: 0;
+      border-top: 1px solid var(--page-rule);
+    }
+    .hero-side-note dt { color: var(--page-faint); font-size: 11px; letter-spacing: .08em; }
+    .hero-side-note dd { color: var(--page-muted); font-size: 12px; }
+
+    main section > div:first-child > h1 {
+      color: var(--page-text) !important;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: 27px !important;
+      font-weight: 400 !important;
+    }
+    main section > div:first-child > h1 + p { color: var(--page-muted) !important; font-family: Arial, Helvetica, sans-serif !important; font-size: 13px !important; }
+    main h2,
+    main h3 { color: var(--page-text) !important; }
+    main h2 { font-size: 12px !important; letter-spacing: .08em !important; }
+    main h3 { font-family: Georgia, "Times New Roman", serif !important; font-size: 16px !important; }
+    main p,
+    main li { color: var(--page-muted); }
+    main hr,
+    main .border-t { border-color: var(--page-rule) !important; }
+
+    #page-experience .space-y-8 > .grid {
+      display: grid !important;
+      grid-template-columns: 170px minmax(0, 1fr) !important;
+      gap: 1.5rem !important;
+    }
+    #page-experience .space-y-8 > .grid > div:last-child { grid-column: 2 !important; }
+    #page-projects .grid { display: block !important; }
+    #page-projects .grid > div {
+      padding: 1rem 0 !important;
+      border: 0 !important;
+      border-bottom: 1px solid var(--page-rule) !important;
+      border-radius: 0 !important;
+    }
+    #page-projects .grid > div:last-child { border-bottom: 0 !important; }
+    #page-credentials > .grid:first-of-type { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+    #page-contact iframe { min-height: 480px; }
+
+    .site-footer {
+      padding: 2rem 0 0;
+      border-top: 1px solid var(--page-rule);
+      color: var(--page-faint);
+      font-size: 12px;
+    }
+
+    @media (max-width: 640px) {
+      body { width: min(100% - 2rem, 850px); }
+      .topbar { align-items: flex-start; gap: .5rem; }
+      .topbar > span { display: none; }
+      .topbar-links { justify-content: flex-start; }
+      .sidebar { padding: 1.5rem 0 1.75rem; }
+      .profile-intro { grid-template-columns: 92px minmax(0, 1fr); gap: 1rem; }
+      .profile-intro > img { width: 92px !important; height: 92px !important; }
+      .profile-intro > .space-y-1 > p:first-child { font-size: 27px !important; }
+      .profile-intro > .space-y-1 .pt-1 { display: none; }
+      .sidebar nav { margin-top: 1rem !important; }
+      main .page-view,
+      main .page-view.hidden { padding: 2.25rem 0 !important; }
+      #page-experience .space-y-8 > .grid { grid-template-columns: 1fr !important; gap: .7rem !important; }
+      #page-experience .space-y-8 > .grid > div:last-child { grid-column: 1 !important; }
+      #page-credentials > .grid:first-of-type { grid-template-columns: 1fr !important; }
+      #page-contact > .grid { display: block !important; }
+      #page-contact iframe { margin-top: 1.5rem; min-height: 560px; }
+    }
   </style>
 </head>
 
@@ -267,35 +525,37 @@
   <aside class="sidebar bg-[#faf9f6] dark:bg-[#121212]" id="sidebar">
 
     <!-- Profile image — bigger, centered -->
-    <img src="Kunj.png" alt="Kunj Shah"
-      class="w-40 h-40 rounded-full object-cover border border-zinc-200/60 dark:border-zinc-700/40 mb-5 shrink-0" />
+    <div class="profile-intro">
+      <img src="Kunj.png" alt="Kunj Shah"
+        class="w-40 h-40 rounded-full object-cover border border-zinc-200/60 dark:border-zinc-700/40 mb-5 shrink-0" />
 
-    <!-- Name + title + status (plain text, no box) -->
-    <div class="space-y-1">
-      <p class="font-serif text-xl font-semibold leading-tight">Kunj Shah</p>
-      <p class="text-[11px] font-mono text-zinc-500 dark:text-zinc-400">Computer Science Student</p>
-      <div class="pt-1 space-y-0.5">
-        <p class="text-[11px] font-mono text-zinc-400 dark:text-zinc-500">Previously</p>
-        <p class="text-[12px] font-mono text-zinc-400 dark:text-zinc-500">Deep Learning Engineer Intern</p>
-        <p class="text-[12px] font-mono text-zinc-400 dark:text-zinc-500">A10 Networks · San Jose, CA</p>
+      <!-- Name + title + status (plain text, no box) -->
+      <div class="space-y-1">
+        <p class="font-serif text-xl font-semibold leading-tight">Kunj Shah</p>
+        <p class="text-[11px] font-mono text-zinc-500 dark:text-zinc-400">Computer Science Student</p>
+        <div class="pt-1 space-y-0.5">
+          <p class="text-[11px] font-mono text-zinc-400 dark:text-zinc-500">Previously</p>
+          <p class="text-[12px] font-mono text-zinc-400 dark:text-zinc-500">Deep Learning Engineer Intern</p>
+          <p class="text-[12px] font-mono text-zinc-400 dark:text-zinc-500">A10 Networks · San Jose, CA</p>
+        </div>
       </div>
     </div>
 
     <!-- Nav links -->
     <nav class="mt-8 w-full flex flex-col gap-1 font-mono text-[13px]">
-      <a href="#home"        data-nav="home"        class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Home</a>
-      <a href="#experience"  data-nav="experience"  class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Experience</a>
-      <a href="#projects"    data-nav="projects"    class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Projects</a>
+      <a href="#page-home"        data-nav="home"        class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Home</a>
+      <a href="#page-experience"  data-nav="experience"  class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Experience</a>
+      <a href="#page-projects"    data-nav="projects"    class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Projects</a>
       <a href="astrophotography.html" class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Astrophotography</a>
-      <a href="#credentials" data-nav="credentials" class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Credentials</a>
-      <a href="#contact"     data-nav="contact"     class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Contact</a>
+      <a href="#page-credentials" data-nav="credentials" class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Credentials</a>
+      <a href="#page-contact"     data-nav="contact"     class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Contact</a>
     </nav>
 
     <!-- Spacer -->
     <div class="flex-1"></div>
 
     <!-- Bottom: Resume + theme toggle -->
-    <div class="w-full space-y-2.5 pt-4 border-t border-zinc-200/40 dark:border-zinc-800/40">
+    <div class="profile-actions w-full space-y-2.5 pt-4 border-t border-zinc-200/40 dark:border-zinc-800/40">
       <a href="Kunj.pdf" target="_blank"
         class="flex items-center gap-2 font-mono text-[12px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors justify-center">
         <i data-lucide="file-text" class="w-3.5 h-3.5 shrink-0"></i>
@@ -343,14 +603,10 @@
             </dl>
           </div>
 
-          <footer class="border-zinc-200/40 dark:border-zinc-800/40 pt-4">
-            <p class="text-[10px] font-mono text-zinc-400 dark:text-zinc-500">© 2026 Kunj Shah · Built with Codex (Obviously) · San Jose, CA</p>
-          </footer>
-
         </section>
 
         <!-- ══ EXPERIENCE ════════════════════════════ -->
-        <section id="page-experience" class="page-view hidden space-y-10 px-6 sm:px-10 py-10 md:py-12">
+        <section id="page-experience" class="page-view space-y-10 px-6 sm:px-10 py-10 md:py-12">
           <div>
             <h1 class="font-serif text-2xl font-light">Experience &amp; Education</h1>
             <p class="text-xs font-mono text-zinc-400 mt-1">Chronology of professional internships and academic coursework.</p>
@@ -448,7 +704,7 @@
         </section>
 
         <!-- ══ PROJECTS ═══════════════════════════════ -->
-        <section id="page-projects" class="page-view hidden space-y-10 px-6 sm:px-10 py-10 md:py-12">
+        <section id="page-projects" class="page-view space-y-10 px-6 sm:px-10 py-10 md:py-12">
           <div>
             <h1 class="font-serif text-2xl font-light">Projects &amp; Models</h1>
             <p class="text-xs font-mono text-zinc-400 mt-1">Pre-trained models, adapters, and open-source repositories.</p>
@@ -531,7 +787,7 @@
         </section>
 
         <!-- ══ CREDENTIALS ════════════════════════════ -->
-        <section id="page-credentials" class="page-view hidden space-y-10 px-6 sm:px-10 py-10 md:py-12">
+        <section id="page-credentials" class="page-view space-y-10 px-6 sm:px-10 py-10 md:py-12">
           <div>
             <h1 class="font-serif text-2xl font-light">Skills &amp; Credentials</h1>
             <p class="text-xs font-mono text-zinc-400 mt-1">Technical expertise, hackathons, and certifications.</p>
@@ -586,7 +842,7 @@
 
         <!-- ══ CONTACT ════════════════════════════════ -->
         <!-- Contact -->
-        <section id="page-contact" class="page-view hidden space-y-8 px-6 sm:px-10 py-10 md:py-12">
+        <section id="page-contact" class="page-view space-y-8 px-6 sm:px-10 py-10 md:py-12">
           <div>
             <h1 class="font-serif text-2xl font-light">Get in Touch</h1>
             <p class="text-xs font-mono text-zinc-400 mt-1">Send a brief message to open collaboration.</p>
@@ -611,12 +867,15 @@
         </section>
 
       </main>
+      <footer class="site-footer">
+        <p>© 2026 Kunj Shah · Built with Codex (Obviously) · San Jose, CA</p>
+      </footer>
     </div>
   </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      lucide.createIcons();
+      if (window.lucide) lucide.createIcons();
 
       // Gallery entries are loaded from assets/astrophotography/gallery.json.
       let astroPhotos = [];
@@ -657,7 +916,7 @@
       function closeAstroModal() { modal.classList.add('hidden'); modal.innerHTML = ''; }
       function openAstroModal(photo) {
         modal.innerHTML = `<div class="min-h-full flex items-center justify-center"><div class="relative w-full max-w-5xl rounded-lg bg-[#faf9f6] dark:bg-[#18181b] shadow-2xl overflow-hidden"><button class="absolute top-3 right-3 z-20 rounded-full bg-black/60 text-white p-2 hover:bg-black/80" aria-label="Close image"><i data-lucide="x" class="w-4 h-4"></i></button><div class="grid md:grid-cols-[1.5fr_1fr]"><div class="relative min-h-[280px] bg-zinc-950 flex items-center justify-center"><img src="${photo.src}" alt="${photo.title}" class="relative z-10 max-h-[72vh] w-full object-contain" onerror="this.remove()"><div class="astro-placeholder absolute inset-0 z-0"><span class="relative font-serif text-2xl text-white">${photo.title}</span></div></div><div class="p-6 sm:p-8"><p class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">${photo.type}</p><h2 class="font-serif text-2xl mt-2">${photo.title}</h2><p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed mt-3">${photo.note || ''}</p><dl class="grid grid-cols-2 gap-x-5 gap-y-4 mt-7 text-[11px] font-mono">${field('Exposure', photo.exposure)}${field('ISO', photo.iso)}${field('Focal length', photo.focal)}${field('Aperture', photo.aperture)}</dl></div></div></div></div>`;
-        modal.classList.remove('hidden'); lucide.createIcons(); modal.querySelector('button').focus();
+        modal.classList.remove('hidden'); if (window.lucide) lucide.createIcons(); modal.querySelector('button').focus();
       }
       gallery.addEventListener('click', event => { const card = event.target.closest('[data-astro-index]'); if (card) openAstroModal(astroPhotos[card.dataset.astroIndex]); });
       modal.addEventListener('click', event => { if (event.target === modal || event.target.closest('button')) closeAstroModal(); });
@@ -675,40 +934,21 @@
       document.getElementById('mob-theme').addEventListener('click', () =>
         setTheme(!document.documentElement.classList.contains('dark')));
 
-      // ── SPA routing ────────────────────────────────
-      const sections = document.querySelectorAll('.page-view');
+      // Keep the page lightweight: navigation scrolls through one document.
       const navLinks = document.querySelectorAll('[data-nav]');
-
-      function show(id) {
-        sections.forEach(s => s.classList.toggle('hidden', s.id !== `page-${id}`));
-        navLinks.forEach(a => a.classList.toggle('active', a.dataset.nav === id));
-
-        // close mobile sidebar
-        document.getElementById('sidebar').classList.remove('open');
-        document.getElementById('overlay').classList.remove('open');
-      }
-
       navLinks.forEach(a => a.addEventListener('click', e => {
+        const target = document.getElementById(`page-${a.dataset.nav}`);
+        if (!target) return;
         e.preventDefault();
-        show(a.dataset.nav);
-        history.pushState(null, '', `#${a.dataset.nav}`);
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', `#page-${a.dataset.nav}`);
       }));
 
-      // Initial state from hash
-      const hash = window.location.hash.replace('#', '') || 'home';
-      show(hash);
-
-      // ── Mobile sidebar ────────────────────────────
-      const sidebar = document.getElementById('sidebar');
-      const overlay = document.getElementById('overlay');
-      document.getElementById('mob-toggle').addEventListener('click', () => {
-        sidebar.classList.toggle('open');
-        overlay.classList.toggle('open');
-      });
-      overlay.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('open');
-      });
+      const legacyHash = window.location.hash.replace('#', '');
+      if (legacyHash && !legacyHash.startsWith('page-')) {
+        const target = document.getElementById(`page-${legacyHash}`);
+        if (target) history.replaceState(null, '', `#page-${legacyHash}`);
+      }
     });
   </script>
 
