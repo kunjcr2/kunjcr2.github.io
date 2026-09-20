@@ -10,7 +10,17 @@
     "note": "This is Andromeda galaxy and its satellite galaxy M110 (top of it). Took it on a real bright sky with full moon, so look out for a newer version."
   },
   {
-    "src": "assets/astrophotography/orion_new.jpg",
+    "src": "assets/astrophotography/pleiades2.jpg",
+    "title": "Pleiades",
+    "type": "Star Cluster",
+    "iso": "ISO 3200",
+    "focal": "200 mm",
+    "exposure": "60 Minutes",
+    "aperture": "f/5.6",
+    "note": "I took one of these, you can find it somehwhere in this gallery and you can see how good it looks compared to that old one."
+  },
+  {
+    "src": "assets/astrophotography/orion2.jpg",
     "title": "Orion Nebula and Running man Nebula",
     "type": "Nebula",
     "iso": "3200",
@@ -30,7 +40,7 @@
     "note": "This is lower part of Cygnus and for reference the brightest star is Deneb in middle. This includes The Wall, North America Nebula (Right below Deneb), Sadr Region (Top left of Deneb, below Cygnus Star). You can also see some extra structures laying around which are part of the sab hill region."
   },
   {
-    "src": "assets/astrophotography/pleiades-optimized.jpg",
+    "src": "assets/astrophotography/pleiades1.jpg",
     "title": "Pleiades",
     "type": "Star Cluster",
     "iso": "ISO 800",
@@ -60,7 +70,7 @@
     "note": "I mean c'mon dude. This is literally moon. Everyone has taken pics of the moon once in their life. I just took it with a better camera."
   },
   {
-    "src": "assets/astrophotography/orion.jpg",
+    "src": "assets/astrophotography/orion1.jpg",
     "title": "Orion Nebula",
     "type": "Nebula",
     "iso": "6400",
