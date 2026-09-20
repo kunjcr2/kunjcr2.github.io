@@ -1,6 +1,7 @@
 [
   {
     "src": "assets/astrophotography/andromeda-optimized.jpg",
+    "year": 2026,
     "title": "Andromeda Galaxy",
     "type": "Spiral galaxy",
     "iso": "ISO 1600",
@@ -11,16 +12,18 @@
   },
   {
     "src": "assets/astrophotography/pleiades2.jpg",
+    "year": 2026,
     "title": "Pleiades",
     "type": "Star Cluster",
     "iso": "ISO 3200",
     "focal": "200 mm",
     "exposure": "60 Minutes",
     "aperture": "f/5.6",
-    "note": "I took one of these, you can find it somehwhere in this gallery and you can see how good it looks compared to that old one."
+    "note": "I took one of these, you can find it somehwhere in this gallery and you can see how good it looks compared to that old one. You can clearly see blue nebula kind of a thing in there and it looks stunning. Contact me for more info."
   },
   {
     "src": "assets/astrophotography/orion2.jpg",
+    "year": 2026,
     "title": "Orion Nebula and Running man Nebula",
     "type": "Nebula",
     "iso": "3200",
@@ -31,6 +34,7 @@
   },
   {
     "src": "assets/astrophotography/ngc7000-optimized.jpg",
+    "year": 2026,
     "title": "North America Nebula",
     "type": "Emission Nebula",
     "iso": "ISO 3200",
@@ -41,6 +45,7 @@
   },
   {
     "src": "assets/astrophotography/pleiades1.jpg",
+    "year": 2024,
     "title": "Pleiades",
     "type": "Star Cluster",
     "iso": "ISO 800",
@@ -51,6 +56,7 @@
   },
   {
     "src": "assets/astrophotography/jupiter.jpg",
+    "year": 2022,
     "title": "Jupiter and moons",
     "type": "Planet",
     "iso": "Null",
@@ -61,6 +67,7 @@
   },
   {
     "src": "assets/astrophotography/moon.jpg",
+    "year": 2022,
     "title": "Moon",
     "type": "Moon",
     "iso": "200",
@@ -71,6 +78,7 @@
   },
   {
     "src": "assets/astrophotography/orion1.jpg",
+    "year": 2023,
     "title": "Orion Nebula",
     "type": "Nebula",
     "iso": "6400",
@@ -81,6 +89,7 @@
   },
   {
     "src": "assets/astrophotography/commet_ztf.jpg",
+    "year": 2023,
     "title": "Comet C/2022 E3 (ZTF)",
     "type": "Commet",
     "iso": "3200",
@@ -91,6 +100,7 @@
   },
   {
     "src": "assets/astrophotography/m13.jpg",
+    "year": 2026,
     "title": "Hercules Globular Cluster",
     "type": "Star Cluster",
     "iso": "3200",
@@ -101,6 +111,7 @@
   },
   {
     "src": "assets/astrophotography/lagoon.jpg",
+    "year": 2023,
     "title": "Lagoon Nebula",
     "type": "Nebula",
     "iso": "6400",
@@ -111,6 +122,7 @@
   },
   {
     "src": "assets/astrophotography/ic1805.JPG",
+    "year": 2026,
     "title": "Heart Nebula",
     "type": "Nebula",
     "iso": "3200",
@@ -121,6 +133,7 @@
   },
   {
     "src": "assets/astrophotography/ring.jpg",
+    "year": 2023,
     "title": "Ring Nebula",
     "type": "Nebula",
     "iso": "6400",
@@ -131,6 +144,7 @@
   },
   {
     "src": "assets/astrophotography/5_gc_2_nebula.jpg",
+    "year": 2022,
     "title": "5 Globular Clusters and Lagoon and Trifid Nebula",
     "type": "Globular Clusters and Nebulas",
     "iso": "3200",
