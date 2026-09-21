@@ -109,7 +109,7 @@ figcaption {
 }
 
 .main-nav {
-  margin-top: 24px;
+  margin-bottom: 28px;
 }
 
 .external-links {
@@ -271,8 +271,8 @@ main {
 
 .contact-layout {
   display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 36px;
+  grid-template-columns: 384px 1fr;
+  gap: 24px;
 }
 
 .contact-form {
@@ -449,7 +449,7 @@ main {
     display: block;
   }
 
-  .simple-header a + a {
+  .simple-header a+a {
     display: inline-block;
     margin-top: 6px;
   }
