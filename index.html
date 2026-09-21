@@ -1,1011 +1,284 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>K</text></svg>" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Kunj Shah | Deep Learning & LLM Engineer" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kunj Shah — computer science student and deep learning engineer in San Jose, California.">
   <title>Kunj Shah | Deep Learning Engineer</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- No flash -->
-  <script>
-    // Light mode is the default; dark mode is enabled only after the user selects it.
-    if (localStorage.theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    }
-  </script>
-
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans:  ['Arial', 'Helvetica', 'sans-serif'],
-            serif: ['Arial', 'Helvetica', 'sans-serif'],
-            mono:  ['Arial', 'Helvetica', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <style>
-    :root {
-      --sidebar-w: 240px;
-      --topbar-h:  52px;
-      --mob-bar-h: 48px;
-    }
-
-    html { -webkit-font-smoothing: antialiased; }
-
-    /* Force hidden to always win over any display rule, including ID selectors */
-    .hidden { display: none !important; }
-
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: #e4e4e7; border-radius: 9999px; }
-    .dark ::-webkit-scrollbar-thumb { background: #3f3f46; }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(5px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .page-view { animation: fadeIn 0.25s ease forwards; }
-
-    /* ── Fixed top bar (desktop) ─────────────────────── */
-    .topbar {
-      position: fixed;
-      top: 0;
-      left: var(--sidebar-w);
-      right: 0;
-      height: var(--topbar-h);
-      z-index: 40;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 1.75rem;
-      border-bottom: 1px solid rgba(228,228,231,0.5);
-      background: rgba(250,249,246,0.95);
-      backdrop-filter: blur(10px);
-    }
-    .dark .topbar {
-      border-bottom-color: rgba(39,39,42,0.6);
-      background: rgba(18,18,18,0.95);
-    }
-    .topbar-links { display: flex; align-items: center; gap: 1.25rem; }
-
-    /* ── Sidebar nav active state ────────────────────── */
-    .nav-link.active {
-      border-color: #18181b;
-      font-weight: 500;
-      color: #18181b;
-    }
-    .dark .nav-link.active {
-      border-color: #f4f4f5;
-      color: #f4f4f5;
-    }
-
-    /* ── Sidebar ─────────────────────────────────────── */
-    .sidebar {
-      position: fixed;
-      top: 0; left: 0;
-      width: var(--sidebar-w);
-      height: 100vh;
-      z-index: 50;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1.25rem 1.75rem;
-      text-align: center;
-      border-right: 1px solid rgba(228,228,231,0.45);
-      transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
-      overflow-y: auto;
-    }
-    .dark .sidebar { border-right-color: rgba(39,39,42,0.55); }
-
-    /* ── Main offset ─────────────────────────────────── */
-    .main-wrap {
-      margin-left: var(--sidebar-w);
-      padding-top: var(--topbar-h);
-    }
-    /* Home section locked to viewport — no outer padding on wrapper */
-    .home-hero {
-      min-height: auto;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      overflow: hidden;
-      padding: 3.5rem 3rem 2rem;
-    }
-    .home-hero footer { margin-top: 3rem; }
-    .hero-topline {
-      display: flex;
-      align-items: center;
-      gap: .75rem;
-      color: #a1a1aa;
-      font-size: .65rem;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-    .hero-topline::before { content: ''; width: 2.5rem; height: 1px; background: currentColor; }
-    .hero-layout { display: grid; grid-template-columns: minmax(0, 1fr) 13rem; gap: 3rem; align-items: end; }
-    .hero-title { max-width: 52rem; letter-spacing: -.04em; }
-    .hero-side-note { border-left: 1px solid rgba(113,113,122,.5); padding-left: 1rem; }
-    .hero-side-note dt { color: #71717a; font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; }
-    .hero-side-note dd { margin-top: .35rem; color: #a1a1aa; font-size: .7rem; line-height: 1.6; }
-    .hero-link-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      padding: .7rem 1rem;
-      border: 1px solid #a1a1aa;
-      border-radius: 999px;
-      transition: background .2s ease, color .2s ease, border-color .2s ease;
-    }
-    .hero-link-primary:hover { background: #f4f4f5; border-color: #f4f4f5; color: #18181b; }
-    .dark .hero-link-primary:hover { background: #f4f4f5; color: #18181b; }
-    @media (max-width: 767px) {
-      .home-hero { min-height: auto; height: auto; padding: 2rem 1.25rem 1.25rem; overflow: visible; }
-      .hero-layout { display: block; }
-      .hero-side-note { display: none; }
-      .hero-title { letter-spacing: -.025em; }
-    }
-    /* ── Mobile ──────────────────────────────────────── */
-    .mob-bar { display: none; }
-    .sidebar-overlay {
-      display: none;
-      position: fixed; inset: 0;
-      background: rgba(0,0,0,0.35);
-      backdrop-filter: blur(2px);
-      z-index: 45;
-    }
-    .sidebar-overlay.open { display: block; }
-
-    @media (max-width: 767px) {
-      .topbar { display: none; }
-      .sidebar {
-        transform: translateX(-100%);
-        width: 280px;
-        background: #ffffff;
-      }
-      .dark .sidebar { background: #121212; }
-      .sidebar.open { transform: translateX(0); }
-      .main-wrap { margin-left: 0; padding-top: var(--mob-bar-h); }
-      .home-hero { min-height: auto; height: auto; padding: 1.5rem 1.25rem 1rem; }
-      .mob-bar {
-        display: flex;
-        position: sticky; top: 0; z-index: 35;
-        height: var(--mob-bar-h);
-        padding: 0 1.25rem;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid rgba(228,228,231,0.5);
-        background: rgba(250,249,246,0.95);
-        backdrop-filter: blur(10px);
-      }
-      .dark .mob-bar {
-        background: rgba(18,18,18,0.95);
-        border-bottom-color: rgba(39,39,42,0.6);
-      }
-    }
-
-    /* Astrophotography gallery */
-    .astro-wall { columns: 1; column-gap: 1rem; }
-    .astro-card {
-      break-inside: avoid;
-      position: relative;
-      display: block;
-      width: 100%;
-      margin: 0 0 1rem;
-      overflow: hidden;
-      border-radius: 0.5rem;
-      background: #18181b;
-      cursor: pointer;
-    }
-    .astro-card img { display: block; width: 100%; transition: transform 500ms cubic-bezier(.16,1,.3,1); }
-    .astro-card:hover img, .astro-card:focus-visible img { transform: scale(1.035); }
-    .astro-overlay {
-      position: absolute; inset: 0;
-      display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 1rem;
-      color: #fff;
-      background: linear-gradient(to top, rgba(9,9,11,.9), rgba(9,9,11,.08) 65%);
-      opacity: 0;
-      transition: opacity 200ms ease;
-    }
-    .astro-card:hover .astro-overlay, .astro-card:focus-visible .astro-overlay { opacity: 1; }
-    .astro-card:focus-visible { outline: 2px solid #a1a1aa; outline-offset: 3px; }
-    .astro-placeholder {
-      min-height: 250px; padding: 1.25rem;
-      display: flex; flex-direction: column; justify-content: flex-end;
-      background: radial-gradient(circle at 72% 26%, #59647e 0, transparent 4%), radial-gradient(circle at 24% 40%, #29324b 0, transparent 2%), linear-gradient(145deg, #151925, #06070b);
-    }
-    .astro-card img + .astro-placeholder { display: none; }
-    .astro-placeholder::before { content: ''; position: absolute; inset: 0; opacity: .45; background-image: radial-gradient(#fff 0.6px, transparent 0.8px); background-size: 22px 22px; }
-    .astro-dialog { background: rgba(9,9,11,.84); }
-    @media (min-width: 640px) { .astro-wall { columns: 2; } }
-    @media (min-width: 1024px) { .astro-wall { columns: 3; } }
-
-    /* Simple academic layout inspired by classic research homepages. */
-    :root {
-      --page-bg: #ffffff;
-      --page-text: #242424;
-      --page-muted: #666666;
-      --page-faint: #8a8a8a;
-      --page-rule: #dedede;
-      --page-link: #2457a7;
-    }
-    .dark {
-      --page-bg: #171717;
-      --page-text: #eeeeee;
-      --page-muted: #b6b6b6;
-      --page-faint: #929292;
-      --page-rule: #3a3a3a;
-      --page-link: #8ab4f8;
-    }
-    html { scroll-padding-top: 1.5rem; }
-    body {
-      width: min(100% - 2.5rem, 1180px);
-      margin: 0 auto !important;
-      padding: 0 0 4rem;
-      background: var(--page-bg) !important;
-      color: var(--page-text) !important;
-      font-family: Arial, Helvetica, sans-serif !important;
-      font-size: 15px;
-      line-height: 1.55;
-      transition: none !important;
-    }
-    body a { color: var(--page-link); }
-    body a:hover { text-decoration: underline; }
-
-    .topbar {
-      position: static;
-      display: flex !important;
-      width: 100%;
-      height: auto;
-      padding: 1.4rem 0 .75rem;
-      border: 0;
-      border-bottom: 1px solid var(--page-rule);
-      background: transparent !important;
-      color: var(--page-muted) !important;
-      backdrop-filter: none;
-      font-family: Arial, Helvetica, sans-serif !important;
-      font-size: 13px !important;
-    }
-    .topbar-links { gap: 1rem; flex-wrap: wrap; justify-content: flex-end; }
-    .topbar a { color: var(--page-link) !important; }
-    .topbar-left {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-shrink: 0;
-    }
-    .topbar button {
-      display: inline-flex;
-      align-items: center;
-      gap: .4rem;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      color: var(--page-link) !important;
-      font-size: 13px;
-      line-height: 1.5;
-      cursor: pointer;
-    }
-    .topbar button:hover { text-decoration: underline; }
-    .mob-bar,
-    .sidebar-overlay { display: none !important; }
-
-    .sidebar {
-      position: static;
-      display: block;
-      width: auto;
-      height: auto;
-      padding: 2rem 0 2.25rem;
-      border: 0;
-      border-bottom: 1px solid var(--page-rule);
-      background: transparent !important;
-      text-align: left;
-      overflow: visible;
-      transform: none !important;
-    }
-    .profile-intro {
-      display: grid;
-      grid-template-columns: 150px minmax(0, 1fr);
-      gap: 1.75rem;
-      align-items: center;
-    }
-    .profile-intro > img {
-      width: 150px !important;
-      height: 150px !important;
-      margin: 0 !important;
-      border: 1px solid var(--page-rule) !important;
-      border-radius: 3px !important;
-      object-fit: cover;
-    }
-    .profile-intro > .space-y-1 > p:first-child {
-      color: var(--page-text);
-      font-family: Arial, Helvetica, sans-serif !important;
-      font-size: 34px !important;
-      font-weight: 400 !important;
-      line-height: 1.1;
-    }
-    .profile-intro > .space-y-1 p { margin: .15rem 0; color: var(--page-muted) !important; font-family: Arial, Helvetica, sans-serif !important; font-size: 13px !important; }
-    .profile-intro .pt-1 { margin-top: .45rem; }
-    .sidebar nav {
-      display: flex !important;
-      flex-direction: row !important;
-      flex-wrap: wrap;
-      gap: .25rem 1rem !important;
-      width: auto !important;
-      margin: 1.2rem 0 0 !important;
-      font-family: Arial, Helvetica, sans-serif !important;
-      font-size: 14px !important;
-    }
-    .sidebar .nav-link {
-      margin: 0 !important;
-      padding: 0 !important;
-      border: 0 !important;
-      color: var(--page-link) !important;
-      font-weight: 400 !important;
-    }
-    .sidebar .nav-link.active { text-decoration: underline; }
-    .sidebar > .flex-1 { display: none; }
-    .profile-actions {
-      display: flex !important;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      width: auto !important;
-      margin-top: .65rem;
-      padding: 0 !important;
-      border: 0 !important;
-    }
-    .profile-actions a,
-    .profile-actions button {
-      width: auto !important;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      color: var(--page-link) !important;
-      font-family: Arial, Helvetica, sans-serif !important;
-      font-size: 13px !important;
-      cursor: pointer;
-    }
-
-    .main-wrap { margin: 0; padding: 0; }
-    .main-wrap > div { max-width: none !important; }
-    .main-wrap,
-    .main-wrap main,
-    .hero-layout,
-    .hero-layout > div,
-    main section { min-width: 0; max-width: 100%; }
-    main .page-view,
-    main .page-view.hidden {
-      display: block !important;
-      padding: 2.75rem 0 !important;
-      border-top: 1px solid var(--page-rule);
-      animation: none;
-      scroll-margin-top: 1rem;
-    }
-    main #page-home {
-      min-height: 0;
-      height: auto;
-      padding: 2.5rem 0 3rem !important;
-      border-top: 0;
-      overflow: visible;
-    }
-    .hero-layout { display: block; }
-    .hero-topline {
-      gap: 0;
-      color: var(--page-muted) !important;
-      font-size: 13px;
-      letter-spacing: 0;
-      text-transform: none;
-    }
-    .hero-topline::before { display: none; }
-    .hero-title {
-      max-width: 720px;
-      margin-top: .8rem !important;
-      color: var(--page-text) !important;
-      font-family: Arial, Helvetica, sans-serif !important;
-      font-size: clamp(28px, 5vw, 39px) !important;
-      font-weight: 400 !important;
-      line-height: 1.2 !important;
-      letter-spacing: -.02em;
-    }
-    #page-home .hero-title + p {
-      max-width: 720px;
-      margin-top: 1rem !important;
-      color: var(--page-muted) !important;
-      font-size: 15px !important;
-      line-height: 1.65;
-      overflow-wrap: anywhere;
-    }
-    #page-home .hero-title + p + div { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem 1.25rem; }
-    .hero-link-primary {
-      padding: 0;
-      border: 0;
-      border-radius: 0;
-      color: var(--page-link) !important;
-    }
-    .hero-link-primary:hover { background: transparent !important; color: var(--page-link) !important; }
-    .hero-side-note {
-      display: grid !important;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.5rem;
-      max-width: 460px;
-      margin-top: 2rem;
-      padding: 1rem 0 0;
-      border: 0;
-      border-top: 1px solid var(--page-rule);
-    }
-    .hero-side-note dt { color: var(--page-faint); font-size: 11px; letter-spacing: .08em; }
-    .hero-side-note dd { color: var(--page-muted); font-size: 12px; }
-
-    main section > div:first-child > h1 {
-      color: var(--page-text) !important;
-      font-family: Arial, Helvetica, sans-serif !important;
-      font-size: 27px !important;
-      font-weight: 400 !important;
-    }
-    main section > div:first-child > h1 + p { color: var(--page-muted) !important; font-family: Arial, Helvetica, sans-serif !important; font-size: 13px !important; }
-    main h2,
-    main h3 { color: var(--page-text) !important; }
-    main h2 { font-size: 12px !important; letter-spacing: .08em !important; }
-    main h3 { font-family: Arial, Helvetica, sans-serif !important; font-size: 16px !important; }
-    main p,
-    main li { color: var(--page-muted); }
-    main hr,
-    main .border-t { border-color: var(--page-rule) !important; }
-
-    #page-experience .space-y-8 > .grid {
-      display: grid !important;
-      grid-template-columns: 170px minmax(0, 1fr) !important;
-      gap: 1.5rem !important;
-    }
-    #page-experience .space-y-8 > .grid > div:last-child { grid-column: 2 !important; }
-    #page-projects .grid { display: block !important; }
-    #page-projects .grid > div {
-      padding: 1rem 0 !important;
-      border: 0 !important;
-      border-bottom: 1px solid var(--page-rule) !important;
-      border-radius: 0 !important;
-    }
-    #page-projects .grid > div:last-child { border-bottom: 0 !important; }
-    #page-credentials > .grid:first-of-type { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
-    #page-contact iframe { min-height: 480px; }
-
-    .site-footer {
-      padding: 2rem 0 0;
-      border-top: 1px solid var(--page-rule);
-      color: var(--page-faint);
-      font-size: 12px;
-    }
-
-    @media (max-width: 640px) {
-      body { width: min(100% - 2rem, 1180px); }
-      .topbar { display: block !important; }
-      .topbar-left { justify-content: flex-start; }
-      .topbar-left > span { display: none; }
-      .topbar-links { justify-content: flex-start; margin-top: .65rem; }
-      .sidebar { padding: 1.5rem 0 1.75rem; }
-      .profile-intro { grid-template-columns: 92px minmax(0, 1fr); gap: 1rem; }
-      .profile-intro > img { width: 92px !important; height: 92px !important; }
-      .profile-intro > .space-y-1 > p:first-child { font-size: 27px !important; }
-      .profile-intro > .space-y-1 .pt-1 { display: none; }
-      .sidebar nav { margin-top: 1rem !important; }
-      main .page-view,
-      main .page-view.hidden { padding: 2.25rem 0 !important; }
-      #page-experience .space-y-8 > .grid { grid-template-columns: 1fr !important; gap: .7rem !important; }
-      #page-experience .space-y-8 > .grid > div:last-child { grid-column: 1 !important; }
-      #page-credentials > .grid:first-of-type { grid-template-columns: 1fr !important; }
-      #page-contact > .grid { display: block !important; }
-      #page-contact iframe { margin-top: 1.5rem; min-height: 560px; }
-    }
-
-    /* One typeface and one link treatment throughout the site. */
-    body,
-    body *,
-    body *::before,
-    body *::after {
-      font-family: Arial, Helvetica, sans-serif !important;
-    }
-    body a,
-    body a:visited,
-    body a:hover,
-    body a:focus,
-    body a:active {
-      color: var(--page-link) !important;
-      font-family: Arial, Helvetica, sans-serif !important;
-    }
-  </style>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>K</text></svg>">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
-<body class="bg-[#ffffff] text-zinc-900 dark:bg-[#121212] dark:text-zinc-100 font-sans transition-colors duration-200">
-
-  <!-- ── Fixed Top Bar (desktop) ─────────────────────── -->
-  <div class="topbar font-mono text-[11px] text-zinc-500 dark:text-zinc-400">
-    <div class="topbar-left">
-      <button id="theme-toggle" aria-label="Toggle theme">
-        <i data-lucide="sun" class="w-3.5 h-3.5 hidden dark:block shrink-0"></i>
-        Toggle theme
-      </button>
-      <span class="text-zinc-400 dark:text-zinc-500 shrink-0">San Jose, CA</span>
-    </div>
-    <div class="topbar-links">
-      <a href="mailto:kunjcr2@gmail.com"                                  class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Email</a>
-      <a href="https://github.com/kunjcr2"           target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">GitHub</a>
-      <a href="https://huggingface.co/kunjcr2"       target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">HuggingFace</a>
-      <a href="https://www.linkedin.com/in/kunjcr2/" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">LinkedIn</a>
-      <a href="Kunj.pdf"                              target="_blank"                           class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Resume</a>
-    </div>
-  </div>
-
-  <!-- ── Mobile top bar ──────────────────────────────── -->
-  <div class="mob-bar bg-[#ffffff]/95 dark:bg-[#121212]/95">
-    <span class="font-serif font-semibold text-base">Kunj Shah</span>
-    <div class="flex items-center gap-2">
-      <button id="mob-theme" class="p-1.5 text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors rounded" aria-label="Toggle theme">
-        <i data-lucide="sun"  class="w-4 h-4 hidden dark:block"></i>
-      </button>
-      <button id="mob-toggle" class="p-1.5 text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors rounded" aria-label="Menu">
-        <i data-lucide="menu" class="w-5 h-5"></i>
-      </button>
-    </div>
-  </div>
-
-  <!-- Overlay -->
-  <div class="sidebar-overlay" id="overlay"></div>
-
-  <!-- ── Sidebar ──────────────────────────────────────── -->
-  <aside class="sidebar bg-[#ffffff] dark:bg-[#121212]" id="sidebar">
-
-    <!-- Profile image — bigger, centered -->
-    <div class="profile-intro">
-      <img src="Kunj.png" alt="Kunj Shah"
-        class="w-40 h-40 rounded-full object-cover border border-zinc-200/60 dark:border-zinc-700/40 mb-5 shrink-0" />
-
-      <!-- Name + title + status (plain text, no box) -->
-      <div class="space-y-1">
-        <p class="font-serif text-xl font-semibold leading-tight">Kunj Shah</p>
-        <p class="text-[11px] font-mono text-zinc-500 dark:text-zinc-400">Computer Science Student</p>
-        <div class="pt-1 space-y-0.5">
-          <p class="text-[12px] underline font-mono text-zinc-400 dark:text-zinc-500"><strong>Upcoming</strong></p>
-          <p class="text-[12px] font-mono text-zinc-400 dark:text-zinc-500">Senior ML Engineer – AI Safety & Evaluation <strong>@</strong> A10 Networks · San Jose, CA (I'M RETURNING)</p>
-          <p class="text-[12px] underline font-mono text-zinc-400 dark:text-zinc-500"><strong>Previously</strong></p>
-          <p class="text-[12px] font-mono text-zinc-400 dark:text-zinc-500">Deep Learning Engineer Intern <strong>@</strong> A10 Networks · San Jose, CA</p>
+<body>
+  <header class="site-header" id="home">
+    <div class="container">
+      <div class="intro">
+        <img class="portrait" src="Kunj.png" alt="Kunj Shah">
+        <div>
+          <h1>Kunj Shah</h1>
+          <p class="subtitle">Computer science student and deep learning engineer</p>
+          <p class="status"><strong>Upcoming</strong> Senior ML Engineer — AI Safety &amp; Evaluation at A10 Networks, San Jose</p>
+          <p class="status"><strong>Previously</strong> Deep Learning Engineer Intern at A10 Networks, San Jose</p>
+          <div class="external-links" aria-label="External links">
+            <a href="mailto:kunjcr2@gmail.com">Email</a>
+            <a href="https://github.com/kunjcr2" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://huggingface.co/kunjcr2" target="_blank" rel="noopener noreferrer">Hugging Face</a>
+            <a href="https://www.linkedin.com/in/kunjcr2/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="Kunj.pdf" target="_blank">Résumé (PDF)</a>
+          </div>
         </div>
       </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Nav links -->
-    <nav class="mt-8 w-full flex flex-col gap-1 font-mono text-[13px]">
-      <a href="#page-home"        data-nav="home"        class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Home</a>
-      <a href="#page-experience"  data-nav="experience"  class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Experience</a>
-      <a href="#page-projects"    data-nav="projects"    class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Projects</a>
-      <a href="#page-credentials" data-nav="credentials" class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Credentials</a>
-      <a href="#page-hobbies"     data-nav="hobbies"     class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Hobbies</a>
-      <a href="#page-contact"     data-nav="contact"     class="nav-link px-2 py-1.5 text-left border-l-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 -ml-0.5 transition-colors">Contact</a>
-    </nav>
+  <main class="container">
+    <section class="page-section about" id="about">
+      <h2>About me</h2>
+      <p>
+        I’m a computer science student focused on deep learning research. I work on language and multimodal models,
+        with a particular interest in how they learn, adapt, and behave.
+      </p>
+      <p><a href="https://github.com/kunjcr2/llms-from-scratch" target="_blank" rel="noopener noreferrer">See my research and experiments →</a></p>
+    </section>
 
-    <!-- Spacer -->
-    <div class="flex-1"></div>
+    <section class="page-section" id="experience">
+      <h2>Experience</h2>
+      <p class="section-note">Work and education</p>
 
-    <!-- Resume shortcut -->
-    <div class="profile-actions w-full space-y-2.5 pt-4 border-t border-zinc-200/40 dark:border-zinc-800/40">
-      <a href="Kunj.pdf" target="_blank"
-        class="flex items-center gap-2 font-mono text-[12px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors justify-center">
-        <i data-lucide="file-text" class="w-3.5 h-3.5 shrink-0"></i>
-        Resume (PDF)
-      </a>
-    </div>
+      <article class="job">
+        <div class="meta">
+          <p>May 2026 — August 2026</p>
+          <p><strong>A10 Networks</strong></p>
+          <p>San Jose, CA</p>
+        </div>
+        <div>
+          <h3>Deep Learning Engineer Intern <span>— AI Firewall Team</span></h3>
+          <ul>
+            <li>Architected and trained TrooperViz, a multimodal safety guardrail model built with Python, PyTorch, and Hugging Face Transformers, enabling evaluation of text, image-text inputs, multi-turn conversations, and assistant-generated outputs.</li>
+            <li>Fine-tuned a vision-language model for multimodal safety classification and merged it with a text-only guardrail model using SLERP, creating one system for visual, conversational, and generative-AI interactions.</li>
+            <li>Built data and evaluation workflows for annotation, preprocessing, synthetic conversation generation, benchmarking, and interactive inference with Gradio and vLLM.</li>
+          </ul>
+          <p class="tools">Python · PyTorch · SFT · SLERP · vLLM · Hugging Face · W&amp;B · CI/CD</p>
+        </div>
+      </article>
 
-  </aside>
+      <article class="job">
+        <div class="meta">
+          <p>October 2025 — April 2026</p>
+          <p><strong>Routes Technologies</strong></p>
+          <p>Remote, TX</p>
+        </div>
+        <div>
+          <h3>AI Engineer Intern</h3>
+          <ul>
+            <li>Architected an LLM-powered NL-to-SQL RAG pipeline with few-shot prompting, input normalization, parameterized SQL sanitization, session memory, and W&amp;B observability across five Azure ML endpoints.</li>
+            <li>Built an SVD collaborative-filtering recommendation pipeline and an LLM-driven taste profiler for nightly user preference generation.</li>
+            <li>Engineered recipe ingestion using Scrapy, Instagram and TikTok integrations, GPT-4o-mini classification, language filtering, and audio transcription fallback.</li>
+          </ul>
+          <p class="tools">Python · SQL · Azure ML · scikit-learn · Sentence Transformers · W&amp;B · Scrapy</p>
+        </div>
+      </article>
 
-  <!-- ── Main Content ─────────────────────────────────── -->
-  <div class="main-wrap">
-    <div class="max-w-4xl mx-auto w-full">
-      <main>
+      <article class="job">
+        <div class="meta">
+          <p>May 2025 — August 2025</p>
+          <p><strong>Dreamable Inc.</strong></p>
+          <p>San Francisco, CA</p>
+        </div>
+        <div>
+          <h3>AI/ML Engineering Intern</h3>
+          <ul>
+            <li>Trained, tuned, and deployed ML models in a production cloud environment using Python, PyTorch, TensorFlow, and Hugging Face.</li>
+            <li>Fine-tuned Qwen-2.5-7B with LoRA on GCP and tracked experiments with Weights &amp; Biases.</li>
+            <li>Curated NLP datasets and built a generative-AI outreach agent with LangChain and the OpenAI API.</li>
+          </ul>
+          <p class="tools">Python · PyTorch · TensorFlow · Hugging Face · LoRA · GCP · LangChain · W&amp;B</p>
+        </div>
+      </article>
 
-        <!-- ══ HOME ══════════════════════════════════ -->
-        <section id="page-home" class="page-view home-hero">
-
-          <div class="hero-layout">
-            <div>
-              <p class="hero-topline">Computer science student · deep learning engineer</p>
-              <h1 class="hero-title mt-6 font-serif text-4xl md:text-6xl font-light leading-[1.04] text-zinc-900 dark:text-zinc-50">
-                I am Kunj Shah &<br> I am an average Deep Learning Enjoyer.
-              </h1>
-              <p class="mt-7 text-zinc-600 dark:text-zinc-400 leading-relaxed text-sm md:text-base font-light max-w-2xl">
-                I’m Kunj, a computer science student focused on deep learning research. Working on all kinds of deep learning models.
-                I explore how language and multimodal models learn, adapt, and behave through careful experiments and open work.
-              </p>
-              <div class="mt-4 flex flex-wrap items-center gap-4 text-xs font-mono text-zinc-500 dark:text-zinc-400">
-                <a href="https://github.com/kunjcr2/llms-from-scratch" target="_blank" class="hero-link-primary">Explore my research and experiments</a>
-              </div>
-            </div>
-            <dl class="hero-side-note hidden md:block space-y-5 text-xs font-mono">
-              <div><dt>Research</dt><dd>Deep learning<br>Language models<br>Model safety</dd></div>
-              <div><dt>Method</dt><dd>Read deeply.<br>Test carefully.</dd></div>
-            </dl>
-          </div>
-
-        </section>
-
-        <!-- ══ EXPERIENCE ════════════════════════════ -->
-        <section id="page-experience" class="page-view space-y-10 px-6 sm:px-10 py-10 md:py-12">
+      <div class="education">
+        <p class="eyebrow">Education</p>
+        <div class="education-grid">
           <div>
-            <h1 class="font-serif text-2xl font-light">Experience &amp; Education</h1>
-            <p class="text-xs font-mono text-zinc-400 mt-1">Chronology of professional internships and academic coursework.</p>
+            <h3>San Jose State University</h3>
+            <p class="meta">B.S. Computer Science · GPA 3.88 · 2026–2027</p>
+            <ul class="plain-list">
+              <li>NSP research with Professor William</li>
+              <li>CodePath Advanced DSA training</li>
+              <li>Dean’s List Honoree</li>
+            </ul>
           </div>
-
-          <div class="space-y-8 pt-4 border-t border-zinc-200/50 dark:border-zinc-800">
-
-            <div class="grid md:grid-cols-4 gap-4">
-              <div class="space-y-0.5">
-                <p class="text-xs font-mono text-zinc-400">May 2026 — August 2026</p>
-                <p class="text-xs font-semibold text-zinc-700 dark:text-zinc-300">A10 Networks</p>
-                <p class="text-[10px] text-zinc-400">San Jose, CA</p>
-              </div>
-              <div class="md:col-span-3 space-y-2">
-                <h3 class="font-serif text-base font-medium">Deep Learning Engineer Intern <span class="font-sans text-xs font-normal text-zinc-500">— AI Firewall Team</span></h3>
-                <ul class="list-disc pl-4 space-y-1.5 text-xs text-zinc-500 leading-relaxed font-light">
-                  <li>Architected and trained TrooperViz, a multimodal safety guardrail model built with Python, PyTorch, and Hugging Face Transformers, enabling comprehensive evaluation of text, image-text inputs, multi-turn conversations, and assistant-generated outputs across diverse safety categories.</li>
-                  <li>Fine-tuned a vision-language model for multimodal safety classification and merged it with a text-only guardrail model using SLERP, creating a unified safety system with broader coverage across visual, conversational, and generative-AI interactions.</li>
-                  <li>Engineered end-to-end data and evaluation workflows—including annotation, Pandas-based preprocessing, synthetic multi-turn conversation generation, model benchmarking, and interactive inference via Gradio and vLLM—streamlining the testing pipeline and accelerating safety assessments.</li>
-                </ul>
-                <p class="text-[10px] font-mono text-zinc-400 pt-1">Python · PyTorch · SFT · SLERP · vLLM · Hugging Face · W&amp;B · CI/CD</p>
-              </div>
-            </div>
-
-            <hr class="border-zinc-200/40 dark:border-zinc-800" />
-
-            <div class="grid md:grid-cols-4 gap-4">
-              <div class="space-y-0.5">
-                <p class="text-xs font-mono text-zinc-400">Oct 2025 — Apr 2026</p>
-                <p class="text-xs font-semibold text-zinc-700 dark:text-zinc-300">Routes Technologies</p>
-                <p class="text-[10px] text-zinc-400">Remote, TX</p>
-              </div>
-              <div class="md:col-span-3 space-y-2">
-                <h3 class="font-serif text-base font-medium">AI Engineer Intern</h3>
-                <ul class="list-disc pl-4 space-y-1.5 text-xs text-zinc-500 leading-relaxed font-light">
-                  <li>Architected an LLM-powered NL-to-SQL RAG pipeline with few-shot prompting, input normalization (470+ synonym mappings), parameterized SQL sanitization, session memory, and Weights &amp; Biases observability—deployed across 5 Azure ML managed online endpoints.</li>
-                  <li>Built an SVD collaborative-filtering recommendation pipeline on Azure ML, evaluated with precision, recall, and MAP metrics, and paired it with an LLM-driven taste profiler that batch-generates user preference vectors in a nightly ETL job, resulting in more relevant recommendations and faster cold-start handling.</li>
-                  <li>Engineered a multi-source recipe ingestion system using a Scrapy crawler with JSON-LD extraction, Instagram Graph API and TikTok oEmbed integrations, GPT-4o-mini for recipe classification, lingua for language filtering, and faster-whisper for audio transcription fallback, which expanded the recipe catalog and cut ingestion latency.</li>
-                </ul>
-                <p class="text-[10px] font-mono text-zinc-400 pt-1">Python · SQL · Azure ML · scikit-learn · Sentence-Transformers · W&amp;B · Scrapy</p>
-              </div>
-            </div>
-
-            <hr class="border-zinc-200/40 dark:border-zinc-800" />
-
-            <div class="grid md:grid-cols-4 gap-4">
-              <div class="space-y-0.5">
-                <p class="text-xs font-mono text-zinc-400">May 2025 — Aug 2025</p>
-                <p class="text-xs font-semibold text-zinc-700 dark:text-zinc-300">Dreamable Inc.</p>
-                <p class="text-[10px] text-zinc-400">San Francisco, CA</p>
-              </div>
-              <div class="md:col-span-3 space-y-2">
-                <h3 class="font-serif text-base font-medium">AI/ML Engineering Intern</h3>
-                <ul class="list-disc pl-4 space-y-1.5 text-xs text-zinc-500 leading-relaxed font-light">
-                  <li>Trained, tuned, and deployed ML models in a production Cloud environment using Python, PyTorch, TensorFlow, and Hugging Face, working collaboratively with a cross-functional team.</li>
-                  <li>Fine-tuned Qwen-2.5-7B via LoRA on GCP Cloud to lower training cost while delivering a Q&amp;A model with comparable accuracy within budget, tracking experiments with Weights &amp; Biases.</li>
-                  <li>Curated NLP datasets (Pandas, NumPy, Hugging Face Datasets) to improve training data quality, and built a generative-AI outreach agent with LangChain and the OpenAI API to automate messaging workflows and increase response rates.</li>
-                </ul>
-                <p class="text-[10px] font-mono text-zinc-400 pt-1">Python · PyTorch · TensorFlow · Hugging Face · LoRA · GCP · LangChain · W&amp;B</p>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="pt-8 border-t border-zinc-200/50 dark:border-zinc-800 space-y-6">
-            <h2 class="text-[10px] font-mono tracking-widest uppercase text-zinc-400 dark:text-zinc-500">Education</h2>
-            <div class="grid sm:grid-cols-2 gap-8">
-              <div class="space-y-1.5">
-                <div class="flex justify-between items-baseline gap-2">
-                  <h3 class="font-serif text-sm font-medium">San Jose State University</h3>
-                  <span class="text-[10px] font-mono text-zinc-400 shrink-0">2026 — 2027</span>
-                </div>
-                <p class="text-xs font-mono text-zinc-400">B.S. Computer Science · GPA 3.88</p>
-                <ul class="text-xs text-zinc-500 space-y-0.5 leading-relaxed">
-                  <li>NSP research with Professor William</li>
-                  <li>CodePath Advanced DSA training</li>
-                  <li>Dean's List Honoree</li>
-                </ul>
-              </div>
-              <div class="space-y-1.5">
-                <div class="flex justify-between items-baseline gap-2">
-                  <h3 class="font-serif text-sm font-medium">San Francisco State University</h3>
-                  <span class="text-[10px] font-mono text-zinc-400 shrink-0">2023 — 2025</span>
-                </div>
-                <p class="text-xs font-mono text-zinc-400">Computer Science (Transferred)</p>
-                <ul class="text-xs text-zinc-500 space-y-0.5 leading-relaxed">
-                  <li>VP of AI Club &amp; Tech Lead at SparkSF</li>
-                  <li>Hosted SFHacks (400+ attendees)</li>
-                  <li>Dean's List Honoree</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-        </section>
-
-        <!-- ══ PROJECTS ═══════════════════════════════ -->
-        <section id="page-projects" class="page-view space-y-10 px-6 sm:px-10 py-10 md:py-12">
           <div>
-            <h1 class="font-serif text-2xl font-light">Projects &amp; Models</h1>
-            <p class="text-xs font-mono text-zinc-400 mt-1">Pre-trained models, adapters, and open-source repositories.</p>
+            <h3>San Francisco State University</h3>
+            <p class="meta">Computer Science (transferred) · 2023–2025</p>
+            <ul class="plain-list">
+              <li>VP of AI Club &amp; Tech Lead at SparkSF</li>
+              <li>Hosted SFHacks for more than 400 attendees</li>
+              <li>Dean’s List Honoree</li>
+            </ul>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="space-y-5 pt-4 border-t border-zinc-200/50 dark:border-zinc-800">
-            <h2 class="text-[10px] font-mono tracking-widest uppercase text-zinc-400">Repositories</h2>
-            <div class="grid sm:grid-cols-2 gap-5">
+    <section class="page-section" id="projects">
+      <h2>Projects</h2>
+      <p class="section-note">Open-source repositories and model weights</p>
 
-              <div class="border border-zinc-200/60 dark:border-zinc-800 rounded-lg p-5 hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors space-y-2">
-                <h3 class="font-serif text-sm font-medium">LLM Firewall for Agentic Tool-Calling</h3>
-                <p class="text-xs text-zinc-500 leading-relaxed">Low-latency inline defense intercepting prompt injections. GPT-2 attacker loop reduced bypass from 23.1% → 3.72%. BERT + LoRA adds ~20ms latency.</p>
-                <a href="https://github.com/kunjcr2/llms-from-scratch/tree/main/models/llm-firewall" target="_blank" rel="noopener noreferrer" class="text-[10px] font-mono text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline transition-colors">GitHub</a>
-              </div>
+      <div class="two-column">
+        <article class="project">
+          <h3>LLM Firewall for Agentic Tool-Calling</h3>
+          <p>Low-latency inline defense for prompt injection. A GPT-2 attacker loop reduced bypass from 23.1% to 3.72%; BERT with LoRA adds about 20 ms latency.</p>
+          <p class="project-links"><a href="https://github.com/kunjcr2/llms-from-scratch/tree/main/models/llm-firewall" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+        </article>
+        <article class="project">
+          <h3>theHelper — AI Research Assistant</h3>
+          <p>Production RAG with FAISS, LangChain chunking, cross-encoder reranking, local observability, and CI-gated QA.</p>
+          <p class="project-links"><a href="https://github.com/kunjcr2/theHelper" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+        </article>
+        <article class="project">
+          <h3>Kanting — Video RAG System</h3>
+          <p>Indexes YouTube transcripts with Whisper and returns precise clip timestamps through semantic search.</p>
+          <p class="project-links"><a href="https://github.com/kunjcr2/kanting-VideoRAG" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+        </article>
+        <article class="project">
+          <h3>AdaptRoute</h3>
+          <p>Task-aware routing from a query to specialized models.</p>
+          <p class="project-links"><a href="https://github.com/kunjcr2/AdaptRoute" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+        </article>
+        <article class="project">
+          <h3>GatorGPT</h3>
+          <p>A 63M-parameter transformer for consumer GPUs, using Grouped Query Attention and RoPE.</p>
+          <p class="project-links"><a href="https://github.com/kunjcr2/GatorGPT" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://huggingface.co/kunjcr2/GatorGPT2" target="_blank" rel="noopener noreferrer">Hugging Face</a></p>
+        </article>
+        <article class="project">
+          <h3>How LLMs Are Made</h3>
+          <p>Annotated implementations of GPT-2, DeepSeek MoE, and Kimi from scratch.</p>
+          <p class="project-links"><a href="https://github.com/kunjcr2/how-llms-are-made" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+        </article>
+      </div>
 
-              <div class="border border-zinc-200/60 dark:border-zinc-800 rounded-lg p-5 hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors space-y-2">
-                <h3 class="font-serif text-sm font-medium">theHelper — AI Research Assistant</h3>
-                <p class="text-xs text-zinc-500 leading-relaxed">Production RAG with FAISS, LangChain chunking, cross-encoder reranking. Local observability into daily JSONL. CI-gated QA.</p>
-                <a href="https://github.com/kunjcr2/theHelper" target="_blank" rel="noopener noreferrer" class="text-[10px] font-mono text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline transition-colors">GitHub</a>
-              </div>
+      <div class="subsection">
+        <p class="eyebrow">Hugging Face weights</p>
+        <div class="two-column">
+          <article class="model">
+            <h3>MedAssistGPT <span class="meta">303M &amp; 401M</span></h3>
+            <p>Medical-domain transformers trained on PubMed, using SwiGLU, GQA, and RoPE.</p>
+            <a href="https://huggingface.co/kunjcr2/MedAssistGPT" target="_blank" rel="noopener noreferrer">Hugging Face</a>
+          </article>
+          <article class="model">
+            <h3>Qwen2.5-0.5B SFT+DPO <span class="meta">0.5B</span></h3>
+            <p>A chat model fine-tuned with SFT and Direct Preference Optimization.</p>
+            <a href="https://huggingface.co/kunjcr2/qwen2.5-0.5b-sft-dpo" target="_blank" rel="noopener noreferrer">Hugging Face</a>
+          </article>
+          <article class="model">
+            <h3>Llama-3.2-3B OpenHermes <span class="meta">3B</span></h3>
+            <p>QLoRA fine-tuning on filtered OpenHermes conversational datasets.</p>
+            <a href="https://huggingface.co/kunjcr2/llama3-3b-lora-openhermes" target="_blank" rel="noopener noreferrer">Hugging Face</a>
+          </article>
+          <article class="model">
+            <h3>StableLM 1.6B SFT+GRPO <span class="meta">1.6B</span></h3>
+            <p>Aligned with GRPO on PKU safety preferences.</p>
+            <a href="https://huggingface.co/kunjcr2/stablelm-1.6b-finetuned-aligned" target="_blank" rel="noopener noreferrer">Hugging Face</a>
+          </article>
+        </div>
+      </div>
+    </section>
 
-              <div class="border border-zinc-200/60 dark:border-zinc-800 rounded-lg p-5 hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors space-y-2">
-                <h3 class="font-serif text-sm font-medium">Kanting — Video RAG System</h3>
-                <p class="text-xs text-zinc-500 leading-relaxed">Indexes YouTube transcripts via Whisper. Semantic search across Sentence-Transformers DB returning precise clip timestamps.</p>
-                <a href="https://github.com/kunjcr2/kanting-VideoRAG" target="_blank" rel="noopener noreferrer" class="text-[10px] font-mono text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline transition-colors">GitHub</a>
-              </div>
+    <section class="page-section" id="skills">
+      <h2>Skills &amp; credentials</h2>
+      <p class="section-note">Tools I use and things I’ve completed</p>
 
-              <div class="border border-zinc-200/60 dark:border-zinc-800 rounded-lg p-5 hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors space-y-2">
-                <h3 class="font-serif text-sm font-medium">AdaptRoute</h3>
-                <p class="text-xs text-zinc-500 leading-relaxed">Task aware routing based on the query to task specific models</p>
-                <div class="flex gap-3 text-[10px] font-mono text-zinc-400">
-                  <a href="https://github.com/kunjcr2/AdaptRoute" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 dark:hover:text-zinc-100 underline transition-colors">GitHub</a>
-                </div>
-              </div>
+      <div class="skills-grid">
+        <div class="plain-group">
+          <h3>LLM engineering</h3>
+          <p>Transformers · SFT · DPO · GRPO · PPO · LoRA/PEFT · TRL · vLLM · Quantization · Vector databases</p>
+        </div>
+        <div class="plain-group">
+          <h3>ML &amp; NLP</h3>
+          <p>PyTorch · TensorFlow · scikit-learn · LangChain · FAISS · Whisper · BART · Sentence Transformers · Pandas · NumPy</p>
+        </div>
+        <div class="plain-group">
+          <h3>Backend &amp; cloud</h3>
+          <p>FastAPI · Flask · Docker · Azure ML · GCP · PostgreSQL · MongoDB · Scrapy · Nginx · CI/CD</p>
+        </div>
+        <div class="plain-group">
+          <h3>Programming</h3>
+          <p>Python · SQL · Java · JavaScript · C++ · Bash · R · HTML/CSS · Git · Linux</p>
+        </div>
+      </div>
 
-              <div class="border border-zinc-200/60 dark:border-zinc-800 rounded-lg p-5 hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors space-y-2">
-                <h3 class="font-serif text-sm font-medium">GatorGPT</h3>
-                <p class="text-xs text-zinc-500 leading-relaxed">63M transformer for consumer GPUs. Grouped Query Attention and RoPE.</p>
-                <div class="flex gap-3 text-[10px] font-mono text-zinc-400">
-                  <a href="https://github.com/kunjcr2/GatorGPT" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 dark:hover:text-zinc-100 underline transition-colors">GitHub</a>
-                  <a href="https://huggingface.co/kunjcr2/GatorGPT2" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 dark:hover:text-zinc-100 underline transition-colors">HF</a>
-                </div>
-              </div>
+      <div class="subsection two-column">
+        <div class="plain-group">
+          <p class="eyebrow">Hackathons</p>
+          <ul class="dated-list">
+            <li><span>CalHacks 12.0 — Palace of Fine Arts, SF</span><time>Oct 2025</time></li>
+            <li><span>MCP AWS Agentic Challenge — AWS Builder Loft, SF</span><time>Jul 2025</time></li>
+            <li><span>SacHacks — Virtual</span><time>Mar 2025</time></li>
+            <li><span>HackMerced — UC Merced</span><time>Mar 2025</time></li>
+            <li><span>Cal Hacks 11.0 — San Francisco</span><time>Oct 2024</time></li>
+          </ul>
+        </div>
+        <div class="plain-group">
+          <p class="eyebrow">Certificates</p>
+          <ul class="plain-list">
+            <li>AI Memory: LLM Memory Systems — LinkedIn</li>
+            <li>Fine-Tuning for LLMs: Beginner to Advanced — LinkedIn</li>
+            <li>Model Context Protocol (MCP) — LinkedIn</li>
+            <li>Introduction to Generative AI — Google Cloud</li>
+            <li>Introduction to Web Development — UC Davis</li>
+            <li>Programming in Python — University of Michigan</li>
+            <li>Special Theory of Relativity — Stanford University</li>
+            <li>Calculus through Data &amp; Modelling (×4) — Johns Hopkins</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-              <div class="border border-zinc-200/60 dark:border-zinc-800 rounded-lg p-5 hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors space-y-2">
-                <h3 class="font-serif text-sm font-medium">How LLMs Are Made</h3>
-                <p class="text-xs text-zinc-500 leading-relaxed">Annotated code building GPT-2, DeepSeek MoE, and Kimi from scratch.</p>
-                <a href="https://github.com/kunjcr2/how-llms-are-made" target="_blank" rel="noopener noreferrer" class="text-[10px] font-mono text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline transition-colors">GitHub</a>
-              </div>
+    <section class="page-section" id="hobbies">
+      <h2>Hobbies</h2>
+      <p class="section-note">Outside of deep learning</p>
+      <div class="two-column">
+        <div class="plain-group">
+          <h3>Astrophotography</h3>
+          <p>I photograph planets, star clusters, galaxies, and nebulae using long exposures and image stacking.</p>
+          <a href="astrophotography.html">View my astrophotography collection →</a>
+        </div>
+        <div class="plain-group">
+          <h3>A star named after me</h3>
+          <p>There is also a registered star carrying my name.</p>
+          <a href="https://www.staracle.com/staracle/staracle.php?Tycho=10099489507" target="_blank" rel="noopener noreferrer">View the star record →</a>
+        </div>
+      </div>
+    </section>
 
-            </div>
-          </div>
+    <section class="page-section" id="contact">
+      <h2>Contact</h2>
+      <p class="section-note">For fine-tuning work, alignment evaluation, model safety, or just to say hello</p>
+      <div class="contact-layout">
+        <div>
+          <p>The easiest way to reach me is by email.</p>
+          <p><a href="mailto:kunjcr2@gmail.com">kunjcr2@gmail.com</a></p>
+        </div>
+        <iframe
+          class="contact-form"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdLanvgNt7DR23VJYfHKKmYYnuA5r8l1YqwXqsspJUcCMkggg/viewform?embedded=true"
+          title="Contact Kunj Shah"
+          loading="lazy">Loading…</iframe>
+      </div>
+    </section>
+  </main>
 
-          <div class="pt-8 border-t border-zinc-200/50 dark:border-zinc-800 space-y-5">
-            <h2 class="text-[10px] font-mono tracking-widest uppercase text-zinc-400">Hugging Face Weights</h2>
-            <div class="grid sm:grid-cols-2 gap-5">
-              <div class="space-y-1">
-                <p class="text-sm font-serif font-medium">MedAssistGPT <span class="font-sans text-[10px] font-normal text-zinc-400">303M &amp; 401M</span></p>
-                <p class="text-xs text-zinc-500 leading-relaxed">Medical-domain transformers on PubMed. SwiGLU, GQA, RoPE.</p>
-                <a href="https://huggingface.co/kunjcr2/MedAssistGPT" target="_blank" rel="noopener noreferrer" class="text-[10px] font-mono text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline transition-colors">HuggingFace</a>
-              </div>
-              <div class="space-y-1">
-                <p class="text-sm font-serif font-medium">Qwen2.5-0.5B SFT+DPO <span class="font-sans text-[10px] font-normal text-zinc-400">0.5B</span></p>
-                <p class="text-xs text-zinc-500 leading-relaxed">Chat model fine-tuned with SFT and Direct Preference Optimization.</p>
-                <a href="https://huggingface.co/kunjcr2/qwen2.5-0.5b-sft-dpo" target="_blank" rel="noopener noreferrer" class="text-[10px] font-mono text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline transition-colors">HuggingFace</a>
-              </div>
-              <div class="space-y-1">
-                <p class="text-sm font-serif font-medium">Llama-3.2-3B OpenHermes <span class="font-sans text-[10px] font-normal text-zinc-400">3B</span></p>
-                <p class="text-xs text-zinc-500 leading-relaxed">QLoRA on filtered OpenHermes conversational datasets.</p>
-                <a href="https://huggingface.co/kunjcr2/llama3-3b-lora-openhermes" target="_blank" rel="noopener noreferrer" class="text-[10px] font-mono text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline transition-colors">HuggingFace</a>
-              </div>
-              <div class="space-y-1">
-                <p class="text-sm font-serif font-medium">StableLM 1.6B SFT+GRPO <span class="font-sans text-[10px] font-normal text-zinc-400">1.6B</span></p>
-                <p class="text-xs text-zinc-500 leading-relaxed">Aligned via GRPO on PKU safety preferences.</p>
-                <a href="https://huggingface.co/kunjcr2/stablelm-1.6b-finetuned-aligned" target="_blank" rel="noopener noreferrer" class="text-[10px] font-mono text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline transition-colors">HuggingFace</a>
-              </div>
-            </div>
-          </div>
-
-        </section>
-
-        <!-- ══ CREDENTIALS ════════════════════════════ -->
-        <section id="page-credentials" class="page-view space-y-10 px-6 sm:px-10 py-10 md:py-12">
-          <div>
-            <h1 class="font-serif text-2xl font-light">Skills &amp; Credentials</h1>
-            <p class="text-xs font-mono text-zinc-400 mt-1">Technical expertise, hackathons, and certifications.</p>
-          </div>
-
-          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-7 pt-4 border-t border-zinc-200/50 dark:border-zinc-800">
-            <div class="space-y-2">
-              <h3 class="font-serif text-sm font-medium">LLM Engineering</h3>
-              <p class="text-[11px] text-zinc-500 leading-relaxed font-mono">Transformers · SFT · DPO · GRPO · PPO · LoRA/PEFT · TRL · vLLM · Quantization · Vector DBs · Prompt Eng.</p>
-            </div>
-            <div class="space-y-2">
-              <h3 class="font-serif text-sm font-medium">ML &amp; NLP</h3>
-              <p class="text-[11px] text-zinc-500 leading-relaxed font-mono">PyTorch · TensorFlow · Scikit-learn · LangChain · FAISS · Whisper · BART · Sentence Transformers · Pandas · NumPy</p>
-            </div>
-            <div class="space-y-2">
-              <h3 class="font-serif text-sm font-medium">Backend &amp; Cloud</h3>
-              <p class="text-[11px] text-zinc-500 leading-relaxed font-mono">FastAPI · Flask · Docker · Azure ML · GCP · PostgreSQL · MongoDB · Scrapy · Nginx · CI/CD</p>
-            </div>
-            <div class="space-y-2">
-              <h3 class="font-serif text-sm font-medium">Programming</h3>
-              <p class="text-[11px] text-zinc-500 leading-relaxed font-mono">Python · SQL · Java · JavaScript · C++ · Bash · R · HTML/CSS · Git · Linux</p>
-            </div>
-          </div>
-
-          <div class="grid sm:grid-cols-2 gap-10 pt-8 border-t border-zinc-200/50 dark:border-zinc-800">
-            <div class="space-y-5">
-              <h2 class="text-[10px] font-mono tracking-widest uppercase text-zinc-400">Hackathons</h2>
-              <div class="space-y-3">
-                <div class="flex justify-between text-xs"><span>CalHacks 12.0 — Palace of Fine Arts, SF</span><span class="text-zinc-400 font-mono shrink-0 ml-2">Oct 2025</span></div>
-                <div class="flex justify-between text-xs"><span>MCP AWS Agentic Challenge — AWS Builder Loft, SF</span><span class="text-zinc-400 font-mono shrink-0 ml-2">Jul 2025</span></div>
-                <div class="flex justify-between text-xs"><span>SacHacks — Virtual</span><span class="text-zinc-400 font-mono shrink-0 ml-2">Mar 2025</span></div>
-                <div class="flex justify-between text-xs"><span>HackMerced — UC Merced</span><span class="text-zinc-400 font-mono shrink-0 ml-2">Mar 2025</span></div>
-                <div class="flex justify-between text-xs"><span>Cal Hacks 11.0 — San Francisco</span><span class="text-zinc-400 font-mono shrink-0 ml-2">Oct 2024</span></div>
-              </div>
-            </div>
-            <div class="space-y-5">
-              <h2 class="text-[10px] font-mono tracking-widest uppercase text-zinc-400">Certificates</h2>
-              <ul class="space-y-2 text-xs text-zinc-500 leading-relaxed">
-                <li>AI Memory: LLM Memory Systems — LinkedIn</li>
-                <li>Fine-Tuning for LLMs: Beginner to Advanced — LinkedIn</li>
-                <li>Model Context Protocol (MCP) — LinkedIn</li>
-                <li>Introduction to Generative AI — Google Cloud</li>
-                <li>Introduction to Web Development — UC Davis</li>
-                <li>Programming in Python — University of Michigan</li>
-                <li>Special Theory of Relativity — Stanford University</li>
-                <li>Calculus through Data &amp; Modelling (×4) — Johns Hopkins</li>
-              </ul>
-            </div>
-          </div>
-
-        </section>
-
-        <!-- ══ HOBBIES ════════════════════════════════ -->
-        <section id="page-hobbies" class="page-view space-y-8 px-6 sm:px-10 py-10 md:py-12">
-          <div>
-            <h1 class="font-serif text-2xl font-light">Hobbies</h1>
-            <p class="text-xs font-mono text-zinc-400 mt-1">What I explore outside of deep learning.</p>
-          </div>
-
-          <div class="space-y-6 pt-4 border-t border-zinc-200/50 dark:border-zinc-800">
-            <div class="space-y-2">
-              <h3 class="font-serif text-base font-medium">Astrophotography</h3>
-              <p class="text-sm text-zinc-500 leading-relaxed">I photograph planets, star clusters, galaxies, and nebulae using long exposures and image stacking.</p>
-              <a href="astrophotography.html">View my astrophotography collection</a>
-            </div>
-
-            <div class="space-y-2 pt-4 border-t border-zinc-200/50 dark:border-zinc-800">
-              <h3 class="font-serif text-base font-medium">A star named after me</h3>
-              <p class="text-sm text-zinc-500 leading-relaxed">There is also a registered star carrying my name.</p>
-              <a href="https://www.staracle.com/staracle/staracle.php?Tycho=10099489507" target="_blank" rel="noopener noreferrer">View the star record</a>
-            </div>
-          </div>
-        </section>
-
-        <!-- ══ CONTACT ════════════════════════════════ -->
-        <!-- Contact -->
-        <section id="page-contact" class="page-view space-y-8 px-6 sm:px-10 py-10 md:py-12">
-          <div>
-            <h1 class="font-serif text-2xl font-light">Get in Touch</h1>
-            <p class="text-xs font-mono text-zinc-400 mt-1">Send a brief message to open collaboration.</p>
-          </div>
-
-          <div class="grid md:grid-cols-5 gap-8 pt-4 border-t border-zinc-200/50 dark:border-zinc-800">
-            <div class="md:col-span-2 space-y-4 text-xs font-mono text-zinc-500">
-              <p class="font-light leading-relaxed">Open to inquiries about custom fine-tuning runs, alignment evaluation, and model safety audits.</p>
-              <div class="space-y-1.5">
-                <p class="text-[10px] uppercase text-zinc-400">Direct</p>
-                <a href="mailto:kunjcr2@gmail.com" class="underline text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-zinc-50">kunjcr2@gmail.com</a>
-              </div>
-            </div>
-            <div class="md:col-span-3">
-              <div class="rounded border border-zinc-200 dark:border-zinc-800 overflow-hidden">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdLanvgNt7DR23VJYfHKKmYYnuA5r8l1YqwXqsspJUcCMkggg/viewform?embedded=true"
-                  class="w-full min-h-[380px]" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-              </div>
-            </div>
-          </div>
-
-        </section>
-
-      </main>
-      <footer class="site-footer">
-        <p>© 2026 Kunj Shah · Built with Codex (Obviously) · San Jose, CA</p>
-      </footer>
-    </div>
-  </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.lucide) lucide.createIcons();
-
-      // Gallery entries are loaded from assets/astrophotography/gallery.json.
-      let astroPhotos = [];
-
-      const gallery = document.getElementById('astro-gallery');
-      if (gallery) {
-      const field = (label, value) => value ? `<div><dt class="text-zinc-400 dark:text-zinc-500">${label}</dt><dd class="text-zinc-700 dark:text-zinc-200 mt-0.5">${value}</dd></div>` : '';
-      function renderAstroGallery() {
-        if (!astroPhotos.length) {
-          gallery.innerHTML = '<p class="text-xs font-mono text-zinc-400">No astrophotography entries yet.</p>';
-          return;
-        }
-        gallery.innerHTML = astroPhotos.map((photo, index) => `
-        <button class="astro-card text-left" type="button" data-astro-index="${index}" aria-label="View ${photo.title}">
-          <img src="${photo.src}" alt="${photo.title}" loading="lazy" onerror="this.remove()">
-          <div class="astro-placeholder relative" aria-hidden="true"><span class="relative font-serif text-xl text-white">${photo.title}</span><span class="relative mt-1 text-[10px] font-mono uppercase tracking-widest text-zinc-300">Add photo</span></div>
-          <div class="astro-overlay"><p class="font-serif text-lg">${photo.title}</p><p class="text-[10px] font-mono text-zinc-300 mt-1">${photo.exposure} · ${photo.focal} · ${photo.iso}</p></div>
-        </button>`).join('');
-      }
-      renderAstroGallery();
-
-      fetch('assets/astrophotography/gallery.json')
-        .then(response => {
-          if (!response.ok) throw new Error('Could not load astrophotography gallery.');
-          return response.json();
-        })
-        .then(photos => {
-          if (!Array.isArray(photos)) throw new Error('Gallery data must be an array.');
-          astroPhotos = photos;
-          renderAstroGallery();
-        })
-        .catch(error => console.warn(error.message));
-
-      const modal = document.createElement('div');
-      modal.className = 'astro-dialog hidden fixed inset-0 z-[60] p-4 sm:p-8 overflow-y-auto';
-      modal.setAttribute('role', 'dialog'); modal.setAttribute('aria-modal', 'true');
-      document.body.appendChild(modal);
-      function closeAstroModal() { modal.classList.add('hidden'); modal.innerHTML = ''; }
-      function openAstroModal(photo) {
-        modal.innerHTML = `<div class="min-h-full flex items-center justify-center"><div class="relative w-full max-w-5xl rounded-lg bg-[#ffffff] dark:bg-[#18181b] shadow-2xl overflow-hidden"><button class="absolute top-3 right-3 z-20 rounded-full bg-black/60 text-white p-2 hover:bg-black/80" aria-label="Close image"><i data-lucide="x" class="w-4 h-4"></i></button><div class="grid md:grid-cols-[1.5fr_1fr]"><div class="relative min-h-[280px] bg-zinc-950 flex items-center justify-center"><img src="${photo.src}" alt="${photo.title}" class="relative z-10 max-h-[72vh] w-full object-contain" onerror="this.remove()"><div class="astro-placeholder absolute inset-0 z-0"><span class="relative font-serif text-2xl text-white">${photo.title}</span></div></div><div class="p-6 sm:p-8"><p class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">${photo.type}</p><h2 class="font-serif text-2xl mt-2">${photo.title}</h2><p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed mt-3">${photo.note || ''}</p><dl class="grid grid-cols-2 gap-x-5 gap-y-4 mt-7 text-[11px] font-mono">${field('Exposure', photo.exposure)}${field('ISO', photo.iso)}${field('Focal length', photo.focal)}${field('Aperture', photo.aperture)}</dl></div></div></div></div>`;
-        modal.classList.remove('hidden'); if (window.lucide) lucide.createIcons(); modal.querySelector('button').focus();
-      }
-      gallery.addEventListener('click', event => { const card = event.target.closest('[data-astro-index]'); if (card) openAstroModal(astroPhotos[card.dataset.astroIndex]); });
-      modal.addEventListener('click', event => { if (event.target === modal || event.target.closest('button')) closeAstroModal(); });
-      document.addEventListener('keydown', event => { if (event.key === 'Escape') closeAstroModal(); });
-
-      // ── Theme ──────────────────────────────────────
-      }
-
-      function setTheme(dark) {
-        document.documentElement.classList.toggle('dark', dark);
-        localStorage.theme = dark ? 'dark' : 'light';
-      }
-      document.getElementById('theme-toggle').addEventListener('click', () =>
-        setTheme(!document.documentElement.classList.contains('dark')));
-      document.getElementById('mob-theme').addEventListener('click', () =>
-        setTheme(!document.documentElement.classList.contains('dark')));
-
-      // Keep the page lightweight: navigation scrolls through one document.
-      const navLinks = document.querySelectorAll('[data-nav]');
-      navLinks.forEach(a => a.addEventListener('click', e => {
-        const target = document.getElementById(`page-${a.dataset.nav}`);
-        if (!target) return;
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        history.replaceState(null, '', `#page-${a.dataset.nav}`);
-      }));
-
-      const legacyHash = window.location.hash.replace('#', '');
-      if (legacyHash && !legacyHash.startsWith('page-')) {
-        const target = document.getElementById(`page-${legacyHash}`);
-        if (target) history.replaceState(null, '', `#page-${legacyHash}`);
-      }
-    });
-  </script>
-
+  <footer class="site-footer container">
+    <p>© 2026 Kunj Shah · San Jose, California</p>
+  </footer>
 </body>
 </html>
