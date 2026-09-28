@@ -17,12 +17,14 @@ kunjcr2.github.io/
 
 ## Running locally
 
-You can open `index.html` directly in a browser. To serve it locally instead, run:
+To preview the site locally, run:
 
 ```bash
 python -m http.server 8000
 ```
 
 Then visit `http://localhost:8000`.
+
+The astrophotography page loads its photographs from `assets/astrophotography/gallery.json`, so it must be viewed through this local server (or the deployed GitHub Pages site), rather than opened as a `file://` URL.
 
 All site styling lives in `styles.css`. There is no build step and no package installation.

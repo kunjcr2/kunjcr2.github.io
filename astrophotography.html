@@ -25,7 +25,7 @@
       <p class="meta">Click any photograph to open the full-size image.</p>
     </section>
 
-    <div class="gallery-years" aria-label="Astrophotography gallery">
+    <template id="gallery-fallback">
       <section class="year-group" aria-labelledby="year-2026">
         <h2 class="year-heading" id="year-2026">2026</h2>
         <div class="photo-grid">
@@ -34,6 +34,13 @@
           <img src="assets/astrophotography/andromeda-optimized.jpg" alt="Andromeda Galaxy and its satellite galaxy M110" loading="lazy">
         </a>
         <figcaption><strong>Andromeda Galaxy</strong>Spiral galaxy, 2026<span class="photo-meta">27 minutes · 120 mm · ISO 1600 · f/5.6</span></figcaption>
+      </figure>
+
+      <figure class="photo">
+        <a href="assets/astrophotography/dc.jpg" target="_blank">
+          <img src="assets/astrophotography/dc.jpg" alt="The Double Cluster: NGC 884 and NGC 869" loading="lazy">
+        </a>
+        <figcaption><strong>Double Cluster — NGC 884 and NGC 869</strong>Double cluster, 2026<span class="photo-meta">22 minutes · 185 mm · ISO 1600 · f/5.6</span></figcaption>
       </figure>
 
       <figure class="photo">
@@ -143,11 +150,82 @@
       </figure>
         </div>
       </section>
+    </template>
+    <div class="gallery-years" id="gallery-years" aria-label="Astrophotography gallery">
+      <p class="meta">Loading gallery…</p>
     </div>
   </main>
 
   <footer class="site-footer container">
     <p>© 2026 Kunj Shah</p>
   </footer>
+  <script>
+    const gallery = document.querySelector('#gallery-years');
+
+    const makeElement = (tagName, className, text) => {
+      const element = document.createElement(tagName);
+      if (className) element.className = className;
+      if (text) element.textContent = text;
+      return element;
+    };
+
+    const hasValue = (value) => value && String(value).toLowerCase() !== 'null';
+
+    const createPhoto = (photo) => {
+      const figure = makeElement('figure', 'photo');
+      const link = makeElement('a');
+      link.href = photo.src;
+      link.target = '_blank';
+      link.rel = 'noopener';
+
+      const image = makeElement('img');
+      image.src = photo.src;
+      image.alt = photo.title;
+      image.loading = 'lazy';
+      link.append(image);
+
+      const caption = makeElement('figcaption');
+      caption.append(makeElement('strong', '', photo.title));
+      caption.append(document.createTextNode(`${photo.type}, ${photo.year}`));
+
+      const details = [photo.exposure, photo.focal, photo.iso, photo.aperture]
+        .filter(hasValue)
+        .join(' · ');
+      if (details) caption.append(makeElement('span', 'photo-meta', details));
+
+      figure.append(link, caption);
+      return figure;
+    };
+
+    const renderGallery = (photos) => {
+      const photosByYear = photos.reduce((groups, photo) => {
+        (groups[photo.year] ??= []).push(photo);
+        return groups;
+      }, {});
+
+      gallery.replaceChildren();
+      Object.entries(photosByYear)
+        .sort(([firstYear], [secondYear]) => Number(secondYear) - Number(firstYear))
+        .forEach(([year, yearPhotos]) => {
+          const section = makeElement('section', 'year-group');
+          const heading = makeElement('h2', 'year-heading', year);
+          heading.id = `year-${year}`;
+          const grid = makeElement('div', 'photo-grid');
+          grid.append(...yearPhotos.map(createPhoto));
+          section.append(heading, grid);
+          gallery.append(section);
+        });
+    };
+
+    fetch('assets/astrophotography/gallery.json')
+      .then((response) => {
+        if (!response.ok) throw new Error(`Gallery request failed: ${response.status}`);
+        return response.json();
+      })
+      .then(renderGallery)
+      .catch(() => {
+        gallery.replaceChildren(makeElement('p', 'meta', 'The gallery could not be loaded. Please refresh the page.'));
+      });
+  </script>
 </body>
 </html>
