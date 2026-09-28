@@ -2,11 +2,14 @@
 
 Place the gallery images in this folder, then add a matching object to `gallery.json`. The site loads this file automatically, so you never need to edit JavaScript to add a photo.
 
+Each gallery card loads the matching WebP preview from `thumbs/`, then opens the original image when clicked. Create a thumbnail with the same filename stem (for example, `my-photo.jpg` uses `thumbs/my-photo.webp`) and include its path in the entry.
+
 Each entry needs these fields:
 
 ```json
 {
   "src": "assets/astrophotography/my-photo.jpg",
+  "thumbnail": "assets/astrophotography/thumbs/my-photo.webp",
   "title": "North America Nebula",
   "type": "Emission nebula",
   "iso": "ISO 800",

@@ -171,7 +171,7 @@
 
     const hasValue = (value) => value && String(value).toLowerCase() !== 'null';
 
-    const createPhoto = (photo) => {
+    const createPhoto = (photo, index) => {
       const figure = makeElement('figure', 'photo');
       const link = makeElement('a');
       link.href = photo.src;
@@ -179,9 +179,11 @@
       link.rel = 'noopener';
 
       const image = makeElement('img');
-      image.src = photo.src;
+      image.src = photo.thumbnail || photo.src;
       image.alt = photo.title;
-      image.loading = 'lazy';
+      image.loading = index < 3 ? 'eager' : 'lazy';
+      image.decoding = 'async';
+      if (index < 3) image.fetchPriority = 'high';
       link.append(image);
 
       const caption = makeElement('figcaption');
@@ -204,6 +206,7 @@
       }, {});
 
       gallery.replaceChildren();
+      let photoIndex = 0;
       Object.entries(photosByYear)
         .sort(([firstYear], [secondYear]) => Number(secondYear) - Number(firstYear))
         .forEach(([year, yearPhotos]) => {
@@ -211,7 +214,7 @@
           const heading = makeElement('h2', 'year-heading', year);
           heading.id = `year-${year}`;
           const grid = makeElement('div', 'photo-grid');
-          grid.append(...yearPhotos.map(createPhoto));
+          grid.append(...yearPhotos.map((photo) => createPhoto(photo, photoIndex++)));
           section.append(heading, grid);
           gallery.append(section);
         });

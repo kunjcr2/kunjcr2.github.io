@@ -1,6 +1,7 @@
 [
   {
     "src": "assets/astrophotography/andromeda-optimized.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/andromeda-optimized.webp",
     "year": 2026,
     "title": "Andromeda Galaxy",
     "type": "Spiral galaxy",
@@ -12,6 +13,7 @@
   },
   {
     "src": "assets/astrophotography/dc.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/dc.webp",
     "year": 2026,
     "title": "Double cluster - NGC 884 and NGC 869",
     "type": "Double Cluster",
@@ -23,6 +25,7 @@
   },
   {
     "src": "assets/astrophotography/pleiades2.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/pleiades2.webp",
     "year": 2026,
     "title": "Pleiades",
     "type": "Star Cluster",
@@ -34,6 +37,7 @@
   },
   {
     "src": "assets/astrophotography/orion2.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/orion2.webp",
     "year": 2026,
     "title": "Orion Nebula and Running man Nebula",
     "type": "Nebula",
@@ -45,6 +49,7 @@
   },
   {
     "src": "assets/astrophotography/ngc7000-optimized.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/ngc7000-optimized.webp",
     "year": 2026,
     "title": "North America Nebula",
     "type": "Emission Nebula",
@@ -56,6 +61,7 @@
   },
   {
     "src": "assets/astrophotography/pleiades1.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/pleiades1.webp",
     "year": 2025,
     "title": "Pleiades",
     "type": "Star Cluster",
@@ -67,6 +73,7 @@
   },
   {
     "src": "assets/astrophotography/jupiter.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/jupiter.webp",
     "year": 2022,
     "title": "Jupiter and moons",
     "type": "Planet",
@@ -78,6 +85,7 @@
   },
   {
     "src": "assets/astrophotography/moon.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/moon.webp",
     "year": 2022,
     "title": "Moon",
     "type": "Moon",
@@ -89,6 +97,7 @@
   },
   {
     "src": "assets/astrophotography/orion1.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/orion1.webp",
     "year": 2023,
     "title": "Orion Nebula",
     "type": "Nebula",
@@ -100,6 +109,7 @@
   },
   {
     "src": "assets/astrophotography/commet_ztf.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/commet_ztf.webp",
     "year": 2023,
     "title": "Comet C/2022 E3 (ZTF)",
     "type": "Commet",
@@ -111,6 +121,7 @@
   },
   {
     "src": "assets/astrophotography/m13.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/m13.webp",
     "year": 2026,
     "title": "Hercules Globular Cluster",
     "type": "Star Cluster",
@@ -122,6 +133,7 @@
   },
   {
     "src": "assets/astrophotography/lagoon.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/lagoon.webp",
     "year": 2023,
     "title": "Lagoon Nebula",
     "type": "Nebula",
@@ -133,6 +145,7 @@
   },
   {
     "src": "assets/astrophotography/ic1805.JPG",
+    "thumbnail": "assets/astrophotography/thumbs/ic1805.webp",
     "year": 2026,
     "title": "Heart Nebula",
     "type": "Nebula",
@@ -144,6 +157,7 @@
   },
   {
     "src": "assets/astrophotography/ring.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/ring.webp",
     "year": 2023,
     "title": "Ring Nebula",
     "type": "Nebula",
@@ -155,6 +169,7 @@
   },
   {
     "src": "assets/astrophotography/5_gc_2_nebula.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/5_gc_2_nebula.webp",
     "year": 2022,
     "title": "5 Globular Clusters and Lagoon and Trifid Nebula",
     "type": "Globular Clusters and Nebulas",
