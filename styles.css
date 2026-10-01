@@ -1,10 +1,10 @@
 :root {
-  color-scheme: light;
-  --background: #ffffff;
-  --text: #222222;
-  --muted: #666666;
-  --rule: #dddddd;
-  --link: #0645ad;
+  color-scheme: dark;
+  --background: #121212;
+  --text: #f1f1f1;
+  --muted: #a9a9a9;
+  --rule: #3a3a3a;
+  --link: #79b8ff;
   --content-width: 900px;
 }
 
