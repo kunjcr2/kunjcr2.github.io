@@ -178,5 +178,17 @@
     "exposure": "5 seconds",
     "aperture": "f/4.5",
     "note": "This is something I got after trying to get milkyway with insufficient knowledge. I captured 5 Globular clusters in it along with 2 nebulas on top right with top one being Trifid nebula and bottomt one being Lagoon nebula. Note: THIS IS HIGHLY EDITED TO SEE WHAT IS WHERE. THIS IS NOT THE EXACT REAL PHOTO."
+  },
+  {
+    "src": "assets/astrophotography/ic1396.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/ic1396.webp",
+    "year": 2026,
+    "title": "Large Emission Nebula (Failed)",
+    "type": "Nebula (Just stars really)",
+    "iso": "3200",
+    "focal": "100 mm",
+    "exposure": "4 seconds",
+    "aperture": "f/4.5",
+    "note": "This is something I got after trying to get milkyway with insufficient knowledge. I captured 5 Globular clusters in it along with 2 nebulas on top right with top one being Trifid nebula and bottomt one being Lagoon nebula. Note: THIS IS HIGHLY EDITED TO SEE WHAT IS WHERE. THIS IS NOT THE EXACT REAL PHOTO."
   }
 ]
