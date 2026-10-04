@@ -14,7 +14,8 @@ Each entry needs these fields:
   "type": "Emission nebula",
   "iso": "ISO 800",
   "focal": "300 mm",
-  "exposure": "3h total",
+  "integration": "3h total",
+  "exposure": "60 seconds per frame",
   "aperture": "f/4",
   "note": "A short note about the capture or processing."
 }

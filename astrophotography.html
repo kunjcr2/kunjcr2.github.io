@@ -190,7 +190,13 @@
       caption.append(makeElement('strong', '', photo.title));
       caption.append(document.createTextNode(`${photo.type}, ${photo.year}`));
 
-      const details = [photo.exposure, photo.focal, photo.iso, photo.aperture]
+      const details = [
+        hasValue(photo.integration) && `Integration: ${photo.integration}`,
+        hasValue(photo.exposure) && `Exposure: ${photo.exposure}`,
+        photo.focal,
+        photo.iso,
+        photo.aperture
+      ]
         .filter(hasValue)
         .join(' · ');
       if (details) caption.append(makeElement('span', 'photo-meta', details));
