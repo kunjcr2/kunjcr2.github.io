@@ -205,6 +205,19 @@
     "integration": "1 hour 33 minutes",
     "exposure": "4 seconds",
     "aperture": "f/4.5",
-    "note": "This is something I got after trying to get milkyway with insufficient knowledge. I captured 5 Globular clusters in it along with 2 nebulas on top right with top one being Trifid nebula and bottomt one being Lagoon nebula. Note: THIS IS HIGHLY EDITED TO SEE WHAT IS WHERE. THIS IS NOT THE EXACT REAL PHOTO."
+    "note": "I tried taking a Large Emission Nebula but its super faint and there weere bunch of clouds so unfortunately I couldnt get any nebulosity except some VERY FAINT red color on middle east side of the image, but will try one more time when I have better equipments."
+  },
+  {
+    "src": "assets/astrophotography/andromeda2.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/andromeda2.webp",
+    "year": 2026,
+    "title": "Andromeda Galaxy",
+    "type": "Galaxy",
+    "iso": "3200",
+    "focal": "195 mm",
+    "integration": "51 minutes",
+    "exposure": "2.5-3 seconds",
+    "aperture": "f/4.5",
+    "note": "ANDROMEDA! My second favourite target and my Second best image of ALL TIME! Stunning disk and dark background makes it SUPER BEAUTIFUL!"
   }
 ]
