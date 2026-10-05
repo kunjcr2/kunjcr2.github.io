@@ -1,5 +1,44 @@
 [
   {
+    "src": "assets/astrophotography/andromeda2.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/andromeda2.webp",
+    "year": 2026,
+    "title": "Andromeda Galaxy",
+    "type": "Galaxy",
+    "iso": "3200",
+    "focal": "195 mm",
+    "integration": "51 minutes",
+    "exposure": "2.5-3 seconds",
+    "aperture": "f/4.5",
+    "note": "ANDROMEDA! My second favourite target and my Second best image of ALL TIME! Stunning disk and dark background makes it SUPER BEAUTIFUL!"
+  },
+  {
+    "src": "assets/astrophotography/orion2.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/orion2.webp",
+    "year": 2026,
+    "title": "Orion Nebula and Running man Nebula",
+    "type": "Nebula",
+    "iso": "3200",
+    "focal": "300 mm",
+    "integration": "34 minutes",
+    "exposure": "1 second",
+    "aperture": "f/5.6",
+    "note": "Took this in September 9th, morning at 3.30 AM lol. Took this at 300 mm and Zoomed it in later on. This contains Running man Nebula (left) and Orion nebula (right) (I love this). Cute and beatiful."
+  },
+  {
+    "src": "assets/astrophotography/pleiades2.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/pleiades2.webp",
+    "year": 2026,
+    "title": "Pleiades",
+    "type": "Star Cluster",
+    "iso": "ISO 3200",
+    "focal": "200 mm",
+    "integration": "60 Minutes",
+    "exposure": "2 seconds",
+    "aperture": "f/5.6",
+    "note": "I took one of these, you can find it somehwhere in this gallery and you can see how good it looks compared to that old one. You can clearly see blue nebula kind of a thing in there and it looks stunning. Contact me for more info."
+  },
+  {
     "src": "assets/astrophotography/andromeda-optimized.jpg",
     "thumbnail": "assets/astrophotography/thumbs/andromeda-optimized.webp",
     "year": 2026,
@@ -24,32 +63,6 @@
     "exposure": "2.5 seconds",
     "aperture": "f/5.6",
     "note": "One of the brightest target for September from Northern hemisphere. This is right next to the Heart nebula, but requires much less integration. Will try one more time of getting this since I just got my new SD card Extreme."
-  },
-  {
-    "src": "assets/astrophotography/pleiades2.jpg",
-    "thumbnail": "assets/astrophotography/thumbs/pleiades2.webp",
-    "year": 2026,
-    "title": "Pleiades",
-    "type": "Star Cluster",
-    "iso": "ISO 3200",
-    "focal": "200 mm",
-    "integration": "60 Minutes",
-    "exposure": "2 seconds",
-    "aperture": "f/5.6",
-    "note": "I took one of these, you can find it somehwhere in this gallery and you can see how good it looks compared to that old one. You can clearly see blue nebula kind of a thing in there and it looks stunning. Contact me for more info."
-  },
-  {
-    "src": "assets/astrophotography/orion2.jpg",
-    "thumbnail": "assets/astrophotography/thumbs/orion2.webp",
-    "year": 2026,
-    "title": "Orion Nebula and Running man Nebula",
-    "type": "Nebula",
-    "iso": "3200",
-    "focal": "300 mm",
-    "integration": "34 minutes",
-    "exposure": "1 second",
-    "aperture": "f/5.6",
-    "note": "Took this in September 9th, morning at 3.30 AM lol. Took this at 300 mm and Zoomed it in later on. This contains Running man Nebula (left) and Orion nebula (right) (I love this). Cute and beatiful."
   },
   {
     "src": "assets/astrophotography/ngc7000-optimized.jpg",
@@ -206,18 +219,5 @@
     "exposure": "4 seconds",
     "aperture": "f/4.5",
     "note": "I tried taking a Large Emission Nebula but its super faint and there weere bunch of clouds so unfortunately I couldnt get any nebulosity except some VERY FAINT red color on middle east side of the image, but will try one more time when I have better equipments."
-  },
-  {
-    "src": "assets/astrophotography/andromeda2.jpg",
-    "thumbnail": "assets/astrophotography/thumbs/andromeda2.webp",
-    "year": 2026,
-    "title": "Andromeda Galaxy",
-    "type": "Galaxy",
-    "iso": "3200",
-    "focal": "195 mm",
-    "integration": "51 minutes",
-    "exposure": "2.5-3 seconds",
-    "aperture": "f/4.5",
-    "note": "ANDROMEDA! My second favourite target and my Second best image of ALL TIME! Stunning disk and dark background makes it SUPER BEAUTIFUL!"
   }
 ]
