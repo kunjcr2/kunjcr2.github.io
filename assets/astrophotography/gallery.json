@@ -9,8 +9,7 @@
     "focal": "195 mm",
     "integration": "51 minutes",
     "exposure": "2.5-3 seconds",
-    "aperture": "f/4.5",
-    "note": "ANDROMEDA! My second favourite target and my Second best image of ALL TIME! Stunning disk and dark background makes it SUPER BEAUTIFUL!"
+    "aperture": "f/4.5"
   },
   {
     "src": "assets/astrophotography/orion2.jpg",
@@ -22,8 +21,7 @@
     "focal": "300 mm",
     "integration": "34 minutes",
     "exposure": "1 second",
-    "aperture": "f/5.6",
-    "note": "Took this in September 9th, morning at 3.30 AM lol. Took this at 300 mm and Zoomed it in later on. This contains Running man Nebula (left) and Orion nebula (right) (I love this). Cute and beatiful."
+    "aperture": "f/5.6"
   },
   {
     "src": "assets/astrophotography/pleiades2.jpg",
@@ -35,8 +33,7 @@
     "focal": "200 mm",
     "integration": "60 Minutes",
     "exposure": "2 seconds",
-    "aperture": "f/5.6",
-    "note": "I took one of these, you can find it somehwhere in this gallery and you can see how good it looks compared to that old one. You can clearly see blue nebula kind of a thing in there and it looks stunning. Contact me for more info."
+    "aperture": "f/5.6"
   },
   {
     "src": "assets/astrophotography/m33.jpg",
@@ -48,8 +45,19 @@
     "focal": "200 mm",
     "integration": "1 hour 10 Minutes",
     "exposure": "2.5 seconds",
-    "aperture": "f/5.6",
-    "note": "My galaxy No. 2. Traingulum, second closest to our galaxy of Milyway inside the local group, sitting at about the 2.7-3 million light years away. More integration can easily make this MUCH better, but it has been windy since long and the winter is starting. Will upload one more image if possible!"
+    "aperture": "f/5.6"
+  },
+  {
+    "src": "assets/astrophotography/m27.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/m27.webp",
+    "year": 2026,
+    "title": "Dumbbell nebula",
+    "type": "Nebula",
+    "iso": "6400",
+    "focal": "300 mm",
+    "integration": "35 minutes 20 seconds",
+    "exposure": "1 second",
+    "aperture": "f/5.6"
   },
   {
     "src": "assets/astrophotography/andromeda-optimized.jpg",
@@ -61,8 +69,7 @@
     "focal": "120 mm",
     "integration": "27 Minutes",
     "exposure": "4 seconds",
-    "aperture": "f/5.6",
-    "note": "This is Andromeda galaxy and its satellite galaxy M110 (top of it). Took it on a real bright sky with full moon, so look out for a newer version."
+    "aperture": "f/5.6"
   },
   {
     "src": "assets/astrophotography/dc.jpg",
@@ -74,8 +81,7 @@
     "focal": "185 mm",
     "integration": "22 Minutes",
     "exposure": "2.5 seconds",
-    "aperture": "f/5.6",
-    "note": "One of the brightest target for September from Northern hemisphere. This is right next to the Heart nebula, but requires much less integration. Will try one more time of getting this since I just got my new SD card Extreme."
+    "aperture": "f/5.6"
   },
   {
     "src": "assets/astrophotography/ngc7000-optimized.jpg",
@@ -87,8 +93,7 @@
     "focal": "70 mm",
     "integration": "15 Minutes",
     "exposure": "5 seconds",
-    "aperture": "f/5.6",
-    "note": "This is lower part of Cygnus and for reference the brightest star is Deneb in middle. This includes The Wall, North America Nebula (Right below Deneb), Sadr Region (Top left of Deneb, below Cygnus Star). You can also see some extra structures laying around which are part of the sab hill region."
+    "aperture": "f/5.6"
   },
   {
     "src": "assets/astrophotography/pleiades1.jpg",
@@ -100,8 +105,7 @@
     "focal": "85 mm",
     "integration": "3 Minutes",
     "exposure": "4 seconds",
-    "aperture": "f/5.6",
-    "note": "This is Pleiades. One of the brightest star cluster in night sky and pretty much visible with naked eyes. Though you can not see the actual start structure from naked eyes, and that's the only reason why it is here."
+    "aperture": "f/5.6"
   },
   {
     "src": "assets/astrophotography/jupiter.jpg",
@@ -113,8 +117,7 @@
     "focal": "Null",
     "integration": "Null",
     "exposure": "Null",
-    "aperture": "Null",
-    "note": "This is Jupiter with its 4 biggest moons; Io, Europa, Ganymede and Callisto. I took this through my phone from the eyepiece of a telescope, Celestron Powerseeker 70AZ. On the same day I saw Saturn as well, but wasnt lucky enough to take a photo."
+    "aperture": "Null"
   },
   {
     "src": "assets/astrophotography/moon.jpg",
@@ -126,8 +129,7 @@
     "focal": "150 mm",
     "integration": "1/250 seconds",
     "exposure": "1/250 seconds",
-    "aperture": "f/4.5",
-    "note": "I mean c'mon dude. This is literally moon. Everyone has taken pics of the moon once in their life. I just took it with a better camera."
+    "aperture": "f/4.5"
   },
   {
     "src": "assets/astrophotography/orion1.jpg",
@@ -139,8 +141,7 @@
     "focal": "150 mm",
     "integration": "4 minutes",
     "exposure": "1 second",
-    "aperture": "f/4.5",
-    "note": "One of my first target for deep sky photography. I have tones of photos of these but none of them are good enough. I learnt a lots of new things, its just I cant see it up in the sky right now and hence stay tuned until I come up with a fire pic of this nebula."
+    "aperture": "f/4.5"
   },
   {
     "src": "assets/astrophotography/commet_ztf.jpg",
@@ -152,8 +153,7 @@
     "focal": "150 mm",
     "integration": "1/5 seconds",
     "exposure": "1/5 second",
-    "aperture": "f/4.5",
-    "note": "This was the commet that did a flyby of earth for the first time in 50000 YEARS. YES 50K. Its also called the 'Green commet' coming from Oort cloud. This is highly edited, but I was able to see the trail just like the image."
+    "aperture": "f/4.5"
   },
   {
     "src": "assets/astrophotography/m13.jpg",
@@ -165,8 +165,7 @@
     "focal": "300 mm",
     "integration": "18 minutes",
     "exposure": "1 second",
-    "aperture": "f/5.6",
-    "note": "Updated image of Hercules Globular Cluster M31. About 300k stars in this tightly packed place. This is about 25k light years away from us. Also, contact me, I saw 3 galaxies, respectively with the distance of 3 million, 423 million, 450 million light years. HOLE SMOKIN POTATOES ON GRILL."
+    "aperture": "f/5.6"
   },
   {
     "src": "assets/astrophotography/lagoon.jpg",
@@ -178,8 +177,7 @@
     "focal": "50 mm (Zoomed in)",
     "integration": "1/4 seconds",
     "exposure": "1/4 second",
-    "aperture": "f/4.5",
-    "note": "This image is from the Mt Abu in India. Single click photo covering Lagoon Nebula. This was part of a big image containing a lots of important points of the Milkyway. Will try this one more time, with better techniques and better software usage."
+    "aperture": "f/4.5"
   },
   {
     "src": "assets/astrophotography/ic1805.JPG",
@@ -191,8 +189,7 @@
     "focal": "150 mm (Zoomed in)",
     "integration": "2 hr 10 mins",
     "exposure": "2 seconds",
-    "aperture": "f/5.6",
-    "note": "This is so far the BEST and most detailed image I have taken, as of 9/12/2026. I swear this is one of the most beautiful nebula I have seen, it is really faint yet I tried taking it. Almost 2 hours of exposure time with 2 nights spent. After taking this image, I will work more on this next weekend to get even a nicer version. STAY TUNED."
+    "aperture": "f/5.6"
   },
   {
     "src": "assets/astrophotography/ring.jpg",
@@ -204,8 +201,7 @@
     "focal": "150 mm (Zoomed in)",
     "integration": "5 seconds",
     "exposure": "5 seconds",
-    "aperture": "f/4.5",
-    "note": "Was trying to get Vega the star, but ended up capturing a faint part of Ring Nebula, which I edited as per the nebula's color leading to a nice representation of the same. Btw this is about ~2570 ly."
+    "aperture": "f/4.5"
   },
   {
     "src": "assets/astrophotography/5_gc_2_nebula.jpg",
@@ -217,8 +213,7 @@
     "focal": "150 mm (Zoomed in)",
     "integration": "5 seconds",
     "exposure": "5 seconds",
-    "aperture": "f/4.5",
-    "note": "This is something I got after trying to get milkyway with insufficient knowledge. I captured 5 Globular clusters in it along with 2 nebulas on top right with top one being Trifid nebula and bottomt one being Lagoon nebula. Note: THIS IS HIGHLY EDITED TO SEE WHAT IS WHERE. THIS IS NOT THE EXACT REAL PHOTO."
+    "aperture": "f/4.5"
   },
   {
     "src": "assets/astrophotography/ic1396.jpg",
@@ -230,7 +225,6 @@
     "focal": "100 mm",
     "integration": "1 hour 33 minutes",
     "exposure": "4 seconds",
-    "aperture": "f/4.5",
-    "note": "I tried taking a Large Emission Nebula but its super faint and there weere bunch of clouds so unfortunately I couldnt get any nebulosity except some VERY FAINT red color on middle east side of the image, but will try one more time when I have better equipments."
+    "aperture": "f/4.5"
   }
 ]
