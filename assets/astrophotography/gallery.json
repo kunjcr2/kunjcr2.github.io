@@ -60,18 +60,6 @@
     "aperture": "f/5.6"
   },
   {
-    "src": "assets/astrophotography/andromeda-optimized.jpg",
-    "thumbnail": "assets/astrophotography/thumbs/andromeda-optimized.webp",
-    "year": 2026,
-    "title": "Andromeda Galaxy",
-    "type": "Spiral galaxy",
-    "iso": "ISO 1600",
-    "focal": "120 mm",
-    "integration": "27 Minutes",
-    "exposure": "4 seconds",
-    "aperture": "f/5.6"
-  },
-  {
     "src": "assets/astrophotography/dc.jpg",
     "thumbnail": "assets/astrophotography/thumbs/dc.webp",
     "year": 2026,
@@ -89,6 +77,18 @@
     "year": 2026,
     "title": "North America Nebula",
     "type": "Emission Nebula",
+    "iso": "ISO 3200",
+    "focal": "70 mm",
+    "integration": "15 Minutes",
+    "exposure": "5 seconds",
+    "aperture": "f/5.6"
+  },
+  {
+    "src": "assets/astrophotography/ngc7000_2.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/ngc7000_2.webp",
+    "year": 2026,
+    "title": "North America Nebula and Sadr region",
+    "type": "Emission Nebula and HILL region",
     "iso": "ISO 3200",
     "focal": "70 mm",
     "integration": "15 Minutes",
