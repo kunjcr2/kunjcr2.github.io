@@ -157,6 +157,50 @@ main {
   margin-bottom: 34px;
 }
 
+.leadership-list {
+  border-top: 1px solid var(--rule);
+}
+
+.leadership-role {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.leadership-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: start;
+}
+
+.leadership-role h3 {
+  margin-bottom: 2px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.leadership-role h3 span {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.leadership-org,
+.leadership-role time {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.leadership-role > p {
+  margin: 10px 0 0;
+}
+
+.leadership-role time {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
 .meta {
   font-size: 14px;
 }
@@ -397,6 +441,16 @@ main {
   .contact-layout {
     grid-template-columns: 1fr;
     gap: 12px;
+  }
+
+  .leadership-heading {
+    display: block;
+  }
+
+  .leadership-role time {
+    display: block;
+    margin-top: 3px;
+    text-align: left;
   }
 
   .skills-grid {
