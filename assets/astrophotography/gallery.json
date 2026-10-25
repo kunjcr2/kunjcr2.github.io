@@ -120,8 +120,8 @@
     "aperture": "Null"
   },
   {
-    "src": "assets/astrophotography/moon.jpg",
-    "thumbnail": "assets/astrophotography/thumbs/moon.webp",
+    "src": "assets/astrophotography/moon_1.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/moon_1.webp",
     "year": 2022,
     "title": "Moon",
     "type": "Moon",
