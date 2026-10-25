@@ -60,6 +60,18 @@
     "aperture": "f/5.6"
   },
   {
+    "src": "assets/astrophotography/moon_2.jpg",
+    "thumbnail": "assets/astrophotography/moon_2.jpg",
+    "year": 2026,
+    "title": "Moon",
+    "type": "Moon",
+    "iso": "100",
+    "focal": "300 mm",
+    "integration": "2 seconds",
+    "exposure": "1/250 seconds",
+    "aperture": "f/5.6"
+  },
+  {
     "src": "assets/astrophotography/dc.jpg",
     "thumbnail": "assets/astrophotography/thumbs/dc.webp",
     "year": 2026,
