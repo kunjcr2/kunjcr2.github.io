@@ -1,5 +1,17 @@
 [
   {
+    "src": "assets/astrophotography/NGC 7000 - North America Nebula - 03.jpeg",
+    "thumbnail": "assets/astrophotography/thumbs/NGC 7000 - North America Nebula - 03.webp",
+    "year": 2026,
+    "title": "North America Nebula",
+    "type": "Emission Nebula",
+    "iso": "3200",
+    "focal": "70 mm",
+    "integration": "28 minutes",
+    "exposure": "5 seconds",
+    "aperture": "f5.6"
+  },
+  {
     "src": "assets/astrophotography/andromeda2.jpg",
     "thumbnail": "assets/astrophotography/thumbs/andromeda2.webp",
     "year": 2026,
