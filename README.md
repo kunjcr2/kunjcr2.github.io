@@ -25,6 +25,12 @@ python -m http.server 8000
 
 Then visit `http://localhost:8000`.
 
-The astrophotography page loads its photographs from `assets/astrophotography/gallery.json`, so it must be viewed through this local server (or the deployed GitHub Pages site), rather than opened as a `file://` URL.
+The astrophotography page contains HTML generated from `assets/astrophotography/gallery.json`. After changing the gallery data, regenerate the page before committing:
 
-All site styling lives in `styles.css`. There is no build step and no package installation.
+```bash
+python scripts/render_gallery.py
+```
+
+The gallery can also be opened directly as a `file://` URL.
+
+All site styling lives in `styles.css`. The site needs no package installation.
