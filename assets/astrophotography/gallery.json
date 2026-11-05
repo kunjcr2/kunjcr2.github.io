@@ -204,8 +204,8 @@
     "aperture": "f/4.5"
   },
   {
-    "src": "assets/astrophotography/ic1805.jpg",
-    "thumbnail": "assets/astrophotography/thumbs/ic1805.webp",
+    "src": "assets/astrophotography/ic1805_1.jpg",
+    "thumbnail": "assets/astrophotography/thumbs/ic1805_1.webp",
     "year": 2026,
     "title": "Heart Nebula",
     "type": "Nebula",
@@ -213,6 +213,18 @@
     "focal": "150 mm (Zoomed in)",
     "integration": "2 hr 10 mins",
     "exposure": "2 seconds",
+    "aperture": "f/5.6"
+  },
+  {
+    "src": "assets/astrophotography/ic1805_2.jpeg",
+    "thumbnail": "assets/astrophotography/thumbs/ic1805_2.webp",
+    "year": 2026,
+    "title": "Heart Nebula, Soul Nebula, Fish Head Nebula, Double Cluster",
+    "type": "Nebulas and Cluster",
+    "iso": "3200",
+    "focal": "70 mm",
+    "integration": "1 hr 40 mins",
+    "exposure": "4 seconds",
     "aperture": "f/5.6"
   },
   {
