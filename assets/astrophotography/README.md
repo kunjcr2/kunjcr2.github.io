@@ -1,8 +1,8 @@
 # Astrophotography images
 
-Place the gallery images in this folder, then add a matching object to `gallery.json`. The site loads this file automatically, so you never need to edit JavaScript to add a photo.
+Place the gallery images in this folder, then add a matching object to `gallery.json`. Run the renderer to update the page; you never need to edit the gallery HTML by hand.
 
-Each gallery card loads the matching WebP preview from `thumbs/`, then opens the original image when clicked. Create a thumbnail with the same filename stem (for example, `my-photo.jpg` uses `thumbs/my-photo.webp`) and include its path in the entry.
+Each gallery card loads a WebP preview from `thumbs/`, then opens the original image when clicked. After adding an image and its entry to `gallery.json`, run `python scripts/render_gallery.py` from the repository root. The script creates or refreshes its WebP preview at `thumbs/<image stem>.webp` and updates `astrophotography.html`. The `thumbnail` field is optional; if present, use the generated path.
 
 Each entry needs these fields:
 

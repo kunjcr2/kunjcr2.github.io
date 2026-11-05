@@ -1,16 +1,52 @@
-"""Render gallery.json into crawlable HTML in astrophotography.html."""
+"""Build gallery WebP thumbnails and render crawlable HTML."""
 
 from collections import defaultdict
 from html import escape
 import json
 from pathlib import Path
+import subprocess
 
 
 ROOT = Path(__file__).resolve().parents[1]
 GALLERY = ROOT / "assets/astrophotography/gallery.json"
+PHOTOS = GALLERY.parent
+THUMBS = PHOTOS / "thumbs"
 PAGE = ROOT / "astrophotography.html"
 START = "      <!-- GALLERY_START: generated from assets/astrophotography/gallery.json -->"
 END = "      <!-- GALLERY_END -->"
+
+
+def prepare_photos(photos):
+    """Give each listed image a WebP preview, rebuilding it when the source changes."""
+    THUMBS.mkdir(exist_ok=True)
+    prepared = []
+    jobs = []
+    destinations = set()
+    for photo in photos:
+        source = (ROOT / photo["src"]).resolve()
+        if source.parent != PHOTOS.resolve() or source.suffix.lower() not in {".jpg", ".jpeg", ".png", ".webp"}:
+            raise ValueError(f"Gallery source must be an image in {PHOTOS}: {photo['src']}")
+        if not source.is_file():
+            raise FileNotFoundError(source)
+
+        thumbnail = THUMBS / f"{source.stem}.webp"
+        if thumbnail in destinations:
+            raise ValueError(f"Two gallery images would share a thumbnail: {thumbnail}")
+        destinations.add(thumbnail)
+        if not thumbnail.is_file() or thumbnail.stat().st_mtime_ns < source.stat().st_mtime_ns:
+            jobs.append({"source": str(source), "thumbnail": str(thumbnail)})
+
+        entry = dict(photo)
+        entry["thumbnail"] = thumbnail.relative_to(ROOT).as_posix()
+        prepared.append(entry)
+    if jobs:
+        subprocess.run(
+            ["node", str(ROOT / "scripts/create_gallery_thumbnails.js")],
+            input=json.dumps(jobs),
+            text=True,
+            check=True,
+        )
+    return prepared, len(jobs)
 
 
 def valid(value):
@@ -44,12 +80,9 @@ def render_photo(photo, index):
 
 
 def main():
-    photos = json.loads(GALLERY.read_text(encoding="utf-8"))
+    photos, created = prepare_photos(json.loads(GALLERY.read_text(encoding="utf-8")))
     years = defaultdict(list)
     for photo in photos:
-        for key in ("src", "thumbnail"):
-            if photo.get(key) and not (ROOT / photo[key]).is_file():
-                raise FileNotFoundError(photo[key])
         years[photo["year"]].append(photo)
 
     sections = []
@@ -74,7 +107,7 @@ def main():
     before, remainder = page.split(START, 1)
     _, after = remainder.split(END, 1)
     PAGE.write_text(before + START + "\n" + "\n".join(sections) + "\n" + END + after, encoding="utf-8")
-    print(f"Rendered {len(photos)} photos across {len(years)} years")
+    print(f"Rendered {len(photos)} photos across {len(years)} years; created or refreshed {created} WebP thumbnails")
 
 
 if __name__ == "__main__":

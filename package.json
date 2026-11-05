@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "render-gallery": "python scripts/render_gallery.py"
+  },
+  "dependencies": {
+    "sharp": "^0.35.4"
+  }
+}
