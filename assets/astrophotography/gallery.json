@@ -84,42 +84,6 @@
     "aperture": "f/5.6"
   },
   {
-    "src": "assets/astrophotography/double_cluster.jpg",
-    "thumbnail": "assets/astrophotography/thumbs/double_cluster.webp",
-    "year": 2026,
-    "title": "Double cluster - NGC 884 and NGC 869",
-    "type": "Double Cluster",
-    "iso": "ISO 1600",
-    "focal": "185 mm",
-    "integration": "22 Minutes",
-    "exposure": "2.5 seconds",
-    "aperture": "f/5.6"
-  },
-  {
-    "src": "assets/astrophotography/ngc7000_1.jpg",
-    "thumbnail": "assets/astrophotography/thumbs/ngc7000_1.webp",
-    "year": 2026,
-    "title": "North America Nebula and Sadr region",
-    "type": "Emission Nebula and H II region",
-    "iso": "ISO 3200",
-    "focal": "70 mm",
-    "integration": "15 Minutes",
-    "exposure": "5 seconds",
-    "aperture": "f/5.6"
-  },
-  {
-    "src": "assets/astrophotography/ngc7000_2.jpg",
-    "thumbnail": "assets/astrophotography/thumbs/ngc7000_2.webp",
-    "year": 2026,
-    "title": "North America Nebula",
-    "type": "Emission Nebula ",
-    "iso": "ISO 3200",
-    "focal": "200 mm",
-    "integration": "1 hour 10 Minutes",
-    "exposure": "4 seconds",
-    "aperture": "f/5.6"
-  },
-  {
     "src": "assets/astrophotography/pleiades_1.jpg",
     "thumbnail": "assets/astrophotography/thumbs/pleiades_1.webp",
     "year": 2025,
@@ -204,18 +168,6 @@
     "aperture": "f/4.5"
   },
   {
-    "src": "assets/astrophotography/ic1805_1.jpg",
-    "thumbnail": "assets/astrophotography/thumbs/ic1805_1.webp",
-    "year": 2026,
-    "title": "Heart Nebula",
-    "type": "Nebula",
-    "iso": "3200",
-    "focal": "150 mm (Zoomed in)",
-    "integration": "2 hr 10 mins",
-    "exposure": "2 seconds",
-    "aperture": "f/5.6"
-  },
-  {
     "src": "assets/astrophotography/ic1805_2.jpeg",
     "thumbnail": "assets/astrophotography/thumbs/ic1805_2.webp",
     "year": 2026,
@@ -249,18 +201,6 @@
     "focal": "150 mm (Zoomed in)",
     "integration": "5 seconds",
     "exposure": "5 seconds",
-    "aperture": "f/4.5"
-  },
-  {
-    "src": "assets/astrophotography/ic1396.jpg",
-    "thumbnail": "assets/astrophotography/thumbs/ic1396.webp",
-    "year": 2026,
-    "title": "Large Emission Nebula (Failed)",
-    "type": "Nebula (Just stars really)",
-    "iso": "3200",
-    "focal": "100 mm",
-    "integration": "1 hour 33 minutes",
-    "exposure": "4 seconds",
     "aperture": "f/4.5"
   }
 ]
