@@ -202,5 +202,17 @@
     "integration": "5 seconds",
     "exposure": "5 seconds",
     "aperture": "f/4.5"
+  },
+  {
+    "src": "assets/astrophotography/ngc1499_pleiades_labeled.jpeg",
+    "thumbnail": "assets/astrophotography/thumbs/ngc1499_pleiades_labeled.webp",
+    "year": 2026,
+    "title": "California Nebula and Pleiades",
+    "type": "Nebula and star cluster",
+    "iso": "3200",
+    "focal": "70 mm",
+    "integration": "4 seconds",
+    "exposure": "1 hour 58 minutes",
+    "aperture": "f/5.6"
   }
 ]
