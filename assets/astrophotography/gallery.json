@@ -87,12 +87,12 @@
     "src": "assets/astrophotography/california_nebula.jpg",
     "thumbnail": "assets/astrophotography/thumbs/california_nebula.webp",
     "year": 2026,
-    "title": "Moon",
-    "type": "Moon",
-    "iso": "100",
-    "focal": "300 mm",
-    "integration": "2 seconds",
-    "exposure": "1/250 seconds",
+    "title": "California Nebula",
+    "type": "Nebula",
+    "iso": "3200",
+    "focal": "100 mm",
+    "integration": "48 minutes",
+    "exposure": "1/ seconds",
     "aperture": "f/5.6"
   },
   {
