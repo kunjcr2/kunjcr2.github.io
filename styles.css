@@ -192,7 +192,7 @@ main {
   font-size: 14px;
 }
 
-.leadership-role > p {
+.leadership-role>p {
   margin: 10px 0 0;
 }
 
@@ -507,4 +507,8 @@ main {
     display: inline-block;
     margin-top: 6px;
   }
+}
+
+.secret {
+  color: #121212
 }
